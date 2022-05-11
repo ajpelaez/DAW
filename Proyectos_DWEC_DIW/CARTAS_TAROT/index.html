@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Juego de memoria con cartas del Tarot para que te sientas como la minita de los horoscopos">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tarot</title>
+    <link rel="icon" href="imagenes/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <div class="cabecera">
+        <div class="logo"><img class="imagenLogo" src="imagenes/logo.jpg" alt="logo"></div>
+        <div class="titulo">
+            <h1 id="cambio0">¿Tienes más memoria que un Piscis?</h1>
+        </div>
+    </div>
+    <div class="tablas">
+        <div class="tablaPuntos">
+            <table>
+                <tr>
+                    <th rowspan="2" width="75px" text-align="center">
+                        <p id="nombre"></p>
+                    </th>
+                    <th><i class="far fa-star"></i>
+                        <p id="cambio1">Puntos</p>
+                    </th>
+                    <th><i class="fas fa-times"></i>
+                        <p id="cambio2">Errores</p>
+                    </th>
+                </tr>
+                <tr>
+                    <td><input type="text" value="0" id="puntos" disabled></td>
+                    <td><input type="text" value="0" id="puntosError" disabled></td>
+                </tr>
+            </table>
+        </div>
+        <div class="tablaRankin">
+            <table>
+                <tr>
+                    <th><i class="far fa-chess-queen"></i>
+                        <p id="cambio3">Jugador mejor puntuado</p>
+                    </th>
+                    <th><i class="fas fa-times"></i>
+                        <p id="cambio4">Errores</p>
+                    </th>
+                </tr>
+                <tr>
+                    <td id="jugadorGana">Top1</td>
+                    <td><input type="text" value="100" id="errorJugadorGana" disabled></td>
+                </tr>
+            </table>
+        </div>
+        <div class="tablaIdioma">
+            <table>
+                <tr>
+                    <th colspan="2" whidth="75px"><i class="fas fa-language"></i>
+                        <p id="cambio5">Idioma</p>
+                    </th>
+                </tr>
+                <tr>
+                    <td> <button id="cambiaContenidoEs">ES</button></td>
+                    <td> <button id="cambiaContenidoEn">EN</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="barraInformativa">
+        <p id="barraInformativa">Barra de información</p>
+    </div>
+    <div class="cartasDescrip">
+        <div class="cartas">
+            <div class="img1">
+                <img id="img1" src="imagenes/vuelta.jpg" alt="dorso" onclick="cambiarImagen(this)">
+            </div>
+            <div class="img2">
+                <img id="img2" src="imagenes/vuelta.jpg" alt="dorso" onclick="cambiarImagen(this)">
+            </div>
+            <div class="img3">
+                <img id="img3" src="imagenes/vuelta.jpg" alt="dorso" onclick="cambiarImagen(this)">
+            </div>
+            <div class="img4">
+                <img id="img4" src="imagenes/vuelta.jpg" alt="dorso" onclick="cambiarImagen(this)">
+            </div>
+            <div class="img5">
+                <img id="img5" src="imagenes/vuelta.jpg" alt="dorso" onclick="cambiarImagen(this)">
+            </div>
+            <div class="img6">
+                <img id="img6" src="imagenes/vuelta.jpg" alt="dorso" onclick="cambiarImagen(this)">
+            </div>
+            <div class="img7">
+                <img id="img7" src="imagenes/vuelta.jpg" alt="dorso" onclick="cambiarImagen(this)">
+            </div>
+            <div class="img8">
+                <img id="img8" src="imagenes/vuelta.jpg" alt="dorso" onclick="cambiarImagen(this)">
+            </div>
+            <div class="img9">
+                <img id="img9" src="imagenes/vuelta.jpg" alt="dorso" onclick="cambiarImagen(this)">
+            </div>
+            <div class="img10">
+                <img id="img10" src="imagenes/vuelta.jpg" alt="dorso" onclick="cambiarImagen(this)">
+            </div>
+            <div class="img11">
+                <img id="img11" src="imagenes/vuelta.jpg" alt="dorso" onclick="cambiarImagen(this)">
+            </div>
+            <div class="img12">
+                <img id="img12" src="imagenes/vuelta.jpg" alt="dorso" onclick="cambiarImagen(this)">
+            </div>
+        </div>
+        <div class="descripcion">
+            <p id="cambio7">Juego de memoria con cartas del Tarot para que te sientas como la minita de los
+                horoscopos</p>
+        </div>
+    </div>
+    <footer>Evelyn Cutillas Navarro || Juego Tarot</footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

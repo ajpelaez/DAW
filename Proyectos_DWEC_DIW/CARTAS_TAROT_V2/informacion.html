@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Juego de memoria con cartas del Tarot para que te sientas como la minita de los horoscopos">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>Tarot</title>
+  <link rel="icon" href="imagenes/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9c89b8;">
+    <div class="container-fluid">
+      <img class="imgLogo" src="imagenes/logo.png" alt="" width="90px" height="75px">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" id="cambio10" href="cartas.html">Juego</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" id="cambio11" href="#" style="color: rgb(66, 64, 64);">Informacion</a>
+          </li>
+        </ul>
+      </div>
+      <div class="d-flex">
+        <table>
+          <tbody>
+            <tr>
+              <td> <button class="btn btn-secondary" id="cambiaContenidoEs">ES</button></td>
+              <td> <button class="btn btn-secondary" id="cambiaContenidoEn">EN</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </nav>
+  <div class="container-fluid mainaside">
+    <div class="row">
+      <main class="container-fluid col-8">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="imagenes/mago.jpg" class="card-img-top cartasInfo" alt="mago">
+              <div class="card-body textoCard">
+                <h5 class="card-title">El Mago</h5>
+                <p class="card-text">El mago representa a una persona hábil, trabajadora, confiable, honesta y segura de
+                  sus
+                  capacidades.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="imagenes/bomba.jpg" class="card-img-top cartasInfo" alt="bomba">
+              <div class="card-body textoCard">
+                <h5 class="card-title">La Muerte</h5>
+                <p class="card-text">La muerte presenta el cambio, el fin de un ciclo y el resurgimiento de otro. La
+                  muerte no
+                  debe ser temida.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="imagenes/colgado.jpg" class="card-img-top cartasInfo" alt="colgado">
+              <div class="card-body textoCard">
+                <h5 class="card-title">El Colgado</h5>
+                <p class="card-text">El colgado simboliza el retorno, estar en suspenso, estancamiento, abandono, o el
+                  sacrificio por algo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="imagenes/diablo.jpg" class="card-img-top cartasInfo" alt="diablo">
+              <div class="card-body textoCard">
+                <h5 class="card-title">El Diablo</h5>
+                <p class="card-text">El diablo representa nuestro interior oscuro, el comportamiento destructivo y
+                  dañino hacia
+                  nosotros mismos.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="imagenes/enamorados.jpg" class="card-img-top cartasInfo" alt="mago">
+              <div class="card-body textoCard">
+                <h5 class="card-title">Los Enamorados</h5>
+                <p class="card-text">Los enamorados es una carta que indica nacimientos o casamientos, el amor de pareja
+                  y la llegada de relaciones
+                  afectivas</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="imagenes/loco.jpg" class="card-img-top cartasInfo" alt="bomba">
+              <div class="card-body textoCard">
+                <h5 class="card-title">El Loco</h5>
+                <p class="card-text">El loco anuncia cambios trascendentales que dependiendo de la posición que adopte
+                  determinará
+                  tu futuro.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="imagenes/templanza.jpg" class="card-img-top cartasInfo" alt="colgado">
+              <div class="card-body textoCard">
+                <h5 class="card-title">La Templanza</h5>
+                <p class="card-text">La templanza es la espiritualidad y la mentalidad positiva, implica también
+                  elevación y
+                  captación del bien. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="imagenes/torre.jpg" class="card-img-top cartasInfo" alt="diablo">
+              <div class="card-body textoCard">
+                <h5 class="card-title">La Torre</h5>
+                <p class="card-text">La torre es una carta que indica la aparición de cambios arrasadores, implica ir
+                  hacia adelante sin
+                  contemplaciones.</p>
+              </div>
+            </div>
+          </div>
+
+      </main>
+      <aside class="col-4">
+        <div class="infoJuego">
+          <h4 style="text-align: center;" id="cambio13">Información sobre el juego</h4>
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne">
+                  Cómo se juega:
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                  El objetivo es lograr memorizar la ubicación de las diferentes cartas con el fin de voltear
+                  sucesivamente
+                  las 2 cartas idénticas que formen pareja para llevárselas.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseTwo">
+                  Puntos:
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                  Consigues 1 punto cuando formas una pareja, al llegar a 7 puntos ganas el juego.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree">
+                  Fallos:
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                  Por cada pareja que levantes que no sea pareja se te sumará 1 punto de error.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingf">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapsef" aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapsef">
+                  Progreso:
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapsef" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingf">
+                <div class="accordion-body">
+                  Por cada punto conseguido la barra de progreso se irá rellenando.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingi">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapsei" aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapsei">
+                  Ranking:
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapsei" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingi">
+                <div class="accordion-body">
+                  En el se podrán ver a los 5 mejores jugadores, es decir, los que hayan cometido menos fallos.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="infoBomba">
+          <h4 style="text-align: center;"  id="cambio14">Información bomba</h4>
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne">
+                  Bomba:
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                  Si levantas la carta bomba se reiniciará todo el juego sin modificar el contador de errores
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="infoDificil">
+          <h4 style="text-align: center;"  id="cambio15">Dificultades:</h4>
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  Fácil
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Se mostrarán todas las cartas durante 2 segundos al inicio del juego</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Normal
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Se mostrará la carta bomba durante 2 segundos al inicio del juego</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Dificil
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">No se mostrará la bomba</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer style="margin-bottom: 5px;">Evelyn Cutillas Navarro || Juego Tarot</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

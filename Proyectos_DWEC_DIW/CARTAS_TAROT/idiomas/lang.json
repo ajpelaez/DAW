@@ -1,0 +1,24 @@
+{
+    "lang":{
+        "EN":{
+           "TITULO":"Do you have more memory than a Pisces?",
+           "SCORE":"Score",
+           "ERRORS":"Errors",
+           "TOPP":"Top player",
+           "TOPERROR":"Top Errors",
+           "LANGUAJE":"Languaje",
+           "INFO":"Information bar",
+           "DESCRI":"Memory game with Tarot cards to make you feel like the minita of horoscopes"
+        },
+        "ES":{
+            "TITULO":"¿Tienes mas memoria que un Piscis?",
+            "SCORE":"Puntos",
+            "ERRORS":"Errores",
+            "TOPP":"Jugador mejor puntuado",
+            "TOPERROR":"Top Errores",
+            "LANGUAJE":"Idioma",
+            "INFO":"Barra de información",
+            "DESCRI":" Juego de memoria con cartas del Tarot para que te sientas como la minita de los horoscopos"
+         }
+    }
+}

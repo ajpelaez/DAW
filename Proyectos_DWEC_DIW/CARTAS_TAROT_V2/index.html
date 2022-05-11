@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Juego de memoria con cartas del Tarot para que te sientas como la minita de los horoscopos">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Tarot</title>
+    <link rel="icon" href="imagenes/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9c89b8;">
+        <div class="container-fluid">
+            <img class="imgLogo" src="imagenes/logo.png" alt="" width="90px" height="75px">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" style="color: rgb(66, 64, 64);"
+                            id="cambio10">Juego</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" id="cambio11"
+                            href="informacion.html">Informacion</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td> <button class="btn btn-secondary" id="cambiaContenidoEs">ES</button></td>
+                            <td> <button class="btn btn-secondary" id="cambiaContenidoEn">EN</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </nav>
+    <header class="container-fluid">
+        
+        <button type="button" id="cambio8" class="btn btn-success col-2 comenzar" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Comenzar
+        </button>
+        <button type="button" id="cambio9" class="btn btn-primary col-2 botonRestart" data-bs-toggle="modal">
+            Volver a jugar
+        </button>
+        
+        
+        <div class="col-10 progressinfo">
+            <div class="progress">
+                <div id="bar" class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%"
+                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="alert alert-dark" id="barraInformativa" role="alert">
+                Barra de Información 
+              </div>
+        </div>
+    </header>
+
+    <div class="container-fluid asidemain">
+        <button type="button" id="cambio12" class="btn btn-light btnAyuda" style="background-color: red;">Ayuda</button>
+        <div class="row">
+            <aside class="col-4">
+                <table class="table table-striped">
+                    <thead>
+                        <tr style="background-color: #c8b6ff;">
+                            <th scope="col" colspan="2">
+                                <p style="text-align: center;" id="nombre"></p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #c8b6ff;">
+                            <td><input type="text" value="0" id="puntos" disabled style="width: 50%;"></td>
+                            <td><input type="text" value="0" id="puntosError" disabled style="width: 50%;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-striped">
+                    <thead style="background-color: #c8b6ff;">
+                        <tr>
+                            <th scope="col" colspan="2">
+                                <p style="text-align: center;" id="cambio3"><i class="far fa-chess-queen"></i>Jugadores
+                                    mejor puntuados</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #c8b6ff;">
+                            <th id="jugadorGana" scope="row">Top1</th>
+                            <td><input type="text" value="4" id="errorJugadorGana" disabled
+                                    style="width: 50%; text-align: center;">
+                            </td>
+                        </tr>
+                        <tr style="background-color: #c8b6ff;">
+                            <th id="" scope="row">Top2</th>
+                            <td><input type="text" value="6" id=""
+                                    style="width: 50%;text-align: center;" disabled>
+                            </td>
+                        </tr>
+                        <tr style="background-color: #c8b6ff;">
+                            <th id="" scope="row">Top3</th>
+                            <td><input type="text" value="10" id="" disabled
+                                    style="width: 50%;text-align: center;"></td>
+                        </tr>
+                        <tr style="background-color: #c8b6ff;">
+                            <th id="" scope="row">Top4</th>
+                            <td><input type="text" value="12" id="" disabled
+                                    style="width: 50%;text-align: center;"></td>
+                        </tr>
+                        <tr style="background-color: #c8b6ff;">
+                            <th id="" scope="row">Top5</th>
+                            <td><input type="text" value="20" id="" disabled
+                                    style="width: 50%;text-align: center;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </aside>
+            <main class="container-fluid col-8">
+                <div class="cartas">
+                    <div class="row">
+                        <div class="col-6 col-md-3 col-lg-2 mx-1 mb-2"> <img class="carta" id="img1"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"> <img class="carta" id="img2"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2 mx-1  mb-2"> <img class="carta" id="img3"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"> <img class="carta" id="img4"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"> <img class="carta" id="img13"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"><img class="carta" id="img5"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"><img class="carta" id="img6"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"><img class="carta" id="img7"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"><img class="carta" id="img8"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"> <img class="carta" id="img14"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"><img class="carta" id="img9"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"><img class="carta" id="img10"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"><img class="carta" id="img11"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"><img class="carta" id="img12"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                        <div class="col-6 col-md-3 col-lg-2  mx-1  mb-2"><img class="carta" id="img15"
+                                src="imagenes/vuelta.jpg" alt="dorso"></div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+    <footer style="margin-bottom: 5px;">Evelyn Cutillas Navarro || Juego Tarot</footer>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: #c8b6ff;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Empieza a jugar!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombreForm"><br><br>
+                    <label for="dificultad">Escoge dificultad:</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radioDificultad" id="inlineRadio1"
+                            value="radioFacil">
+                        <label class="form-check-label" for="inlineRadio1">Fácil</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radioDificultad" id="inlineRadio2"
+                            value="radioMedio">
+                        <label class="form-check-label" for="inlineRadio2">Normal</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radioDificultad" id="inlineRadio3"
+                            value="radioDificil">
+                        <label class="form-check-label" for="inlineRadio3">Dificil</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radioDificultad" id="inlineRadio3"
+                            value="radioLeyenda">
+                        <label class="form-check-label" for="inlineRadio3">Leyenda</label>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                            id="btnComenzar">Comenzar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

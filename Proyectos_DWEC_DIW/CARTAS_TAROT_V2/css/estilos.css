@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap");
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.disabledbutton {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.imgLogo {
+  margin-right: 30px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+#barraInformativa {
+  border: solid black 1px;
+  border-radius: 7px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.progressinfo {
+  width: 80%;
+  margin: auto;
+}
+
+.progress {
+  border: solid black 1px;
+}
+
+.botonRestart {
+  display: none;
+}
+
+.tablas {
+  width: 100%;
+}
+
+body {
+  background-color: #bde0fe;
+  background-size: cover;
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-cartas-tarot-dibujadas-mano_79603-2056.jpg?size=626&ext=jpg");
+  background-size: 100%;
+  font-family: "Charm", cursive;
+}
+
+.asidemain {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.carta {
+  border-radius: 10px;
+  height: 175px;
+  width: 140px;
+}
+
+.cartaDescri {
+  height: 200px;
+  width: 150px;
+}
+
+.cartasInfo {
+  height: 250px;
+  border: 2px solid gray;
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: -2px 3px 11px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: -2px 3px 11px -2px rgba(0, 0, 0, 0.75);
+}
+
+.infoJuego {
+  background-color: #a2d2ff;
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.infoBomba {
+  background-color: #bde0fe;
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.textoCard {
+  background-color: #f1c0e8;
+  -webkit-box-shadow: -2px 3px 11px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: -2px 3px 11px -2px rgba(0, 0, 0, 0.75);
+  border: 2px solid gray;
+  border-top: 1px solid white;
+}
+
+.infoDificil {
+  background-color: #bde0fe;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.mainaside {
+  margin-top: 10px;
+  width: 80%;
+}
+
+#puntosError, #puntosJugadorGana {
+  color: red;
+}
+
+#puntos {
+  color: green;
+}
+
+footer {
+  padding: 5px;
+  text-align: center;
+  border: solid black 1px;
+  border-radius: 7px;
+  width: 92.5%;
+  margin: auto;
+  background: #343346;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(52, 51, 70, 0.922006)), color-stop(55%, rgba(169, 147, 219, 0.843575)));
+  background: linear-gradient(90deg, rgba(52, 51, 70, 0.922006) 0%, rgba(169, 147, 219, 0.843575) 55%);
+  margin-top: 10px;
+  display: block;
+}
+
+.sombra {
+  -webkit-box-shadow: -21px 6px 18px -3px rgba(0, 0, 0, 0.75);
+          box-shadow: -21px 6px 18px -3px rgba(0, 0, 0, 0.75);
+}
+/*# sourceMappingURL=estilos.css.map */

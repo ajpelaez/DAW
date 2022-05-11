@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<LANGUAJE>
+    <EN>
+        <TITULO>Do you have more memory than a Pisces?</TITULO>
+        <SCORE>Score</SCORE>
+        <ERRORS>Errors</ERRORS>
+        <TOPP>Top player</TOPP>
+        <TOPERROR>Errors</TOPERROR>
+        <LANGUAJE>Languaje</LANGUAJE>
+        <INFO>Information bar</INFO>
+    </EN>
+    <ES>
+        <TITULO>¿Tienes mas memoria que un Piscis?</TITULO>
+        <SCORE>Puntos</SCORE>
+        <ERRORS>Errores</ERRORS>
+        <TOPP>Jugador mejor puntuado</TOPP>
+        <TOPERROR>Errores</TOPERROR>
+        <LANGUAJE>Idioma</LANGUAJE>
+        <INFO>Barra de información</INFO>
+    </ES> 
+</LANGUAJE>

@@ -17,3 +17,5 @@
  - [Cartas Simpson - ACB](Proyectos_DWEC_DIW/CARTAS_SIMPSON_ACB) - Autor: [acbeldeandaw](https://github.com/acbeldeandaw)
  - [Cartas Simpson V2 - ACB](Proyectos_DWEC_DIW/CARTAS_SIMPSON_V2_ACB) - Autor: [acbeldeandaw](https://github.com/acbeldeandaw)
  - [Cartas El Chiringuito](Proyectos_DWEC_DIW/ChirinCartas) - Autores: [cristiansaezpracticas](https://github.com/cristiansaezpracticas) y [charly1597](https://github.com/charly1597)
+  - [Cartas Tarot](Proyectos_DWEC_DIW/CARTAS_TAROT) - Autora: [evelynn333](https://github.com/evelynn333)
+  - [Cartas Tarot V2](Proyectos_DWEC_DIW/CARTAS_TAROT) - Autora: [evelynn333](https://github.com/evelynn333)

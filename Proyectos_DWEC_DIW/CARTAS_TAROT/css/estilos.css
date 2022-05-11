@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap");
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #c7b8c5;
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-cartas-tarot-dibujadas-mano_79603-2056.jpg?size=626&ext=jpg");
+  background-size: 100%;
+  font-family: 'Charm', cursive;
+  height: 100%;
+}
+
+.cartas {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 150px 150px 150px 150px;
+      grid-template-columns: 150px 150px 150px 150px;
+  -ms-grid-rows: 200px 200px 200px;
+      grid-template-rows: 200px 200px 200px;
+  background-color: transparent;
+  gap: 10px;
+  margin-left: 250px;
+  width: 70%;
+}
+
+.cartas > div {
+  height: 200px;
+}
+
+img {
+  border-radius: 10px;
+  height: 200px;
+  width: 150px;
+}
+
+#puntosError, #puntosJugadorGana {
+  color: red;
+}
+
+#puntos {
+  color: green;
+}
+
+.cabecera {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #a78787;
+  opacity: 0.5;
+}
+
+.imagenLogo {
+  width: 150px;
+  height: 75px;
+}
+
+.titulo {
+  margin-top: 20px;
+}
+
+.tablas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+table, td, th, tr {
+  border: solid black 1px;
+}
+
+.barraInformativa {
+  padding: 5px;
+  text-align: center;
+  border: solid black 1px;
+  border-radius: 7px;
+  width: 92.5%;
+  margin: auto;
+  background-color: lightgray;
+  opacity: 0.5;
+}
+
+.cartasDescrip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 620px;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.descripcion {
+  width: 30%;
+  border: solid black 1px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  overflow: scroll;
+  overflow-x: hidden;
+  background-image: url("../imagenes/fotoDescri.jpg");
+}
+
+.descripcion > p::-moz-selection {
+  color: red;
+}
+
+.descripcion > p::selection {
+  color: red;
+}
+
+footer {
+  padding: 5px;
+  text-align: center;
+  border: solid black 1px;
+  border-radius: 7px;
+  width: 92.5%;
+  margin: auto;
+  background: #020024;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(2, 0, 36, 0.790354)), color-stop(25%, rgba(221, 131, 222, 0.843575)));
+  background: linear-gradient(90deg, rgba(2, 0, 36, 0.790354) 0%, rgba(221, 131, 222, 0.843575) 25%);
+  margin-top: 10px;
+  display: block;
+}
+
+.sombra {
+  -webkit-box-shadow: -21px 6px 18px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: -21px 6px 18px -3px rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (max-width: 1024px) {
+  .cartas {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+    -ms-grid-rows: 200px 200px 200px;
+        grid-template-rows: 200px 200px 200px;
+    margin: auto;
+  }
+  footer {
+    margin-top: 25%;
+  }
+  .descripcion {
+    height: 133%;
+  }
+  .cabecera {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cartasDescrip {
+    float: left;
+  }
+  .cartas {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: 200px 200px 200px;
+        grid-template-rows: 200px 200px 200px;
+    margin: auto;
+  }
+  footer {
+    margin-top: 170%;
+  }
+  .tablas {
+    display: -ms-grid;
+    display: grid;
+  }
+  .descripcion {
+    height: 201%;
+  }
+  .cabecera {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cartas {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: 200px 200px 200px;
+        grid-template-rows: 200px 200px 200px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: auto;
+  }
+  .descripcion {
+    display: none;
+  }
+  .tablas {
+    display: -ms-grid;
+    display: grid;
+  }
+  footer {
+    margin-top: 276%;
+  }
+  .cabecera {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=estilos.css.map */
