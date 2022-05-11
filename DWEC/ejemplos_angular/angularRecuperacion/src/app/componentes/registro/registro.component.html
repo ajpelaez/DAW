@@ -1,0 +1,22 @@
+<form class="form-group" [formGroup]="formRegister" (submit)="evaluaForm()">
+    
+    <label for="nombre">Nombre</label><input type="text" formControlName="nombre" id="nombre">
+    <label for="apellidos">Apellidos</label><input type="text" formControlName="apellidos" id="apellidos">
+    <br> 
+    <label for="password">Contraseña</label><input type="password" formControlName="password" id="password">
+    <label for="email">Email</label><input type="text" formControlName="email" id="email"> 
+    <br>
+    <label for="dni">dni</label><input type="text" formControlName="dni" id="dni">
+    <label for="tlf">Telefono</label><input type="number" formControlName="tlf" id="tlf">
+    <br>
+    <button type="submit" [disabled]="formRegister.invalid">Registro</button>
+
+</form>
+<!--Aqui empezamos a comprabar errores y mostrarlos por pantalla-->
+{{tlfN.errors | json}}
+{{dniN.errors | json}}
+
+<div class="alert alert-danger" role="alert" *ngIf="nameN.invalid && (nameN.dirty || nameN.touched)">
+        <div *ngIf="nameN.errors.required">El nombre es requerido</div>
+        <div *ngIf="nameN.errors.minlength">ksksksksk</div>    
+</div>

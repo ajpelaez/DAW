@@ -1,0 +1,77 @@
+<div class="d-flex justify-content-between ">
+  <div class="card  w-25 text-left">
+    <h4 class="card-title">Estructuras de control con If-Else</h4>
+    <div class="card-text">
+        <input type="checkbox" [(ngModel)]="verdad">
+        <h5 *ngIf="verdad; else mentira">Es verdad con *ngIf</h5>
+        <ng-template #mentira><h5>Es mentira con *ngIf</h5></ng-template>
+
+        <h5>{{verdad? "Es verdad" : "Es mentira"}} con operador ternario</h5>
+        <div>
+          <p>Un input con if para decir si eres menor de 18, es menor de 30 o es mayor de 30 </p>
+          <label for="edad">Edad</label><input id ="edad" type="number" [(ngModel)]="edad">
+          <p *ngIf="edad == 0">Introduce tu edad</p>
+          <p>If-ElseIF-Else con SugarCandy</p>
+          <h5 *ngIf="edad<18; else adulto">Es menor de 18 años</h5>
+          <ng-template #adulto>
+            <ng-container *ngIf="edad<30; else mayor">
+              <h5>Es menor de 30 años</h5>
+            </ng-container>
+            <ng-template #mayor><h5>Es mayor de 30 años</h5></ng-template>
+          </ng-template>
+          <br><p>If-Else con microsintaxis</p>
+          <ng-template [ngIf]="edad<18" [ngIfElse]="adulto2">
+            <h5>Menor de 18 años con microsintaxis</h5>
+          </ng-template>
+          <ng-template #adulto2>
+            <ng-template [ngIf]="edad<30" [ngIfElse]="mayor2">
+              <h5>Es menor de 30 años con microsintaxis</h5>
+            </ng-template>
+          </ng-template>
+          <ng-template #mayor2>
+            <h5>Es moyor de 30 años con microsintaxis</h5>
+          </ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="card  w-25 text-center">
+    <h3>Switch Case Calculadora</h3>
+    <label for="num1">Numero 1</label><input id="num1" type="number" [(ngModel)]=num1>
+    
+    <label for="num2">Numero 2</label><input type="number" [(ngModel)]=num2>
+    <hr>
+    <select [(ngModel)]="operador">
+      <option *ngFor="let operacion of operaciones" [value]="operacion">
+        {{operacion}}
+      </option>
+    </select>
+    
+    <div [ngSwitch]="operador">
+      <span *ngSwitchCase="'suma'"><br><p>{{num1 + num2}}</p></span>
+      <span *ngSwitchCase="'resta'"><br><p>{{num1 - num2}}</p></span>
+      <span *ngSwitchCase="'multiplica'"><br><p>{{num1 * num2}}</p></span>
+      <span *ngSwitchCase="'divide'"><br><p>{{num1 / num2}}</p></span>
+      <span *ngSwitchDefault><p>Selecciona un operador</p></span>
+    </div>
+  </div>
+  <div class="card  w-25 text-right">
+    <div class="card-body">
+      <h4 class="card-title">For avanzado</h4>
+      <ul>
+        <li *ngFor="let numero of [78, 11, 22, 33, 44, 55]; 
+          let indice = index;
+          let cuenta = count;
+          let impar = odd;
+          let primero = first;
+          let ultimo = last; "
+          [ngClass] = "{'text-danger': impar , 'bg-primary':primero}"
+          (click)="muestraLog(indice,impar,primero,ultimo)"
+          >
+          En la posicion {{indice}} de {{cuenta}}, el número es {{numero}}. Que es {{impar? "impar" :"par"}}. 
+          {{primero? "Es el primero de la lista" : ""}}{{ultimo? "Es el último de la lista":""}}
+        
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

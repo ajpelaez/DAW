@@ -1,0 +1,29 @@
+{{ titulo }}
+
+<form>
+  <input type="text" name="nombre" [(ngModel)]="nombre">
+  <input type="text" name="apellido" [(ngModel)]="apellido">
+  <input type="text" name="cargo" [(ngModel)]="cargo">
+
+  <input type="submit" value="Registrar" (click)="registrarUsuario()">
+
+</form>
+
+<p *ngIf="registrado; else sinRegistrar"> {{mensaje}} con el nombre de {{nombre}} {{apellido}}
+  con el cargo de <span [ngStyle]="{color: cargo=='director' ? 'red': 'yellow'}">{{cargo}}</span>
+  con el cargo de <span [ngClass]="{directores:cargo=='director'}">{{cargo}}</span>
+  con el cargo de <span [ngClass]="cargo=='director' ? 'directores' : 'noDirectores'">{{cargo}}</span></p>
+
+
+<ng-template #sinRegistrar>
+  <p>Nadie registrado</p>
+
+</ng-template>
+
+<br><br>
+
+
+<ul>
+  <li *ngFor="let lenguaje of lenguajes; let i=index">{{lenguaje.titulo}} + Posicion {{i}}</li>
+</ul>
+

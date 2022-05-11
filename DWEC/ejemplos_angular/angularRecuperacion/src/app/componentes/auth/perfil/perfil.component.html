@@ -1,0 +1,139 @@
+<div class="d-flex justify-content-center">
+
+    <div class="card col-sm-6">
+    
+        <div class="card-header h5 text-center">
+                Tu Perfil
+        </div>
+        
+            <img class="card-img-top"   >
+            
+            
+        <div class="card-body text-center">
+            <p>NOMBRE: {{perfil.nombre}}</p>
+            <p>APELLIDOS: {{perfil.apellidos}}</p>
+            <p>DNI: {{perfil.dni}}</p>
+            <p>EMAIL: {{perfil.email}}</p>
+            
+            <img src="{{perfil.imgSrc? perfil.imgSrc : 'assets/images/dummy.png'}}" width="100px">
+        </div>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editarModal">
+            Editar Perfil
+        </button>
+        <button type="button" class="btn btn-primary btn-lg border-white" data-toggle="modal" data-target="#fotoModal">
+            Cambiar Foto
+        </button>
+        
+    </div>
+    <div class="card col-sm-6">
+        <div class="card-header h5 text-center">
+            Mensajes Recibidos
+        </div>
+        <div class="card-body text-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Enviado Por:</th>
+                        <th>Mensaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let mensaje of mensajesRec">
+                        <td>{{mensaje.nombreRemitente}}</td>
+                        <td>{{mensaje.mensaje}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-header h5 text-center">
+            Mensajes Enviados
+        </div>
+        <div class="card-body text-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Enviado Por:</th>
+                        <th>Mensaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let mensaje of mensajesEnv">
+                        <td>{{mensaje.nombreDestinatario}}</td>
+                        <td>{{mensaje.mensaje}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+             
+
+        
+    
+    
+
+    <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    
+                </div>
+                <div class="modal-body">
+                    <div class=" container card-body " >
+                        <form class="form-group" [formGroup]="formPerfil" (submit)="editarPerfil() " data-dismiss="modal" aria-label="Close">
+                    
+                            <label for="nombre">Nombre</label><input type="text" class="form-control" formControlName="nombre" id="nombre">
+                            <label for="apellidos">Apellidos</label><input type="text" class="form-control" formControlName="apellidos" id="apellidos">
+                            <br> 
+                            <label for="password">Contraseña</label><input type="password" class="form-control" formControlName="password" id="password">
+                            <label for="repassword">Repite Contraseña</label><input type="password" class="form-control" formControlName="repassword" id="repassword">
+                            <label for="email">Email</label><input type="text" class="form-control" formControlName="email" id="email"> 
+                            <br>
+                            <label for="dni">dni</label><input type="text" class="form-control" class="form-control" formControlName="dni" id="dni">
+                            <label for="tlf">Telefono</label><input type="number" class="form-control" formControlName="telefono" id="tlf">
+                            <br>
+                            <button type="submit" class="btn btn-primary" data-dismiss="modal" aria-label="Close" [disabled]="formPerfil.invalid">Editar</button>
+                        </form>
+                        
+                        <button class="btn btn-danger" (click) = "eliminarUsuario()" data-dismiss="modal" aria-label="Close" >Borrar Usuario</button>
+                        
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="fotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    
+                </div>
+                <div class="modal-body">
+                    <div class=" container card-body " >
+                        <form [formGroup]="formImage" class="form-group" (submit)="subirImagen()">
+                            <input type="file" class="btn btn-secundary" formControlName = "imagen"  (change) = "cambiaImagen($event)">
+                            <button class="btn btn-success" data-dismiss="modal" aria-label="Close" (click)="subirImagen()">Subir Imagen</button>
+                        </form>
+                        <p>Subir imagen por parámetros</p>
+                        <input type="file" class="btn btn-secundary" (change)="tengoFoto($event)">
+                        <button type="button" class="btn btn-success" data-dismiss="modal" aria-label="Close" (click)="subirFoto()">SubirImagen por parametros</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    
+</div>

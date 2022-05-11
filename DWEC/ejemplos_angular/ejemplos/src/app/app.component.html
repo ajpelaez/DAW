@@ -1,0 +1,60 @@
+<!--INTERPOLATION-->
+
+Estas en la página de
+{{ title }}
+
+
+
+<br>
+Este es el número aleatorio {{numeroAleatorio}}
+<br><br><br><br><br>
+
+
+<!--VARIABLE DE PLANTILLA-->
+
+<hr><br><br>
+<input #inputPrueba type="text"/>
+<br>
+Texto de saludo : {{saludo}}
+
+
+<br>
+<br>
+<button (click)="inputPrueba.focus()">Focus</button>
+<br><br>
+
+<button (click)="saludar(inputPrueba.value)">Saludar</button>
+
+
+<!--PROPERTY BINDING-->
+
+<hr><br><br>
+<option [selected]="variable1" value="Rainbow">Rainbow</option>
+<option [selected]="variable2" value="Rainbow">Selected Rainbow</option>
+<input type="radio" [checked]="variable1" />Option 1
+<input type="radio" [checked]="variable2" />Option 2
+
+
+<!--EVENT BINDING-->
+<hr><br><br>
+
+OPCION: {{ opcionMarcada }}<br>
+<input type="radio" value="opcion1" name="input1" (click)="setOption($event)"/>Option 1
+<br>
+<input type="radio" value="opcion2" name="input1" (click)="setOption($event)"/>Option 2
+
+<div>
+<div (click)="pulsarBoton($event)">
+  <button (click)="pulsarBoton($event)">BOTON</button>
+</div>
+</div>
+
+
+<!--TWO WAY BINDING-->
+<hr><br><br>
+<p>Tu nombre es: {{nombre}}</p>
+
+Introduce tu nombre: <input type="text" [(ngModel)]="nombre">
+
+
+

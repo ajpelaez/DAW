@@ -1,0 +1,40 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-3">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="nombre" [(ngModel)]="user.nombre">
+          </div>
+          <div class="form-group">
+              <label for="apellido">Apellido</label>
+              <input type="text" class="form-control" name="apellido" id="apellido" placeholder="apellido" [(ngModel)]="user.apellido">
+          </div>
+          <div class="form-group">
+              <label for="edad">Edad</label>
+              <input type="number" class="form-control" name="edad" id="edad" placeholder="edad" [(ngModel)]="user.edad">
+          </div>
+        
+          <button (click)="insertar()" class="btn btn-primary">Submit</button>
+    </div>
+
+
+
+    <div class="col-3">
+        <table class="table table-striped table-inverse table-responsive">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>EDAD</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usern of users" (click)="alerta(usern.nombre)">
+                        <td scope="row">{{usern.nombre}}</td>
+                        <td>{{usern.apellido}}</td>
+                        <td>{{usern.edad}}</td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+    
+</div>

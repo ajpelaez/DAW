@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/"><img src="assets/icon/logo.png" width="100px">Home</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            
+            <li class="nav-item">
+                <a class="nav-link" routerLink ="/lista" routerLinkActive="active">Lista Perfiles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink ="/loteria" routerLinkActive="active">Loteria</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink ="/calculadora" routerLinkActive="active">Calculadora</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink ="/estructuras" routerLinkActive="active">Estructuras</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink ="/formulario" routerLinkActive="active">Formulario</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink ="/crud-local" routerLinkActive="active">Crud-Local</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink ="/crud" routerLinkActive="active">Crud con php</a>
+            </li>
+              
+        </ul>
+        <ul class="navbar-nav mt-2 mt-lg-0">
+            
+            <ng-template [ngIf]="!fnLoged()" [ngIfElse]="salir">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink ="/registro" routerLinkActive="active">Registro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink ="/login" routerLinkActive="active">Login</a>
+                </li>
+            </ng-template> 
+            <ng-template #salir>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink ="/perfil" routerLinkActive="active">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="doLogOut()" routerLink ="." routerLinkActive="active">Logout</a>
+                    
+                </li>
+                <li class="nav-item" *ngIf="fnAdmin()" >
+                    
+                    <a class="nav-link" routerLink ="/roles" routerLinkActive="active">Administrar Usuarios</a>
+                   
+                </li>
+            </ng-template>
+           
+            
+        </ul>
+        
+    </div>
+</nav>

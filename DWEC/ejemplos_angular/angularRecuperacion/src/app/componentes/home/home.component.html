@@ -1,0 +1,42 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3">Sesión de {{nombre}} {{apellido}}</h1>
+        <hr class="my-2">
+        <label for="nombre">Nombre: </label><input class= "form-control plaintext col-4" type="text" [(ngModel)]="nombre">
+        <br>
+        <label for="apellido">Apellido: </label><input class= "form-control plaintext col-4 " type="text" [(ngModel)]="apellido">
+        <br>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" routerLink="/hola/{{nombre}}/{{apellido}}" role="button">Ir</a>
+        </p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="card col-6">
+            <h5 class="card-title">Introduce un texto:</h5>
+            <input type="text" [(ngModel)]="variable">
+            <p class="card-text">{{variable}}</p>
+        
+            <h5 class="card-title">suma 2 Números</h5>
+            <label for="numero1">Numero 1</label><input type="number" id="numero1" [(ngModel)]="num1">
+            <label for="numero2">Numero 2</label><input type="number" id="numero2" [(ngModel)]="num2">
+            <p>Resultado: {{num1+num2}}</p>
+        
+            <p class="card-text"  *ngIf="num1==0">El primer numero es un 0</p>
+            <p class="card-text"  *ngIf="num1!=0">El primer numero distinto de 0</p>
+        </div>
+        <div class="card col-6">
+            <ul>
+                <h5 class="card-title">Lista de Letras</h5>
+                <li *ngFor="let i of letras">{{(i)}}</li>
+            </ul>
+            <ul>
+                <h5 class="card-title">Lista de Usuarios:</h5>
+                <li   *ngFor="let usuario of usuarios" (click)="selUser(usuario)">{{usuario.nombre +" "+ usuario.apellido}}</li>
+                <p *ngIf ="usuarioSel!=null">El usuarioa seleccionado es {{usuarioSel.nombre + " " + usuarioSel.apellido}}</p>
+            </ul>
+        </div>
+    </div>
+</div>
+<br>

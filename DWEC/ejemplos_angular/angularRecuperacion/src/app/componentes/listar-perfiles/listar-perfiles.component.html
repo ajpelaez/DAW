@@ -1,0 +1,41 @@
+<div class="p-4 d-flex justify-content-center">
+    <div class="card col-sm-5 ">
+    
+        <div class="card-body">
+            <h4 class="card-title">Listar usuarios</h4>
+            <ul class="list-group text-center">
+                <li class="list-group-item"*ngFor="let usuario of usuarios" 
+                (click)="usuarioSel = usuario; formMensajes.patchValue({idDestinatario:usuarioSel.id})">
+                    {{usuario.nombre}}
+                    {{usuario.email}}
+                    <img src="{{usuario.imgSrc? usuario.imgSrc : 'assets/images/dummy.png'}}" width="40px">
+                </li>
+            </ul>    
+        </div>
+    </div>
+    <div class=" card border-primary d-flex justify-content-center bg-warning" *ngIf= "usuarioSel">
+        <div class=" p-5 ">
+            <div class="card-body  text-center">
+                <h2>Perfil Seleccionado</h2>
+                <hr>
+                <p>{{usuarioSel.nombre}} {{usuarioSel.apellidos}}</p>
+                <p>{{usuarioSel.dni}}</p>
+                <p>{{usuarioSel.email}}</p>
+                
+                <img src="{{usuarioSel.imgSrc? usuarioSel.imgSrc : 'assets/images/dummy.png'}}" width="100px">
+    
+            </div>
+            <div class="form-gorup ">
+                <h3>Enviar mensaje</h3>
+                <form class="form-group" [formGroup]="formMensajes" (submit)="submit()">
+                   <input type="text" class="form-control-plaintext bg-light border-dark " formControlName= "mensaje">
+                   <button type="submit" class="form-control"  [disabled]="formMensajes.invalid">Enviar</button>
+                </form>    
+            </div>
+            
+        </div>
+    </div>
+
+</div>
+
+  

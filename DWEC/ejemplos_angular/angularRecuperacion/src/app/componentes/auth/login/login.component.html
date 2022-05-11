@@ -1,0 +1,17 @@
+
+<div class="card container pt-4">
+    <div class="alert alert-primary" role="alert" *ngIf="mensaje">
+        <strong>{{mensaje}}</strong>
+    </div>
+    <form class="form-group" [formGroup]="formLogin" (submit)="submit()">
+    
+        <label for="email">Email</label><input type="text" class="form-control" formControlName="email" id="email"> 
+        <br>
+        <label for="password">Contraseña</label><input type="password" class="form-control" formControlName="password" id="password">
+        <br>
+        <button type="submit" class="form-control" [disabled]="formLogin.invalid">Login</button>
+    
+    </form>
+   
+</div>
+

@@ -1,0 +1,39 @@
+
+<div class="d-flex justify-content-center ">
+    <div class="card">
+        <div class="card">
+            <div class="card-header">
+                <h2>Numero 1</h2>
+            </div>
+            <div class="card-body">
+                <app-generar-loteria #numero1></app-generar-loteria>
+            </div>
+        </div>
+        
+    </div>
+    <div class="card">
+        <div class="card">
+            <div class="card-header">
+                <h2>Numero 2</h2>
+            </div>
+            <div class="card-body">
+                <app-generar-loteria #numero2 ></app-generar-loteria>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="card col text-center">
+        <button class="btn btn-primary" (click)="numero1.obtenAleatorio(); numero2.obtenAleatorio()">Dame un número aleatorio</button>
+        <br>
+        <h5>{{numero1.digito}} - {{numero2.digito}}</h5>
+        <h2 *ngIf="numero1.digito == numero2.digito" class="bg-success">Has Ganado!!</h2>
+        <h2 *ngIf="numero1.digito != numero2.digito" class="bg-warning">Sigue intentandolo</h2>
+    </div>
+    
+</div>
+
+

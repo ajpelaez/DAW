@@ -1,0 +1,56 @@
+<div class="col-12 ">
+    <div class="container-fluid ">
+        <div class="row ">
+            <div class="card  col-sm-5 ">
+                <h3>Insertar Nota</h3>
+                <label for="titulo" class="form-text">Titulo</label>
+                <input type="text" class="form-control" name="titulo" id="titulo" [(ngModel)]="notaNueva.titulo">
+                <label for="contenido" class="form-text">Contenido</label>
+                <input type="text" class="form-control" name="contenido" id="contenido" [(ngModel)]="notaNueva.contenido">
+                <br>
+                <button  class="btn btn-primary" (click)="insertarNota()">Insertar Nota</button>
+                <hr>
+                <h3>Editar Nota</h3>
+                <label for="titulo" class="form-text">Titulo</label>
+                <input type="text" name="titulo" id="titulo" [(ngModel)]="notaSelecionada.titulo">
+                <label for="contenido" class="form-text">Contenido</label>
+                <input type="text" name="contenido" id="contenido" [(ngModel)]="notaSelecionada.contenido">
+                <div>
+                    <button class="btn btn-warning" (click)="editarNota(notaSelecionada)">Editar Nota</button>
+                    <br>
+                    <button class="btn btn-danger"(click)="borrarNota(notaSelecionada)">Borrar Nota</button>
+                </div>
+                
+            </div>   
+            <div class="card  col-sm-5 ">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Titulo</th>
+                            <th>Contenido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let nota of notas" (click)="notaSelecionada=nota">
+                            <td>{{nota.id}}</td>
+                            <td>{{nota.titulo}}</td>
+                            <td>{{nota.contenido}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+     
+    
+    
+
+
+
+
+

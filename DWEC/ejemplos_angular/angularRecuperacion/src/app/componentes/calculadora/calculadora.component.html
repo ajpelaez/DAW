@@ -1,0 +1,10 @@
+<div class="card">
+    <div class="card-header">
+        <h3>Tabla del {{num_entrada}}</h3>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Numero: <input type="number" [(ngModel)]="num_entrada"></h4>
+        <p class="card-text"><a routerLink="/multiplicar/{{num_entrada}}" *ngIf='num_entrada'>Mostrar Tabla del {{num_entrada}}</a></p>
+    </div>
+    
+</div>

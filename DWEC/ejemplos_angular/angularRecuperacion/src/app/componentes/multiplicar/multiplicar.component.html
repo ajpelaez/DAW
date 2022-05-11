@@ -1,0 +1,19 @@
+
+<div class="d-flex justify-content-center">
+    <table class="col-6 table table-striped text-center">
+        <thead>
+            <tr>
+                <th>Esta es la tabla del {{factor}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let resultado of tabla; let indice=index">
+                <td >
+                    {{factor}} x {{indice}} = {{resultado}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

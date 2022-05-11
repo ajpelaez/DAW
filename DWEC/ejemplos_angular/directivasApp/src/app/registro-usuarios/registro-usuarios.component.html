@@ -1,0 +1,11 @@
+{{ titulo }}
+
+<form>
+  <input type="text" name="nombre" [(ngModel)]="nombre">
+  <input type="text" name="apellido" [(ngModel)]="apellido">
+
+  <input type="submit" value="Registrar" (click)="registrarUsuario()">
+
+</form>
+
+<p *ngIf="registrado"> {{mensaje}} con el nombre de {{nombre}} {{apellido}}</p>

@@ -1,0 +1,61 @@
+<div class="col-12 ">
+    <div class="container-fluid ">
+        <div class="row ">
+            <div class="card  col-sm-5 ">
+                <h3>Con inputs y ngmodel</h3>
+                <label for="titulo">Titulo</label>
+                <input type="text" class="form-control" name="titulo" [(ngModel)]="notaSeleccionada.titulo">
+                <label for="contenido">Contenido</label>
+                <input type="text" class="form-control" name="titulo" [(ngModel)]="notaSeleccionada.contenido">
+                <button class="btn btn-primary" (click)="crearNota(nota)">Insertar</button>
+            </div>
+            <div class="card  col-sm-5 ">
+                <br>
+                <h3>Formulario con Form Group</h3>
+                <form [formGroup]="formNuevo" (ngSubmit)="crearNota(formNuevo.value)">
+                    <input type="text" class="form-control" placeholder="titulo..." formControlName="titulo">
+                    <input type="text" class="form-control" placeholder="contenido..." formControlName="contenido">
+                    <button type="submit" class="btn btn-primary" [disabled]="formNuevo.invalid">Insertar</button>    
+                </form>
+                <br>
+                <div class="alert alert-primary" role="alert" *ngIf="creada">
+                    <strong>Nota creada correctamente</strong>
+                </div>
+                <button type="submit" class="btn btn-danger" (click)="eliminarNota()" *ngIf="formNuevo.value.id">Borrar</button>
+                <button type="submit" class="btn btn-primary" (click)="editarNota()" *ngIf="formNuevo.value.id">Editar</button>
+                <button type="submit" class="btn btn-warning" (click)="formNuevo.reset()">Cancelar</button>
+                <br>
+                <input type="text" name="busqueda" id="busqueda" placeholder="busqueda..." [(ngModel)]="busqueda" (input)="buscarConRetraso()">
+            </div>        
+        </div>
+    </div>
+</div>
+<div class="d-flex justify-content-center text-center">
+    <div class="col-sm-8">
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Contenido</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let no of notas" (click)="formNuevo.patchValue(no)">
+                    
+                    <td>{{no.titulo}}</td>
+                    <td>{{no.contenido}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+
+</div>     
+    
+
+                
+
+
+
+

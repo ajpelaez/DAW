@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Eamil</th>
+            <th>Rol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of usuarios">
+            <td scope="row">{{usuario.nombre}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.nombreRol}}</td>
+            <td>
+                <select [(ngModel)]="usuario.idRol">
+                    <option *ngFor="let rol of roles" [value]="rol.id">
+                        {{rol.nombreRol}}
+                    </option>
+                </select>
+                <button (click)="editarRol(usuario.id, usuario.idRol)">Cambiar Rol</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
