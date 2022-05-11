@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+	
+body {
+	margin: auto;
+	padding: auto;
+	font-family: 'Source Sans Pro', sans-serif;
+    background-image: url("../img/bg.png");
+	background-repeat: repeat;
+}
+		
+.header {
+    grid-column: 1 / 7;
+}
+
+.score {
+    grid-column: 1 / span 1;
+}
+
+.ranking {
+    grid-column: 2 / span 3;
+}
+
+.language {
+    grid-column: 5 / span 2;
+}
+
+.information-bar {
+    grid-column: 1 / span 6;
+}
+
+.game {
+    grid-column: 1 / span 4;
+}
+
+.description {
+    grid-column: 5 / 7;
+    font-weight: bold;
+}
+
+.footer {
+    grid-column: 1 / span 6;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+}
+.score{
+    font-size: 15px !important;
+}
+
+.grid-container>div {
+	border-radius: 5px;
+	box-shadow: rgb(0 0 0 / 20%) 0 2px 0 0;
+	background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 25px;
+}
+
+#tablero table {
+    padding: 4px 8px;
+    margin: auto;
+}
+
+/*CSS para los tr y td que están contenidos dentro del div con id tablero*/
+#tablero tr,
+#tablero td {
+    padding: 0;
+    margin: 0;
+}
+
+/*CSS para las imagenes que están dentro de un td que a su vez están dentro del div con id tablero*/
+#tablero td img {
+    margin: 4px;
+    padding: 0;
+    height: 200px;
+    width: 160px;
+    border: none;
+	border-radius: 5px;
+}
+
+/*Para cuando se pasa el ratón por encima de las imágenes*/
+#tablero td img:hover {
+    margin: 4px;
+    padding: 0;
+    height: 195px;
+    width: 155px;
+    border: 1px solid red;
+	border-radius: 5px;
+}
+
+button{
+    width: 100px;
+    height: 50px;
+}
+
+#textoDesc{
+    margin-top: 120px;
+}
+
+.linea {
+    font-weight: bold;
+}
+
+#logo {
+    background-image: url("../img/logo.png");
+    float: left;
+    height: 175px;
+    width: 150px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.cartasAcertadas{
+    -webkit-box-shadow: -3px 2px 52px 35px rgba(0,0,0,0.48);
+    -moz-box-shadow: -3px 2px 52px 35px rgba(0,0,0,0.48);
+    box-shadow: -3px 2px 52px 35px rgba(0,0,0,0.48);
+}
+
+.footer{
+    background: rgb(72,145,166);
+    background: radial-gradient(circle, rgba(72,145,166,1) 0%, rgba(39,84,206,1) 22%, rgba(29,65,219,1) 47%, rgba(0,9,255,1) 61%, rgba(184,107,56,1) 96%);
+}
+
+@media only screen and (max-width: 480px)  {
+	.language {
+		grid-column-start: 5;
+        grid-row-start: 2;
+		color: red;
+	}
+	
+	.score {
+		grid-column-start: 1;
+	}
+	
+	.ranking {
+		grid-column-start: 1;
+	}
+}

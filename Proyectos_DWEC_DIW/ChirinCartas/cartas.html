@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=ç, initial-scale=1.0">
+        <title>El Juego del Chingurito</title>
+        <!--cargamos el favicon-->
+        <link rel="icon" href="img/favicon.png" type="image/png" />
+        <!--cargamos las css-->
+        <link rel="stylesheet" href="css/estilos.css">
+        <!--cargamos el javascript-->
+        <script src="https://kit.fontawesome.com/3beb550330.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="grid-container">
+
+            <div class="header">
+                <div id="logo"></div>
+                <h1 id="title">ChirinCartas</h1>
+            </div>
+
+            <div class="score">
+                <!--nombre-->
+                <p id="nombre"></p>
+                <!--contador intentos-->
+                <i class="fas fa-exclamation-circle"></i>
+                <p id="intentos" class="linea">Intentos</p>
+                <!--contador movimientos-->
+                <p id="movimientos"></p>
+                <i class="fas fa-check-circle"></i>
+                <p id="puntuacion" class="linea">Acertados</p>
+                <!--contador aciertos-->
+                <p id="aciertos"></p>
+            </div>
+
+            <div class="ranking">
+                <i class="fas fa-medal"></i>
+                <p id="clasificacion" class="linea">Ranking intentos</p>
+                <p id="jugador"></p>
+                <p id="fallos"></p>
+            </div>
+
+            <div class="language">
+                <i class="fas fa-language"></i>
+                <p id="lengua" class="linea">Idioma</p>
+                <button id="esp">es</button>
+                <button id="ing">en</button>
+            </div>
+
+            <div class="information-bar">
+                <p id="mensaje"></p>
+            </div>
+
+            <div class="game">
+                <!--div para el contenido-->
+                <div id="tablero">Cargando...</div>
+                <!--tablero dónde se carga el tablero con imagenes-->
+            </div>
+
+            <div class="description" id="descrip"></div>
+
+            <div class="footer">
+                <!--pie-->
+                <p>Carlos Talavera y Cristian Sáez</p><br> DAW - 2º DAW
+            </div>
+            
+        </div>
+        <script src="js/ajax.js"></script>
+        <script src="js/cartas.js" type="text/javascript"></script>
+    </body>
+</html>

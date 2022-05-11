@@ -1,0 +1,24 @@
+{
+    "lang": {
+        "en": {
+            "score": "Score",
+            "game_description": "Welcome to the game of El Chiringuito. Look for the card pair of each tertullian. When you manage to find 6 pairs you will have won.",
+            "errors": "Errors",
+            "top_player": "Ranking",
+            "message_success": "The cards match!",
+            "message_mistake": "The cards don't match!",
+            "message_victory": "You've won!",
+            "language": "Language"
+        },
+        "es": {
+            "score": "Puntuación",
+            "game_description": "Bievenido al juego de El Chiringuito. Busca la pareja de carta de cada tertuliano. Cuando consigas encontrar 6 parejas habrás ganado.",
+            "errors": "Errores",
+            "top_player": "Clasificación",
+            "message_success": "¡Las cartas coinciden!",
+            "message_mistake": "¡Las cartas no coinciden!",
+            "message_victory": "¡Has ganado!",
+            "language": "Idioma"
+        }
+    }
+}
