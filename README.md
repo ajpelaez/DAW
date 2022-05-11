@@ -12,7 +12,7 @@
 
  ---
 
- ## Proyectos conjuntos de alumnxs para los módulos de DWEC y DIW:
+## Proyectos realizados para los módulos de DWEC y DIW:
 
  - [Cartas Simpson - ACB](Proyectos_DWEC_DIW/CARTAS_SIMPSON_ACB) - Autor: [acbeldeandaw](https://github.com/acbeldeandaw)
  - [Cartas Simpson V2 - ACB](Proyectos_DWEC_DIW/CARTAS_SIMPSON_V2_ACB) - Autor: [acbeldeandaw](https://github.com/acbeldeandaw)
