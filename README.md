@@ -1,6 +1,8 @@
 # DAW - Desarrollo de Aplicaciones WEB
  Transparencias, código, ejercicios y proyectos de diferentes asignaturas del Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones WEB.
 
+ Puedes ver este repositorio en versión web aquí: [Version WEB](https://ajpelaez.github.io/DAW/)
+
  Este repositorio recopila contenidos, ejercicios y proyectos realizados por alumnxs del IES Juan Bosco durante el curso 2021/2022. Principalmente de los módulos de DIW y DWEC.
 
  - [Material Diseño de Interfaces WEB](DIW)
