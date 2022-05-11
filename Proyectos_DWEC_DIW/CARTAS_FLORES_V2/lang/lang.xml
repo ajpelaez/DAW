@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LANGUAGE>
+  <EN>
+    <TITLE>Marius CARDS GAME XML</TITLE>
+    <SCORE>Score xml</SCORE>
+    <ERROR>Errors xml</ERROR>
+    <RANKING>Ranking</RANKING>
+    <LANG>Language</LANG>
+  </EN>
+  <ES>
+    <TITLE>JUEGO DE CARTAS Marius XML</TITLE>
+    <SCORE>Puntos xml</SCORE>
+    <ERROR>Fallosxml</ERROR>
+    <RANKING>Clasificación</RANKING>
+    <LANG>Lenguaje</LANG>
+  </ES>
+ </LANGUAGE>

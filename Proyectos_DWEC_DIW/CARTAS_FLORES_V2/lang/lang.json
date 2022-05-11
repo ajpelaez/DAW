@@ -1,0 +1,27 @@
+{
+    "lang":{
+        "ES": {
+            "index":"Juego",
+            "infor":"Información",
+            "title":"El Juego de Marius",
+            "score":"Puntuación",
+            "description":"Juego diseñado para educación infantil consistente en emparejar los números, letras o símbolos que se esconden tras un panel.",
+            "error":"Fallos",
+            "topp":"Top 5 Jugadores",
+            "language":"Idioma",
+            "footer":"El Juego de Marius",
+            "progress":"Aquí verás tu progreso"
+        },
+        "EN":{
+            "index":"Game",
+            "infor":"Information",
+            "title":"Marius's Game",
+            "score":"Score",
+            "error":"Errors",
+            "topp":"Top 5 Player's",
+            "language":"Language",
+            "footer":"Marius's Game",
+            "progress":"Here you will see your progress"
+        }
+    }
+}

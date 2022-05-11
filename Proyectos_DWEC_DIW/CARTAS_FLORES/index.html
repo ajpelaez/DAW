@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <title>Cartas</title>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="header">
+      <img id="logo" src="imgs/logo.png" alt="logo" />
+      <h1 id="title" class="title">Marius's Game</h1>
+    </div>
+    <div class="score">
+      <table>
+        <tr>
+          <td rowspan="2" id="nick">Nick</td>
+          <td id="score">Score</td>
+          <td id="error">Errors</td>
+        </tr>
+        <tr>
+          <td id="scoreNum">0</td>
+          <td id="errorNum">0</td>
+        </tr>
+      </table>
+    </div>
+    <div class="ranking">
+      <table>
+        <tr>
+          <td id="topPlayer">Top Player</td>
+          <td id="topErrors">Errors</td>
+        </tr>
+        <tr>
+          <td id="topPlayerNick"></td>
+          <td id="topPlayerErr"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="language">
+      <table>
+        <tr>
+          <th colspan="2" id="language">Language</th>
+        </tr>
+        <tr>
+          <td id="ES">ES</td>
+          <td id="EN">EN</td>
+        </tr>
+      </table>
+    </div>
+    <div id="info" class="info">-----</div>
+    <div class="game">
+      <div class="carta">
+        <img src="imgs/carta1.png" id="1" draggable="false"/>
+      </div>
+      <div class="carta">
+        <img src="imgs/carta1.png" id="2" draggable="false"/>
+      </div>
+      <div class="carta">
+        <img src="imgs/carta2.png" id="3" draggable="false"/>
+      </div>
+      <div class="carta">
+        <img src="imgs/carta2.png" id="4" draggable="false"/>
+      </div>
+      <div class="carta">
+        <img src="imgs/carta3.png" id="5" draggable="false"/>
+      </div>
+      <div class="carta">
+        <img src="imgs/carta3.png" id="6" draggable="false"/>
+      </div>
+      <div class="carta">
+        <img src="imgs/carta4.png" id="7" draggable="false"/>
+      </div>
+      <div class="carta">
+        <img src="imgs/carta4.png" id="8" draggable="false"/>
+      </div>
+      <div class="carta">
+        <img src="imgs/carta5.png" id="9" draggable="false"/>
+      </div>
+      <div class="carta">
+        <img src="imgs/carta5.png" id="10" draggable="false"/>
+      </div>
+      <div class="carta">
+        <img src="imgs/carta6.png" id="11" draggable="false"/>
+      </div>
+      <div class="carta">
+        <img src="imgs/carta6.png" id="12" draggable="false"/>
+      </div>
+    </div>
+    <div class="description" id="description">
+      Juego diseñado para educación infantil consistente en emparejar los
+      números, letras o símbolos que se esconden tras un panel.
+    </div>
+    
+    <div class="footer" id="footer" >Marius's Game</div>
+  </div>
+  <div class="block" id="blockInteractions"></div>
+  <script type="text/javascript" src="js/javascript.js"></script>
+</body>
+
+</html>

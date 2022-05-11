@@ -1,0 +1,184 @@
+@font-face {
+  font-family: fuenteCustom;
+  src: url("../fonts/Mansalva-Regular.ttf");
+}
+* {
+  font-family: fuenteCustom, "Comic Sans MS";
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body {
+  background-image: url(../imgs/fondo.jpg);
+}
+
+.header {
+  grid-area: header;
+}
+
+.game {
+  grid-area: game;
+}
+
+.description {
+  grid-area: description;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.score {
+  grid-area: score;
+}
+
+.language {
+  grid-area: language;
+}
+
+.ranking {
+  grid-area: ranking;
+}
+
+.info {
+  grid-area: info;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "header header header header header header" "score score ranking ranking language language" "info info info info info info" "game game game game game description" "footer footer footer footer footer footer";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 1200px;
+  margin: 0px auto;
+  margin-top: 20px;
+  background-color: #586d5c;
+  color: #263b30;
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-image: linear-gradient(180deg, #ffffff 0, #fffefa 10%, #fff2f2 20%, #fde5e7 30%, #e3d6d8 40%, #c6c6c6 50%, #aab6b2 60%, #94a79f 70%, #819a8d 80%, #748f7d 90%, #6a866e 100%);
+  text-align: center;
+  font-size: 30px;
+}
+
+.header > img {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+#ES, #EN {
+  cursor: pointer;
+}
+
+#ES:hover, #EN:hover {
+  cursor: pointer;
+  background-color: #819a8d;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #819a8d;
+  text-align: center;
+  padding: 0px;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  width: 98%;
+  background-color: #819a8d;
+}
+
+.game .carta {
+  height: 250px;
+  text-align: center;
+  background-color: #819a8d;
+  background-image: url(../imgs/carta.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.game .carta img {
+  height: 250px;
+  width: 100%;
+  display: none;
+  margin: auto;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.description {
+  overflow-y: hidden;
+  min-height: auto;
+  max-height: auto;
+  font-size: 25px !important;
+  font-weight: bold;
+  padding: 10px;
+  font-family: "Comic Sans MS";
+  grid-area: description;
+}
+
+.footer {
+  background-image: linear-gradient(180deg, #ffffff 0, #fffefa 10%, #fff2f2 20%, #fde5e7 30%, #e3d6d8 40%, #c6c6c6 50%, #aab6b2 60%, #94a79f 70%, #819a8d 80%, #748f7d 90%, #6a866e 100%);
+}
+
+.block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+@media (max-width: 2024px) {
+  .game {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 1768px) {
+  .game {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 1480px) {
+  .grid-container {
+    grid-template-areas: "header header header header header header" "score score score score language language" "ranking ranking ranking ranking language language" "info info info info info info" "game game game game game game" "footer footer footer footer footer footer";
+  }
+
+  .description {
+    display: none !important;
+  }
+}/*# sourceMappingURL=styles.css.map */
