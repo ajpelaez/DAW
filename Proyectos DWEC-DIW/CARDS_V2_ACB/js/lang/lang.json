@@ -1,0 +1,34 @@
+{
+    "es": {
+        "LangLabel": "Idioma<i class='fas fa-globe'></i>",
+        "Score": "Puntuación<i class='fas fa-check'></i>",
+        "ErrorLabel": "Fallos<i class='fas fa-times'></i>",
+        "TopError": "Fallos<i class='fas fa-times'></i>",
+        "Info": "Barra informativa<i class='fas fa-bell'></i>",
+        "Description": "Diviértete encontrando las parejas en este simple juego de cartas con la temática de Los Simpson",
+        "Title": "Los Simpsons - Juego de Cartas",
+        "Win": "Has ganado con X fallos!",
+        "WinAmongus": "Has ganado!",
+        "Fail": "Cartas incorrectas!",
+        "Match": "Has acertado!",
+        "Record": "Buena jugada! Has marcado un nuevo récord con X fallos!",
+        "Bomb": "Has encontrado la bomba!",
+        "Lose": "Fin del juego!"
+    },
+    "en": {
+        "LangLabel": "Language<i class='fas fa-globe'></i>",
+        "Score": "Score<i class='fas fa-check'></i>",
+        "ErrorLabel": "Mistakes<i class='fas fa-times'></i>",
+        "TopError": "Mistakes<i class='fas fa-times'></i>",
+        "Info": "Informative board<i class='fas fa-bell'></i>",
+        "Description": "Have fun finding pairs of cards in this simple The Simpsons themed game",
+        "Title": "The Simpsons - Card Game",
+        "Win": "You won with X mistakes!",
+        "WinAmongus": "You won!",
+        "Fail": "Incorrect cards!",
+        "Match": "You guessed right!",
+        "Record": "Good game! You set a new record with X mistakes!",
+        "Bomb": "You found the bomb!",
+        "Lose": "Game Over!"
+    }
+}

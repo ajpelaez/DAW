@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Just a simple The Simpsons card matching game written in HTML, CSS and JavaScript made by a web dev student." />
+    <title>Los Simpsons - Juego de Cartas</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div>
+            <img src="img/logo.webp" alt="Logotipo de los Simpsons" class="logo">
+            <h1 id="title" class="title">Simpson's Donut</h1>
+        </div>
+    </div>
+
+    <div class="misc">
+        <div class="score">
+            <div id="nick" class="nick label"></div>
+            <div id="scoreLabel" class="label">Puntuación<i class="fas fa-check"></i></div>
+            <div id="errorLabel" class="label">Fallos<i class="fas fa-times"></i></div>
+            <div><input type="number" id="score" value="0" disabled></div>
+            <div><input type="number" id="errors" value="0" disabled></div>
+        </div>
+        <div class="top">
+            <div id="topLabel" class="label">Mejor jugador<i class="fas fa-user"></i></div>
+            <div id="topErrorsLabel" class="label">Fallos<i class="fas fa-times"></i></div>
+            <div><input type="text" id="topNick" value="N/A" disabled></div>
+            <div><input type="number" id="topErrors" value="0" disabled></div>
+        </div>
+        <div class="lang">
+            <div id="langLabel" class="langLabel label">Idioma<i class="fas fa-globe"></i></div>
+            <div><button id="lang-es">ES</button></div>
+            <div><button id="lang-en">EN</button></div>
+        </div>
+    </div>
+
+    <div id="info" class="info">Barra informativa<i class="fas fa-bell"></i></div>
+
+    <div class="content">
+        <div class="board">
+            <div class="card down">
+                <img src="img/bart.webp" alt="Imagen de Bart Simpson" class="hidden">
+            </div>
+            <div class="card down">
+                <img src="img/marge.webp" alt="Imagen de Marge Simpson" class="hidden">
+            </div>
+            <div class="card down">
+                <img src="img/milhouse.webp" alt="Imagen de Milhouse Van Houten" class="hidden">
+            </div>
+            <div class="card down">
+                <img src="img/homer.webp" alt="Imagen de Homer Simpson" class="hidden">
+            </div>
+            <div class="card down">
+                <img src="img/lisa.webp" alt="Imagen de Lisa Simpson" class="hidden">
+            </div>
+            <div class="card down">
+                <img src="img/maggie.webp" alt="Imagen de Lisa Simpson" class="hidden">
+            </div>
+            <div class="card down">
+                <img src="img/bart.webp" alt="Imagen de Bart Simpson" class="hidden">
+            </div>
+            <div class="card down">
+                <img src="img/marge.webp" alt="Imagen de Marge Simpson" class="hidden">
+            </div>
+            <div class="card down">
+                <img src="img/milhouse.webp" alt="Imagen de Milhouse Van Houten" class="hidden">
+            </div>
+            <div class="card down">
+                <img src="img/homer.webp" alt="Imagen de Homer Simpson" class="hidden">
+            </div>
+            <div class="card down">
+                <img src="img/lisa.webp" alt="Imagen de Lisa Simpson" class="hidden">
+            </div>
+            <div class="card down">
+                <img src="img/maggie.webp" alt="Imagen de Lisa Simpson" class="hidden">
+            </div>
+        </div>
+        <div class="side">
+            <img src="img/fam.webp" alt="Imagen de los Simpsons">
+            <span id="description">Diviértete encontrando las parejas en este simple juego de cartas con la temática de los Simpson</span>
+        </div>
+    </div>
+
+    <div class="block" id="blockInteractions"></div>
+
+    <div class="footer">Adrian Cristian B. - Simpson's Donut</div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

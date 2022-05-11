@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave&family=Source+Code+Pro&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  margin: auto;
+  color: white;
+  font-family: "Sedgwick Ave", Helvetica, sans-serif;
+  border-radius: 15px;
+  border: 1px solid white;
+  background-color: #923cb5;
+  background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%);
+}
+
+header a {
+  text-decoration: none;
+  font-family: "Sedgwick Ave", Helvetica, sans-serif;
+  font-size: 30px;
+  color: #838383;
+}
+
+header a:hover {
+  color: white;
+}
+
+header .active {
+  color: white;
+}
+
+header img {
+  max-height: 60px;
+}
+
+body {
+  background-image: url("../assets/img/bg.webp");
+  background-position: top;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  color: white;
+  background-color: #32296b;
+  font-family: "Source Code Pro", Helvetica, sans-serif;
+}
+
+tr,
+th,
+td {
+  border: 1px solid white;
+}
+
+i {
+  padding-left: 7px;
+  vertical-align: middle;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-family: "Source Code Pro", Helvetica, sans-serif;
+}
+
+#btnPlay,
+#btnHelp,
+#btnReset {
+  width: 100px;
+  border: 1px solid white;
+  border-radius: 15px;
+  background-color: #32296b;
+}
+
+#btnPlay:hover,
+#btnHelp:hover,
+#btnReset:hover {
+  background-color: #272055;
+  background-image: linear-gradient(147deg, #272055 0%, #272055 74%);
+}
+
+.btn {
+  font-family: "Source Code Pro", Helvetica, sans-serif;
+}
+
+.btn-lang {
+  width: 100%;
+  color: white;
+  border: none;
+  background-color: transparent;
+  font-family: "Source Code Pro", Helvetica, sans-serif;
+}
+
+.btn-lang:hover {
+  background-color: #272055;
+  cursor: pointer;
+}
+
+.btn-primary {
+  border: none;
+  border-radius: 0;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: #272055;
+  border: none;
+}
+
+.btn-close {
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat !important;
+}
+
+#play {
+  background-color: #161138;
+}
+
+.btn-dark {
+  background-color: black;
+  background-image: linear-gradient(147deg, black 0%, black 74%);
+}
+
+.btn-outline-primary {
+  background-color: #161138;
+  color: #838383;
+  border: 1px solid white !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #272055 !important;
+}
+
+.btn-check:active + .btn-outline-primary,
+.btn-check:checked + .btn-outline-primary {
+  background-color: #272055;
+  color: white;
+}
+
+.modal {
+  font-family: "Source Code Pro", Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.modal-content {
+  background-color: #32296b;
+  color: white;
+}
+
+.progress {
+  height: 20px;
+  font-family: "Source Code Pro", Helvetica, sans-serif;
+  background-color: black;
+  border: 1px solid white;
+}
+
+.progress-bar {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #923cb5 74%);
+}
+
+.alert {
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  background-color: #923cb5;
+  background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%);
+  border: 1px solid white;
+  font-family: "Source Code Pro", Helvetica, sans-serif;
+}
+
+.alert-success {
+  background-color: LimeGreen;
+  background-image: linear-gradient(147deg, LimeGreen 0%, #000000 74%);
+}
+
+.alert-danger {
+  background-color: darkred;
+  background-image: linear-gradient(147deg, darkred 0%, #000000 74%);
+}
+
+.content {
+  width: 98%;
+}
+
+.cards {
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 15px;
+  background-color: #32296b;
+}
+
+.cards .down {
+  background-color: #161138;
+  background-image: url("../assets/img/card.webp");
+}
+
+.cards .up {
+  background-color: #161138;
+  background-image: url("");
+}
+
+.cards-card {
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  border: 1px solid white;
+}
+
+.cards-card img {
+  height: 180px;
+  width: 100%;
+  margin: auto;
+  border-radius: 15px;
+}
+
+.cards-card .hidden {
+  display: none;
+  box-shadow: none;
+}
+
+.cards-card .selected {
+  display: block;
+  box-shadow: 0px 0px 15px 2px black;
+}
+
+.cards-card .error {
+  display: block;
+  box-shadow: 0px 0px 15px 2px Red;
+}
+
+.cards-card .match {
+  display: block;
+  box-shadow: 0px 0px 15px 2px LimeGreen;
+}
+
+.cards-card .bomb {
+  display: block;
+  box-shadow: 0px 0px 15px 2px Orange;
+}
+
+.card {
+  height: 100%;
+  background-color: #161138;
+  color: white;
+  border: 1px solid white;
+}
+
+.card img {
+  height: 160px;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.information {
+  color: white;
+}
+
+.info-play,
+.info-bomb,
+.info-diff {
+  border: 1px solid white;
+  background-color: #32296b;
+}
+
+.fa-gamepad {
+  color: lightseagreen;
+}
+
+.fa-bomb {
+  color: red;
+}
+
+.fa-disease {
+  color: gold;
+}
+
+.accordion-button,
+.accordion-button:active,
+.accordion-button:focus,
+.accordion-button:checked,
+.accordion-button:hover {
+  background-color: #923cb5;
+  background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%);
+  border: 1px solid white !important;
+  color: white !important;
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+.accordion-item {
+  background-color: #161138;
+}
+
+footer {
+  width: 98%;
+  padding: 10px;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+  background-color: #923cb5;
+  background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%);
+  border: 1px solid white;
+  font-family: "Source Code Pro", Helvetica, sans-serif;
+}
+
+.block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: transparent;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+@media screen and (max-width: 600px) {
+  .cards-card,
+.cards-card img {
+    height: 140px;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,22 @@
+{
+    "es": {
+        "LangLabel": "Idioma<i class='fas fa-globe'></i>",
+        "Score": "Puntuación<i class='fas fa-check'></i>",
+        "ErrorLabel": "Fallos<i class='fas fa-times'></i>",
+        "TopError": "Fallos<i class='fas fa-times'></i>",
+        "TopLabel": "Mejor jugador<i class='fas fa-user'></i>",
+        "Info": "Barra informativa<i class='fas fa-bell'></i>",
+        "Description": "Diviértete encontrando las parejas en este simple juego de cartas con la temática de Los Simpson",
+        "Title": "Los Simpsons - Juego de Cartas"
+    },
+    "en": {
+        "LangLabel": "Language<i class='fas fa-globe'></i>",
+        "Score": "Score<i class='fas fa-check'></i>",
+        "ErrorLabel": "Mistakes<i class='fas fa-times'></i>",
+        "TopError": "Mistakes<i class='fas fa-times'></i>",
+        "TopLabel": "Best player<i class='fas fa-user'></i>",
+        "Info": "Informative board<i class='fas fa-bell'></i>",
+        "Description": "Have fun finding pairs of cards in this simple The Simpsons themed game",
+        "Title": "The Simpsons - Card Game"
+    }
+}

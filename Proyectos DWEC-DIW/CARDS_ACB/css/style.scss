@@ -1,0 +1,337 @@
+$primary-color: darkslateblue;
+$secondary-color: rgb(54, 46, 107);
+$title-font: "Sedgwick Ave",
+Helvetica,
+sans-serif;
+$content-font: "Source Code Pro",
+Helvetica,
+sans-serif;
+$main-border: 1px solid white;
+@mixin theme($theme: White) {
+    display: block;
+    box-shadow: 0px 0px 15px 2px $theme;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&family=Source+Code+Pro&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #7f5a83;
+    background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+}
+
+i {
+    padding: 0 7px;
+    vertical-align: middle;
+}
+
+.header {
+    border-bottom: 1px solid white;
+}
+
+.header div {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-family: $title-font;
+}
+
+.header .logo {
+    width: 80px;
+}
+
+.header .title {
+    padding: 10px;
+    margin: auto;
+}
+
+.misc {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto;
+    color: white;
+    font-family: $content-font
+}
+
+.misc>div {
+    gap: 2px;
+    padding: 2px;
+    background-color: black;
+}
+
+.misc>div>div {
+    background-color: darkslateblue;
+}
+
+.misc .label {
+    padding: 5px 0;
+}
+
+.score {
+    width: 35%;
+    display: grid;
+    grid-template-columns: 1.8fr 1.5fr 1.5fr;
+    grid-template-rows: 1fr 1.25fr;
+    text-align: center;
+}
+
+.score .nick {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row: 1 / -1;
+    overflow-x: auto;
+}
+
+.score input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-family: $content-font
+}
+
+.top {
+    width: 35%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1.25fr;
+    text-align: center;
+}
+
+.top input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-family: $content-font
+}
+
+.lang {
+    width: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1.25fr;
+    text-align: center;
+}
+
+.lang .langLabel {
+    grid-column: 1 / -1;
+}
+
+.lang button {
+    width: 100%;
+    height: 100%;
+    color: white;
+    border: none;
+    background-color: transparent;
+    font-family: $content-font
+}
+
+.lang button:hover {
+    background-color: $secondary-color;
+    cursor: pointer;
+}
+
+.info {
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    border: $main-border;
+    font-family: $content-font
+}
+
+.content {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.board {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.board .card {
+    height: 200px;
+    text-align: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    border: $main-border;
+}
+
+.board .down {
+    background-color: darkslateblue;
+    background-image: url('../img/card.webp');
+}
+
+.board .up {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url('');
+}
+
+.board .card img {
+    height: 200px;
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.board .card .hidden {
+    display: none;
+    box-shadow: none;
+}
+
+.board .card .selected {
+    @include theme;
+}
+
+.board .card .error {
+    @include theme($theme: Red);
+}
+
+.board .card .match {
+    @include theme($theme: LimeGreen);
+}
+
+.side {
+    width: 15%;
+    min-height: 100%;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    border: $main-border;
+    overflow: auto;
+    font-family: $content-font
+}
+
+.side img {
+    width: 100%;
+}
+
+.side span::selection {
+    color: red;
+}
+
+.side:hover {
+    font-weight: bold;
+}
+
+.footer {
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    border: $main-border;
+    font-family: $content-font
+}
+
+.block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 1024px) {
+    .board {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .misc {
+        justify-content: center;
+    }
+    .misc>div {
+        margin: 5px;
+    }
+    .score {
+        width: 70%;
+    }
+    .top {
+        width: 50%;
+    }
+    .lang {
+        width: 30%;
+    }
+    .board {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .misc {
+        justify-content: center;
+    }
+    .misc>div {
+        margin: 5px;
+    }
+    .score {
+        width: 100%;
+    }
+    .top {
+        width: 100%;
+    }
+    .lang {
+        width: 40%;
+    }
+    .board {
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+    }
+    .side {
+        display: none;
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}

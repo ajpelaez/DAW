@@ -1,0 +1,369 @@
+$primary-color: rgb(50, 41, 107);
+$secondary-color: rgb(39, 32, 85);
+$third-color: rgb(22, 17, 56);
+$title-font: "Sedgwick Ave",
+Helvetica,
+sans-serif;
+$content-font: "Source Code Pro",
+Helvetica,
+sans-serif;
+$main-border: 1px solid white;
+@mixin theme($theme: black) {
+    display: block;
+    box-shadow: 0px 0px 15px 2px $theme;
+}
+
+@mixin bg($bg: #923cb5, $gd: #000000) {
+    background-color: $bg;
+    background-image: linear-gradient(147deg, $bg 0%, $gd 74%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&family=Source+Code+Pro&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    margin: auto;
+    color: white;
+    font-family: $title-font;
+    border-radius: 15px;
+    border: 1px solid white;
+    @include bg
+}
+
+header a {
+    text-decoration: none;
+    font-family: $title-font;
+    font-size: 30px;
+    color: rgb(131, 131, 131);
+}
+
+header a:hover {
+    color: white;
+}
+
+header .active {
+    color: white;
+}
+
+header img {
+    max-height: 60px;
+}
+
+body {
+    background-image: url('../assets/img/bg.webp');
+    background-position: top;
+}
+
+h5 {
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    color: white;
+    background-color: $primary-color;
+    font-family: $content-font;
+}
+
+tr,
+th,
+td {
+    border: 1px solid white;
+}
+
+i {
+    padding-left: 7px;
+    vertical-align: middle;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-family: $content-font
+}
+
+#btnPlay,
+#btnHelp,
+#btnReset {
+    width: 100px;
+    border: 1px solid white;
+    border-radius: 15px;
+    background-color: $primary-color;
+}
+
+#btnPlay:hover,
+#btnHelp:hover,
+#btnReset:hover {
+    @include bg($bg: $secondary-color, $gd: $secondary-color);
+}
+
+.btn {
+    font-family: $content-font;
+}
+
+.btn-lang {
+    width: 100%;
+    color: white;
+    border: none;
+    background-color: transparent;
+    font-family: $content-font
+}
+
+.btn-lang:hover {
+    background-color: $secondary-color;
+    cursor: pointer;
+}
+
+.btn-primary {
+    border: none;
+    border-radius: 0;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: $secondary-color;
+    border: none;
+}
+
+.btn-close {
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat !important;
+}
+
+#play {
+    background-color: $third-color;
+}
+
+.btn-dark {
+    @include bg($bg: black, $gd: black);
+}
+
+.btn-outline-primary {
+    background-color: $third-color;
+    color: rgb(131, 131, 131);
+    border: 1px solid white !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: $secondary-color !important;
+}
+
+.btn-check:active+.btn-outline-primary,
+.btn-check:checked+.btn-outline-primary {
+    background-color: $secondary-color;
+    color: white;
+}
+
+.modal {
+    font-family: $content-font;
+    font-weight: bold;
+}
+
+.modal-content {
+    background-color: $primary-color;
+    color: white;
+}
+
+.progress {
+    height: 20px;
+    font-family: $content-font;
+    background-color: black;
+    border: 1px solid white;
+}
+
+.progress-bar {
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #923cb5 74%);
+}
+
+.alert {
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    @include bg;
+    border: 1px solid white;
+    font-family: $content-font
+}
+
+.alert-success {
+    @include bg($bg: LimeGreen);
+}
+
+.alert-danger {
+    @include bg($bg: darkred);
+}
+
+.content {
+    width: 98%;
+}
+
+.cards {
+    height: 100%;
+    border: 1px solid white;
+    border-radius: 15px;
+    background-color: $primary-color;
+}
+
+.cards .down {
+    background-color: $third-color;
+    background-image: url('../assets/img/card.webp');
+}
+
+.cards .up {
+    background-color: $third-color;
+    background-image: url('');
+}
+
+.cards-card {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    border: $main-border;
+}
+
+.cards-card img {
+    height: 180px;
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.cards-card .hidden {
+    display: none;
+    box-shadow: none;
+}
+
+.cards-card .selected {
+    @include theme;
+}
+
+.cards-card .error {
+    @include theme($theme: Red);
+}
+
+.cards-card .match {
+    @include theme($theme: LimeGreen);
+}
+
+.cards-card .bomb {
+    @include theme($theme: Orange);
+}
+
+.card {
+    height: 100%;
+    background-color: $third-color;
+    color: white;
+    border: 1px solid white;
+}
+
+.card img {
+    height: 160px;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.information {
+    color: white;
+}
+
+.info-play,
+.info-bomb,
+.info-diff {
+    border: 1px solid white;
+    background-color: $primary-color;
+}
+
+.fa-gamepad {
+    color: lightseagreen;
+}
+
+.fa-bomb {
+    color: red;
+}
+
+.fa-disease {
+    color: gold;
+}
+
+.accordion-button,
+.accordion-button:active,
+.accordion-button:focus,
+.accordion-button:checked,
+.accordion-button:hover {
+    @include bg;
+    border: 1px solid white !important;
+    color: white !important;
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+.accordion-item {
+    background-color: $third-color;
+}
+
+footer {
+    width: 98%;
+    padding: 10px;
+    margin: 10px auto;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+    @include bg;
+    border: $main-border;
+    font-family: $content-font
+}
+
+.block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: transparent;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+@media screen and (max-width: 600px) {
+    .cards-card,
+    .cards-card img {
+        height: 140px;
+    }
+}
