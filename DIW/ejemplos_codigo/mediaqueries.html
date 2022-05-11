@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+.container{
+  width: 1100px;
+  height: 100px;
+  background-color: red;
+}
+
+/* .container{
+  background-color: yellowgreen !important;
+} */
+
+@media (max-width: 1024px) {
+    .container{
+      width: 800px;
+      height: 100px;
+      background-color: green;
+    }
+}
+
+@media (max-width: 480px) {
+  .container{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <div class="container">
+      <p>Hola</p>
+  </div>
+
+</body>

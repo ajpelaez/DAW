@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+.visible {
+  background-color: lightyellow;
+  width: 150px;
+  height: 150px;
+  overflow: visible; /*Contenido sale del elemento y es completamente visible.*/
+}
+.scroll {
+  background-color: lightgreen;
+  width: 150px;
+  height: 150px;
+  overflow: scroll; /*Muestra una barra de scroll (horizontal y vertical) cuando los contenidos no caben en el contenedor.*/
+}
+.hidden {
+  background-color: lightblue;
+  width: 150px;
+  height: 150px;
+  overflow: hidden; /*Contenido que sale del contenedor padre se oculta y no se muestran barras de scroll. */
+}
+.auto {
+  background-color: lightgrey;
+  width: 150px;
+  height: 150px;
+  overflow: auto;
+}
+/*Ejemplo de overflow:hidden con floats*/
+.auto-img {
+  background-color: lightgrey;
+  overflow: hidden;
+}
+.auto-img img{
+ float: left;
+ max-height: 300px;
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+  <h1>Propiedad overflow</h1>
+  <h2>overflow: visible (default):</h2>
+  <div class="visible">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+  <br><br><br><br><br><br>
+  <h2>overflow: scroll</h2>
+  <div class="scroll">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+
+  <h2>overflow: hidden</h2>
+  <div class="hidden">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+
+  <h2>overflow: auto con scroll</h2>
+  <div class="auto">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+  <h2>overflow: hidden con floats</h2>
+  <p>En este caso la imagen excede el contenedor y tiene la propiedad float: left. Al establecer la propiedad "overflow: auto o hidden" conseguimos que el contenido no desborde el contenedor.</p>
+  <div class="auto-img"><img src="https://www.eniun.com/wp-content/uploads/eniun-creatividad-historia-alicante.png">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+
+</body>

@@ -1,0 +1,13 @@
+{
+    "lang": {
+        "ES": {
+            "Score": "Puntuacion",
+            "GameDescription": "Este es un juego de cartas que funciona...",
+            "Errors": "Errores"
+        },
+        "ES": {
+            "Score": "Score",
+            "GameDescription": "This is a card game that works...",
+            "Errors": "Errors"
+        }
+}

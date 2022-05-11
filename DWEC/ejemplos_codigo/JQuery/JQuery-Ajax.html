@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="jquery.js"></script>
+    <style>
+
+    </style>
+    <script>
+        $(document).ready(inicio);
+
+        function inicio() {
+
+            $("#ajax").click(function () {
+                var nom = $("#nombre").val();
+                var ape = $("#apellido").val();
+                var parametros = {
+                    "nombre": nom,
+                    "apellido": ape
+                };
+
+                //$.ajax: tiene un conjunto completo de parámetros
+                $.ajax({
+                    url: "saludo.php", //URL donde realizamos la petición
+                    data: parametros, //Datos a enviar, como objeto o como cadena
+                    success: function (respuesta) { //Función si la petición ha ido bien
+                        $("#mostrar").text(respuesta);
+                    },
+                    error: function (xhr, status) { //Función si la petición ha fallado
+                        alert("Ha ocurrido un error");
+                    },
+                    complete: function (xhr, status) {
+                            alert("Petición realizada");
+                        }
+                        //Otras opciones: beforeSend, async, cache, context, headers... (ver API)
+                });
+            });
+
+            //get básico
+            $("#enviarGet").click(function () {
+                $.get("saludo.php", {
+                    "nombre": "Juan",
+                    "apellido": "Sanchez"
+                }, function (respuesta) {
+                    $("#mostrar").text(respuesta);
+                });
+            });
+
+            $("#enviarGetMensajes").click(function () {
+                //Función que no envía nada y controla diferentes resultados de la solicitud
+                $.get("saludo.php", function () {
+                    alert("Exito");
+                }).done(function () {
+                    alert("Exito 2");
+                }).fail(function () {
+                    alert("Error");
+                }).always(function () {
+                    alert("Siempre");
+                });
+            });
+
+            $("#enviarPost").click(function () {
+                //Función post que envía datos y recibe respuesta
+                $.post("saludo.php", {
+                    "nombre": "Juan",
+                    "apellido": "Sanchez"
+                }).done(function (respuesta) {
+                    alert("Respuesta: " + respuesta)
+                });
+            });
+
+            //Obtiene un JSON desde el servidor
+            $("#getJSON").click(function () {
+                $.getJSON("json.php", function (respuesta) {
+                    $.each(respuesta, function (clave, valor) {
+                        alert(clave + " : " + valor);
+                    });
+                });
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" name="nombre" id="nombre" />
+    <input type="text" name="apellido" id="apellido" />
+    <button id="ajax">Enviar Ajax</button>
+    <button id="enviarGet">Enviar Get</button>
+    <button id="enviarGetMensajes">Enviar Get 2</button>
+    <button id="enviarPost">Enviar Post</button>
+    <button id="getJSON">getJSON</button>
+    <p id="mostrar"></p>
+</body>
+
+</html>

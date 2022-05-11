@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+.header {
+  grid-column: 1 / 7;
+}
+.score {
+  grid-column: 1 / span 2;
+}
+.ranking {
+  grid-column: 3 / span 2;
+}
+.language {
+  grid-column: 5 / span 2;
+}
+
+.information-bar {
+  grid-column: 1 / span 6;
+}
+
+.game {
+  grid-column: 1 / 6;
+  height: 500px;
+}
+
+.description {
+  grid-column: 6 / 7;
+}
+
+.footer {
+  grid-column: 1 / span 6;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+@media (max-width: 480px) {
+
+  .language{
+    grid-column-start: 5;
+    grid-row-start: 2;
+    color: red;
+  }
+
+  .score{
+    grid-column-start: 1;
+  }
+
+  .ranking{
+    grid-column-start: 1;
+  }
+
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="header">Header</div>
+
+  <div class="score">Score</div>
+  <div class="ranking">Ranking</div>
+  <div class="language">Language</div>
+
+  <div class="information-bar">Information</div>
+
+  <div class="game">Game</div>
+  <div class="description">Description</div>
+  <div class="footer">Footer</div>
+</div>
+
+</body>
+</html>

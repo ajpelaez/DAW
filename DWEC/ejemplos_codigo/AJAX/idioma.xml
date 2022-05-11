@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LANGUAGE>
+  <EN>
+    <SCORE>Score</SCORE>
+    <ERRORS>Errors</ERRORS>
+  </EN>
+  <ES>
+    <SCORE>Puntuación</SCORE>
+    <ERRORS>Errores</ERRORS>
+  </ES>
+</LANGUAGE>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="score">Puntuación</p>
+    <p id="errors">Errores</p>
+
+    <button id="cambiaIdiomaES">Idioma ES</button>
+    <button id="cambiaIdiomaEN">Idioma EN</button>
+
+
+    <script>
+
+        window.addEventListener("load",inicio);
+
+        function inicio(){
+          document.getElementById("cambiaIdiomaES").addEventListener("click", cambiarIdioma);
+          document.getElementById("cambiaIdiomaEN").addEventListener("click", cambiarIdioma);
+        }
+
+
+        function cambiarIdioma(e){
+          if (e.target.id == "cambiaIdiomaES") localStorage.setItem("idioma", "ES");
+          else localStorage.setItem("idioma", "EN");
+          cargarIdioma();
+        }
+
+        function cargarIdioma() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    cargarXML(this);
+                }
+            };
+            xhr.open("GET", "idioma.xml", true);
+            xhr.send();
+        }
+
+        function cargarXML(xml) {
+            var docXML = xml.responseXML;
+            var idioma;
+            if (localStorage.getItem("idioma") == "ES") idioma = docXML.getElementsByTagName("ES");
+            else idioma = docXML.getElementsByTagName("EN");
+
+            var score = idioma[0].getElementsByTagName("SCORE")[0].textContent;
+            var errors = idioma[0].getElementsByTagName("ERRORS")[0].textContent;
+
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("errors").innerHTML = errors;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

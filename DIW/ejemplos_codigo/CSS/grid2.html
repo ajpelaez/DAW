@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.header { grid-area: header; }
+
+.game {
+  grid-area: game;
+  height: 500px;
+}
+
+.description { grid-area: description; }
+.footer { grid-area: footer; }
+
+.score { grid-area: score; }
+.language { grid-area: language; }
+.ranking { grid-area: ranking; }
+.information-bar { grid-area: information;}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'score score ranking ranking language language'
+    'information information information information information information'
+    'game game game game game description'
+    'footer footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="header">Header</div>
+  <div class="score">Score</div>
+  <div class="ranking">Ranking</div>
+  <div class="language">Language</div>
+  <div class="information-bar">Information</div>
+  <div class="game">Game</div>
+  <div class="description">Description</div>
+  <div class="footer">Footer</div>
+</div>
+
+</body>
+</html>
