@@ -14,4 +14,5 @@
 
  # Proyectos conjuntos de alumnxs para los módulos de DWEC y DIW:
 
- - [Cartas (Adrian Cristan Beldean)](Proyectos DWEC-DIW/CARDS_ACB)
+ - [Cartas Simpson](Proyectos_DWEC_DIW/ACB_CARDS) - Autor: [acbeldeandaw](https://github.com/acbeldeandaw)
+ - [Cartas Simpson V2](Proyectos_DWEC_DIW/ACB_CARDS_V2) - Autor: [acbeldeandaw](https://github.com/acbeldeandaw)
