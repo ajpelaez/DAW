@@ -7,7 +7,7 @@
     <RANKING>Ranking</RANKING>
     <TOPPLAYER>Player en cabeza</TOPPLAYER>
     <MENSAJE>You Win!</MENSAJE>
-    <LANG>Lenguage</LANG>
+    <LANG> Lenguage</LANG>
 </EN>
 <ES>
     <SCORE>Puntuación</SCORE>
@@ -16,6 +16,6 @@
     <RANKING>Clasificación</RANKING>
     <TOPPLAYER>Top Player</TOPPLAYER>
     <MENSAJE>Ganaste!</MENSAJE>
-    <LANG>Lenguaje</LANG>
+    <LANG> Lenguaje</LANG>
 </ES>
 </LANGUAGE>

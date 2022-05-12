@@ -36,7 +36,6 @@
 | [Cartas Simpson](Proyectos_DWEC_DIW/CARTAS_SAMUEL) | [srivasj99](https://github.com/srivasj99) |
 | [Cartas Ramon](Proyectos_DWEC_DIW/CARTAS_MINECRAFT) | [raorpa](https://github.com/raorpa) |
 | [Cartas Memorama](Proyectos_DWEC_DIW/CARTAS_MEMORAMA) | [narsx](https://github.com/narsx) |
-| [Cartas Memorama V2](Proyectos_DWEC_DIW/CARTAS_MEMORAMA_V2) | [narsx](https://github.com/narsx) |
 | [Cartas Street Fighter](Proyectos_DWEC_DIW/CARTAS_FIGHT) | [SamperDaw](https://github.com/SamperDaw) |
 | [Cartas Animales](Proyectos_DWEC_DIW/CARTAS_ANIMALES) | [RubenGarcia-Romeral](https://github.com/RubenGarcia-Romeral) |
 | [Cartas Kebap](Proyectos_DWEC_DIW/CARTAS_KEBAP) | [ShinMugenNoKabe](https://github.com/ShinMugenNoKabe) y [diego-sanchez-r](https://github.com/diego-sanchez-r) |

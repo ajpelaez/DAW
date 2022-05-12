@@ -1,154 +1,232 @@
-class Memorama {
-  constructor(){
-    this.canPlay = false;
-    //ninguna carta por defecto abierta
-    this.card1 = null;
-    this.card2 = null;
-   
-    //imagenesDisponibles
-    this.avaiableImages = [0,1,2,3,4,5]
-    //Orden de las imagenes
-    this.orderForThisRound = [];
-    //selecionamos todas las tarjeta del tablero (board game)-<tienes que castearlo porque el querySelector no devuelve un array
-    this.cards = Array.from(document.querySelectorAll(".board-game figure"));
-    //maximos pares del juego
-    this.maxPairNumber = this.avaiableImages.length;
-    
-    //iniciar juego
-    this.startGame();
-    //iniciar nickuser
-    this.nickuser=prompt("Introduce tu nickname");
-    document.getElementById("nickname").innerHTML = this.nickuser;
-    document.getElementById("Rfallos").innerHTML = localStorage.getItem("toperrors");
-    document.getElementById("Rnickuser").innerHTML = localStorage.getItem("toplayer");
-    
+var canPlay = false; 
+var leyenda = false;
+$(document).ready(function(){
 
 
-    
-  }
-  startGame(){
-    //inicializamos puntuación
-    this.puntuacion = 0;
-    //inicializamos fallos
-    this.fallos = 0;
-    this.foundPairs=0;
-    //Ordenamos de forma aleatoria con la funcion
-    this.setNewOrder();
-    //Ponemos las imagenes en el nuevo array
-    this.setImagesInCards();
-    //sbrir tarjetas
-    this.openCards();
-  }
-  setNewOrder(){
-    //Rellenamos el orden aleatoriamente primero duplicas el aaray y luego haces ramdon
-    this.orderForThisRound = this.avaiableImages.concat(this.avaiableImages);
-    this.orderForThisRound.sort(() => Math.random() - 0.5 );
-  }
-  setImagesInCards(){
-    for (const key in this.cards) {
-        const card= this.cards[key];
-        const image = this.orderForThisRound[key];
-        //tienes que acerder al hijo 1 que es el que contiene la imagen (no la back)
-        const imgLabel = card.children[1].children[0];
-        card.dataset.image = image;
-        imgLabel.src = `./images/${image}.jpg`;
-    }
-  }
-  openCards(){
-      //añadimos la clase opened a todas.
-      this.cards.forEach (card => card.classList.add("opened"));
-      //establecemos un tiempo para que se cierren
-      setTimeout(() => {
-        this.closeCards();
-      }, 3000);
-  }
-  closeCards(){
-    //eliminamos la clase opened de todas las clases
-    this.cards.forEach(card => card.classList.remove("opened"));
-    //añadir el click a cada tarjeta
-    this.addClickEvents();
-    this.canPlay = true;
-  }
+	$(".img-thumbnail").attr("src", "img/logo.png");
+	
+	
+	
 
-  //LOGICA DEL JUEGO 
-  addClickEvents(){
-    //se lo añades al contexto de la clase no del evento de ahí el bind
-    this.cards.forEach(card=>card.addEventListener("click",this.flipCard.bind(this)));
-  }
-  removeClickEvents(){
-    this.cards.forEach(card=>card.removeEventListener("click",this.flipCard.bind(this)));
- 
-  }
-  flipCard(e){
-    const clickedCard = e.target;
-    if (this.canPlay && !clickedCard.classList.contains("opened")){
-      clickedCard.classList.add("opened");
-      //le pasas el dataset con el id de la targeta selecionada
-      this.checkPair(clickedCard.dataset.image);
-    }
-  }
-  checkPair(image) {
-    if(!this.card1) this.card1 = image;
-    else this.card2 = image;
-    if(this.card1 && this.card2){
-      if(this.card1 == this.card2) {
-        this.puntuacion++;
-        document.getElementById("score").innerHTML = "Score "+this.puntuacion+" pts";
-        
-        this.canPlay = false;
-        setTimeout(this.checkIfWon.bind(this),300);
-      }
-      else {
-        this.fallos++;
-        document.getElementById("errors").innerHTML = this.fallos+" Errors";
-        //para que no se pueda abrir otra carta
-        this.canPlay = false;
-        //mter tiempo para cargar la animacion, referenciar a this no a settimeout
-        setTimeout(this.resetOpenedCards.bind(this),800);
-        
-      }
-    }
-  }
-  resetOpenedCards(){
-    const firstOpened = document.querySelector(`.board-game figure.opened[data-image='${this.card1}']`);
-    const secondOpened = document.querySelector(`.board-game figure.opened[data-image='${this.card2}']`);
+	img1 = {
+		ruta: "",
+		id: ""
+	};
 
-    firstOpened.classList.remove("opened");
-    secondOpened.classList.remove("opened");
+	var img2 = {
+		ruta: "",
+		id: ""
+	};
 
-    this.card1 = null;
-    this.card2 = null;
-    this.canPlay = true;
-  }
-  checkIfWon(){
-    this.foundPairs++;
+	var push = 0,
+		intentosFallidos = 0,
+		intentosCorrectos = 0;
 
-    this.card1 = null;
-    this.card2 = null;
-    this.canPlay = true;
-    if(this.maxPairNumber == this.foundPairs) {
-      alert("Ganaste!");
-      //TODO 
-    
-      if(localStorage.getItem("toperrors") == null || this.fallos < Number(localStorage.getItem("toperrors"))){
-        localStorage.setItem("toplayer", this.nickuser) ;
-        localStorage.setItem("toperrors", this.fallos);
-        document.getElementById("Rfallos").innerHTML = this.fallos;
-        document.getElementById("Rnickuser").innerHTML = this.nickuser;
-        alert(this.nickuser + localStorage.getItem("toplayer"));
-      }
+	const audiowin = new Audio("/sounds/win.wav" );
+	const flip = new Audio("/sounds/flip.wav" );
+	const point = new Audio("/sounds/point.wav");
+	const error = new Audio("/sounds/error.wav");
+	const bomb = new Audio("/sounds/bomb.wav");
 
+	$(".img-thumbnail").click(function(){
+		
+		if (canPlay){
+			if(leyenda == true){
+				var maxintentos= 2;
+			}
+		if ($(this).attr("class") == "NULL") {
+			return null};
+			$(this).fadeOut(1);
+			$(this).fadeIn();
+			var foto = $(this).attr("src").split("/");
+			foto = foto[foto.length - 1];
+	
+			if(foto == "logo.png"){
+				if (push == 0){
+					
+					img1.ruta = $(this).data("alt").split("/");
+					img1.ruta = img1.ruta[img1.ruta.length - 1];		
+					img1.id = $(this).attr("id");
+					flip.play();
+					if(img1.ruta == "bomb.jpg"){
+						bomb.play();
+						alert("Huy perdiste!")
+						setTimeout(function(){
+							window.location.reload();
+						}, 1000);
+						
+					}
+				}else{
+					img2.ruta = $(this).data("alt").split("/");
+					img2.ruta = img2.ruta[img2.ruta.length - 1];
+					img2.id = $(this).attr("id");
+					flip.play();
+					if(img2.ruta == "bomb.jpg"){
+						bomb.play();
+						alert("Huy perdiste!")
+						setTimeout(function(){
+							window.location.reload();
+						}, 1000);
+					}
+				}
+	
+				if (push == 1){
+					setTimeout(function(){
+						if (img1.ruta != img2.ruta) {
+							error.play();
+							$("#result").text("Incorrecto");
+							$(".img-thumbnail").attr("src", ("img/logo.png"));
+							intentosFallidos++;
+							$("#intentosFallidos").text(intentosFallidos);
+						}else{
+							$("#result").text("Correcto");
+							point.play();
+							$("#"+img1.id).attr("src", "img/like.jpg");
+							$("#"+img2.id).attr("src", "img/like.jpg");
+							// Si ya estan bien se 
+							$("#"+img1.id).attr("class", "NULL");
+							$("#"+img2.id).attr("class", "NULL");
+							intentosCorrectos++;
+							$("#intentosCorrectos").text(intentosCorrectos);
+							alert
+							if (intentosCorrectos == 7) {
+								audiowin.play();
+								var msg = "Felicidades Ganaste :D  !! \n¿Desea cambiar de usuario?";
+								if(localStorage.getItem("toperrors") == null || intentosFallidos > Number(localStorage.getItem("toperrors"))){
+									localStorage.setItem("toplayer", nickuser) ;
+	
+									localStorage.setItem("toperrors", intentosFallidos);
+									$("#Rfallos").text(intentosFallidos);
+									$("#Rnickuser").text(nickuser);
+								}
+								var option = confirm(msg);
+								if (option) {
+									window.location.reload();		
+								}else {
+									intentosFallidos=0;
+									intentosCorrectos=0;
+									$("#intentosFallidos").text(intentosFallidos);
+									$("#intentosCorrectos").text(intentosCorrectos);
+									
+								}
+							}
+						}
+						if(intentosFallidos == maxintentos){
+							canPlay=false;
+							alert("Has fallado dos veces, has perdido");
+							window.location.reload();
+						}
+						push = 0;
+					},700);
+				}
+				ruta = $(this).data("alt");
+				$(this).attr("src", "img/" + ruta);
+				push++;
 
-      this.setNewGame();
-    }
-  }
-  setNewGame(){
-    this.removeClickEvents();
-    this.cards.forEach(card => card.classList.remove("opened"));
-    setTimeout(this.startGame.bind(this),1000);
-  }
-}
-//Cuando el documento se carge por completo
-document.addEventListener("DOMContentLoaded", () =>{
-  new Memorama();
+			}else{
+				$(this).attr("src", "img/logo.png");
+				push--;
+			}
+		}
+		});
+		
 });
+//funcion del modal
+$(document).delegate('#addNew', 'click', function(event) {
+	event.preventDefault();
+	nickuser= $('#usuario').val();
+	$("#nickuser").text(nickuser);
+	canPlay = true;
+	crearImagenes();
+	dificultad= $('input[name="dificultad"]:checked').val();
+	if(dificultad=="normal"){
+		layenda=false;
+		setTimeout(function(){
+			$(".img-thumbnail").attr("src", "img/logo.png")
+			}, 2000); 
+			$("#pista").attr("type", "hidden")	
+	}else if (dificultad=="facil") {
+		leyenda=false
+		$("#pista").attr("type", "button")
+		setTimeout(function(){
+			$(".img-thumbnail").attr("src", "img/logo.png")
+			}, 2000); 
+	}else if(dificultad=="dificil"){
+		leyenda=false
+		$("#pista").attr("type", "hidden")	
+		setTimeout(function(){
+			$(".img-thumbnail").attr("src", "img/logo.png")
+			}, 1); 
+	}else if(dificultad=="leyenda"){
+		leyenda=true;
+		$("#pista").attr("type", "hidden")	
+		setTimeout(function(){
+			$(".img-thumbnail").attr("src", "img/logo.png")
+			}, 1000); 
+	}else{
+		setTimeout(function(){
+			leyenda=true;
+			$("#pista").attr("type", "hidden")	
+			$(".img-thumbnail").attr("src", "img/logo.png")
+			}, 2000); 
+	}
+});
+//funcion boton facil
+$(document).delegate('#pista', 'click', function(event) {
+	alert("Has utilizado la pista");
+	alert($(".img-thumbnail").attr("src").split("/"));
+	$("#pista").attr("type", "hidden")
+});
+//funcion de lenguaje esp
+$(document).delegate('#esp', 'click', function(event) {
+
+	$.getJSON('castellano.json', function(data)  {
+		$("#lscore").text(data.LANGUAGE.ES.SCORE);
+		$("#lnickname").text(data.LANGUAGE.ES.NICKNAME);
+		$("#lerrors").text(data.LANGUAGE.ES.ERRORS);
+		$("#l1nickname").text(data.LANGUAGE.ES.NICKNAME);
+		$("#l1errors").text(data.LANGUAGE.ES.ERRORS);
+		$("#lang").text(data.LANGUAGE.ES.LANG);
+	  });
+});
+//funcion de lenguaje eng
+$(document).delegate('#eng', 'click', function(event) {
+	$.getJSON('castellano.json', function(data)  {
+		$("#lscore").text(data.LANGUAGE.EN.SCORE);
+		$("#lnickname").text(data.LANGUAGE.EN.NICKNAME);
+		$("#lerrors").text(data.LANGUAGE.EN.ERRORS);
+		$("#l1nickname").text(data.LANGUAGE.EN.NICKNAME);
+		$("#l1errors").text(data.LANGUAGE.EN.ERRORS);
+		$("#lang").text(data.LANGUAGE.EN.LANG);
+	  });
+
+});
+
+function crearImagenes(){
+	var rutas = [
+		["0.jpg", 0],
+		["1.jpg", 0],
+		["2.jpg", 0],
+		["3.jpg", 0],
+		["4.jpg", 0],
+		["5.jpg", 0],
+		["6.jpg", 0],
+		["bomb.jpg",0]
+	];
+	for (var i = 1; i <= 15; i++) {
+		var num = Math.floor(Math.random()*10%8);
+		if(rutas[num][1] < 2 ){
+
+			$("#foto"+i).data("alt", rutas[num][0]);
+			$("#foto"+i).attr("src", "img/" + rutas[num][0]);
+
+			if(rutas[num][0] == "bomb.jpg"){
+				rutas[num][1]++;
+			}
+
+			rutas[num][1]++;
+		}else{
+			i--;
+		}
+	}
+}
