@@ -1,0 +1,489 @@
+@font-face {
+  font-family: PokemonFont;
+  src: url("../fonts/Pokemon\ Hollow.ttf"), format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0px;
+  font-family: "Dongle", sans-serif;
+  
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ef5734;
+  background-image: linear-gradient(315deg, #ef5734 0%, #ffcc2f 74%);
+}
+
+/* Estilos bootstrap */
+#ActualPlayer {
+  background-color: #ef5734;
+  background-image: linear-gradient(315deg, #ef5734 0%, #ffcc2f 74%);
+  color: #bd962c;
+  background-size: cover;
+  font-size: 2em;
+}
+
+#informationTitle {
+  height: 100%;
+  margin: auto;
+  font-size: 2em;
+}
+
+.row {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#cartaPokemonInformcacion {
+  width: 100%;
+}
+
+.carta {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  width: 100%;
+  height: 180px !important;
+}
+
+.card {
+  width: 100%;
+  height: 180px;
+}
+
+.cardInformation {
+  position: relative;
+  width: 200px;
+  height: 350px;
+  border: 3px double black;
+  border-radius: 50px;
+  box-shadow: 10px 5px 5px black;
+  transition: 1s;
+}
+.cardInformation:hover {
+  width: 200px;
+  height: 350px;
+  border: 3px double black;
+  border-radius: 50px;
+  transition: 1s;
+  box-shadow: 10px 5px 5px white;
+  background-color: darkgrey;
+}
+
+#enlace {
+  position: absolute;
+  width: 200px;
+  height: 350px;
+  z-index: 1;
+  border-radius: 50px;
+}
+
+.card-img-top {
+  width: 60%;
+  height: 60%;
+}
+.card-body {
+  width: 100%;
+  height: 100%;
+}
+
+#icono {
+  width: 100%;
+}
+
+#TopPalyer-Ranking {
+  background-color: #ef5734;
+  background-image: linear-gradient(315deg, #ef5734 0%, #ffcc2f 74%);
+  font-size: 2em;
+}
+#botonesInformacion {
+  text-align: center;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+}
+
+#Informacion-lateral button{
+margin: 20px 0px 20px 0px;
+}
+
+.Boton-Menu {
+  transition: 0.5s;
+  box-shadow: 10px 5px 5px black;
+}
+
+.Boton-Menu:hover {
+  transition: 0.5s;
+  box-shadow: 10px 5px 5px white;
+}
+
+.Boton-Menu-Interior{
+  transition: 0.5s;
+  box-shadow: 10px 5px 5px black;
+}
+
+.Boton-Menu-Interior:hover{
+  transition: 0.5s;
+  box-shadow: 10px 5px 5px white;
+}
+
+#botones {
+  border: 1px solid black;
+  border-radius: 50px;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+  transition: 0.5s;
+  transform: scale(0.8);
+}
+#botones:hover {
+  transform: scale(0.9);
+  transition: 0.5s;
+}
+
+
+#FondoJuego {
+  background-image: url("../imgs/ImagenFondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+
+}
+
+.block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#FondoInformacionCartas {
+  background-color: rgba(255, 255, 255, 0);
+  transition: 1s;
+}
+
+#cardSpace {
+  /*Contorno de la Carta*/
+  background-color: rgb(255, 255, 255, 0);
+  transition: 1s;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-container-Informacion {
+  margin: 0;
+  grid-gap: 50px;
+  padding: 10px;
+}
+
+#ES {
+  background-image:linear-gradient(red 33%, yellow 33%, yellow 66.66%, red 66.66%);
+  color: black;
+}
+
+#EN {
+  background-image:linear-gradient(red 33%, white 33%, white 66.66%, red 66.66%);
+  color: black;
+}
+
+#bombaInformacion {
+  width: 50%;
+  height: 50%;
+}
+
+a {
+  color: #EEEEEE;
+}
+
+.card-text {
+  width: 100%;
+  height: 100%;
+}
+
+#botonModal {
+  border: 5px solid black;
+  border-radius: 50px;
+  text-align: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 15px;
+  font-size: 1.5em;
+  background-color: #f5d020;
+  background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+  color: blanchedalmond;
+}
+
+#Pista {
+  border: 5px solid black;
+  border-radius: 50px;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  padding: 15px;
+  font-size: 1.5em;
+  background-color: #f5d020;
+  background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+  color: blanchedalmond;
+  transition: 0.5s;
+  box-shadow: 10px 5px 5px black;
+}
+
+#Pista:hover {
+  transition: 0.5s;
+  box-shadow: 10px 5px 5px white;
+}
+
+#pista:hover {
+  font-size: 1.5em;
+}
+
+#ContenidoModal {
+  color: white;
+  border: 5px solid black;
+  border-radius: 50px;
+  background-color: #f5d020;
+  background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+}
+#ContenidoModal button {
+  width: 40%;
+  border: 2px solid black;
+  border-radius: 50px;
+  font-size: 1.5em;
+}
+
+#ContenidoModal img {
+  margin: auto;
+  width: 100px;
+}
+
+#Informacion-bomba img {
+  margin: auto;
+  width: 150px;
+}
+
+
+#ContenidoModal p {
+  font-size: 1.5em;
+}
+
+#IdiomasModal{
+  width: 100%;
+  text-align: center;
+}
+
+#ComandosModal {
+  width: 100%;
+  text-align: center;
+}
+
+#InformacionModal {
+  width: 100%;
+  text-align: center;
+}
+
+#VolverJuegoModal {
+  width: 100%;
+  text-align: center;
+}
+
+#VolverJuegoModal button {
+  background: radial-gradient(circle, #303841 37%, #3A4750 100%);
+  color: #F6C90E;
+}
+
+#iconoInformacion {
+  width: 10%;
+}
+
+#DificultadModal {
+  text-align: center;
+}
+
+#DificultadModal button {
+  width: 30%;
+}
+
+/* Fin de Estilos Bootstrap*/
+.mainTitle {
+  display: flex;
+  background: radial-gradient(circle, #303841 37%, #3A4750 100%);
+  color: #F6C90E;
+  font-family: "PokemonFont";
+}
+
+.mainTitle img {
+  width: 5em;
+  height: 5em;
+}
+
+.mainTitle link {
+  width: 100px;
+  height: 100px;
+}
+
+.mainTitle h1 {
+  text-align: center;
+  margin: auto;
+  font-size: 4em;
+  font-family: "Dongle", sans-serif;
+}
+
+.menu {
+  /* border: 1px solid black;*/
+  padding: 2% 2% 2% 2%;
+  display: flex;
+  justify-content: space-between;
+  background: #EEEEEE;
+}
+
+.menuNickUserAndScore {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+  font-size: 1.5em;
+}
+
+.menuNickUserAndScore div {
+  border: 1px solid black;
+}
+
+#nick {
+  padding: 0.3em;
+  align-self: center;
+  width: auto;
+}
+
+.score {
+  display: inline-grid;
+  width: auto;
+}
+
+.score div {
+  padding: 0px;
+}
+
+.menu div {
+  padding: 0.2em;
+}
+
+.menuTopPlayer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  text-align: center;
+}
+
+.menuTopPlayer div {
+  border: 1px solid black;
+  font-size: 1.5em;
+}
+
+.menuLanguage {
+  text-align: center;
+  display: block;
+  font-size: 1.5em;
+}
+
+.menuLanguage div {
+  flex-wrap: wrap;
+  border: 1px solid black;
+  display: grid;
+}
+
+.menuLanguage button {
+  padding: 2%;
+  font-size: 0.7em;
+  display: inline-block;
+}
+
+.information {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid black;
+  height: 2em;
+  padding: 0em 0em 0.2em 0em;
+  font-size: 2em;
+  background: radial-gradient(circle, #3A4750 73%, #EEEEEE 100%);
+}
+
+.information h2 {
+  color: #F6C90E;
+}
+
+.pokeball {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999;
+  background: url("imgs/pokeballSlow.gif") center no-repeat #fff;
+}
+
+.game {
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+  background-color: #f5d020;
+}
+
+.gameInformation {
+  background-image: url("../imgs/poster4.jpg");
+  background-size: cover;
+  width: auto;
+}
+
+.gameDescription {
+  padding: 5em 0 0 0;
+  color: #F6C90E;
+  font-size: 4em;
+}
+
+.grid-container {
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 10px;
+
+}
+
+.grid-container img {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid black;
+  text-align: center;
+  font-size: 30px;
+  height: 5em;
+  width: 5em;
+}
+
+h2 {
+  text-align: center;
+}
+
+.container-fluid {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  background-color: #ef5734;
+  background-image: linear-gradient(315deg, #ef5734 0%, #ffcc2f 74%);
+  font-size: 2em;
+  margin: 0;
+}

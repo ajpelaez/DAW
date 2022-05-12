@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/ico" href="imgs/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styleCardGame.css">
+    <script src="./jquery.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Fila 1 -->
+            <div class="col-12 row-2" id="botonesInformacion">
+                <!-- Icono -->
+                <img src="imgs/favicon.ico" margin="auto" id="iconoInformacion">
+                <!-- Fin icono -->
+                <!-- Botones -->
+                <button type="button" id="botonModal" class="btn w-50 Boton-Menu" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Menu
+                </button>
+                <img src="imgs/favicon.ico" margin="auto" id="iconoInformacion">
+            </div> <!-- Fin botones -->
+        </div> <!-- Fin Fila 1 -->
+        <div class="row">
+            <!-- Fila 2 -->
+            <div class="col-8" id="FondoInformacionCartas">
+                <!-- Informacion Cartas -->
+                <div class="row grid-container-Informacion d-flex aling-items-center justify-content-center">
+                    <div class="col-6 col-md-4 col-lg-3 mt-2 ">
+                        <div class="cardInformation">
+                            <a href="https://pokemon.fandom.com/es/wiki/Pikachu" target="_blanck" id="enlace"></a>
+                            <img src="imgs/Pikachu.png" class="card-img-top" id="cartaPokemonInformcacion">
+                            <div class="card-body">
+                                <p class="card-text">Pikachu es un Pokémon de tipo eléctrico introducido en la primera
+                                    generación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 mt-2 ">
+                        <div class="cardInformation">
+                            <a href="https://pokemon.fandom.com/es/wiki/Diglett" target="_blanck" id="enlace"></a>
+                            <img src="imgs/digglet.png" class="card-img-top" id="cartaPokemonInformcacion">
+                            <div class="card-body">
+                                <p class="card-text">Diglett es un Pokémon de tipo tierra introducido en la primera
+                                    generación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 mt-2 ">
+                        <div class="cardInformation">
+                            <a href="https://pokemon.fandom.com/es/wiki/Cyndaquil" target="_blanck" id="enlace"></a>
+                            <img src="imgs/cyndaquill.png" class="card-img-top" id="cartaPokemonInformcacion">
+                            <div class="card-body">
+                                <p class="card-text">Cyndaquil es un Pokémon de tipo fuego introducido en la segunda
+                                    generación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 mt-2 ">
+                        <div class="cardInformation">
+                            <a href="https://pokemon.fandom.com/es/wiki/Charizard" target="_blanck" id="enlace"></a>
+                            <img src="imgs/Charizard.png" class="card-img-top" id="cartaPokemonInformcacion">
+                            <div class="card-body">
+                                <p class="card-text">Charizard es un Pokémon de tipo fuego/volador, introducido en la
+                                    primera generación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 mt-2 ">
+                        <div class="cardInformation">
+                            <a href="https://pokemon.fandom.com/es/wiki/Eevee" target="_blanck" id="enlace"></a>
+                            <img src="imgs/eevee.png" class="card-img-top" id="cartaPokemonInformcacion">
+                            <div class="card-body">
+                                <p class="card-text">Eevee es un Pokémon de tipo normal introducido en la primera
+                                    generación</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 mt-2 ">
+                        <div class="cardInformation">
+                            <a href="https://pokemon.fandom.com/es/wiki/Mewtwo" target="_blanck" id="enlace"></a>
+                            <img src="imgs/mewtwo.png" class="card-img-top" id="cartaPokemonInformcacion">
+                            <div class="card-body">
+                                <p class="card-text">lorem Mewtwo es un Pokémon legendario y artificial de tipo psíquico
+                                    introducido en la primera generación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 mt-2 ">
+                        <div class="cardInformation">
+                            <a href="https://pokemon.fandom.com/es/wiki/Groudon" target="_blanck" id="enlace"></a>
+                            <img src="imgs/groudon.png" class="card-img-top" id="cartaPokemonInformcacion">
+                            <div class="card-body">
+                                <p class="card-text">Groudon es un Pokémon legendario de tipo tierra introducido en la
+                                    tercera generación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Fin Informacion Cartas -->
+            </div>
+            <div class="col-4" id="Informacion-lateral">
+                <!-- Informacion Juego -->
+
+                <button type="button" id="botonModal" class="btn w-100 Boton-Menu" data-bs-toggle="modal"
+                    data-bs-target="#ModalInformacion">
+                    Información del juego
+                </button>
+                <button type="button" id="botonModal" class="btn w-100 Boton-Menu" data-bs-toggle="modal"
+                    data-bs-target="#ModalBomba">
+                    Información de la bomba
+                </button>
+                <button type="button" id="botonModal" class="btn w-100 Boton-Menu" data-bs-toggle="modal"
+                    data-bs-target="#ModalDificultades">
+                    Información de las dificultades
+                </button>
+            </div> <!-- Fin Informacion Juego   -->
+        </div> <!-- Fin Fila 2 -->
+    </div>
+
+    <!-- Footer -->
+    <div class="alert alert-danger mt-2 mx-2 text-center footer" role="alert">
+        Juego Diseñado y realizado por Andrés Córdoba Gutiérrez
+    </div>
+    <!-- Fin Footer -->
+    <!-- Modal Menu -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content p-4" id="ContenidoModal">
+                <h2>Menu Del Juego</h2>
+                <img src="imgs/favicon.ico" margin="auto">
+                <div class="modal-header">
+                </div>
+                <hr>
+                <div id="IdiomasModal">
+                    <p>Selecciona tu idioma</p>
+                    <button class="btn btn-secondary Boton-Menu-Interior" id="ES">ES</button>
+                    <button class="btn btn-secondary Boton-Menu-Interior" id="EN">EN</button>
+                </div>
+                <hr>
+                <div id="VolverJuegoModal">
+                    <p>Información sobre el juego</p>
+                    <button class="btn btn-secondary Boton-Menu-Interior" id="Information"><a
+                            style="text-decoration: none;" href="index.html">Volver al Juego</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal Menu -->
+    <!-- Modal Informacion -->
+
+    <div class="modal fade" id="ModalInformacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content p-4" id="ContenidoModal">
+                <h2>Informacion del Juego</h2>
+                <img src="imgs/favicon.ico" margin="auto">
+                <hr>
+                <div id="Informacion-Juego">
+                    <p>Como se juega</p>
+                    <p>
+                        En este juego de habilidad mental, tendras que descubrir las 7 parejas de pokemon, ¿conseguiras
+                        el primer puesto del top?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal Informacion -->
+    <!-- Modal Bomba -->
+    <div class="modal fade" id="ModalBomba" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content p-4" id="ContenidoModal">
+                <h2>Información sobre la Bomba</h2>
+                <img src="imgs/favicon.ico" margin="auto">
+                <hr>
+                <div id="Informacion-bomba">
+                    <img src="imgs/bomba.png" id="bombaInformacion">
+                    <p>
+                        CUIDADO, es este juego se a colado un invitado no deseado, un Kirby trabieso te dejara un
+                        regalito si no estas atento, reiniciando todas las parejas descubiertas.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal Bomba -->
+    <!-- Modal Dificultades -->
+    <div class="modal fade" id="ModalDificultades" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content p-4" id="ContenidoModal">
+                <h2>Información dificultades</h2>
+                <img src="imgs/favicon.ico" margin="auto">
+                <div id="Informacion-bomba">
+                    <p>
+                        En este juego hay varias dificultades disponibles<br>
+                        Facil: Para pasar el rato y encontrar las 7 parejas de pokemon<br>
+                        Normal: Para un desafio con un kirby que te impedira ganar tan facilmente, y reiniciara las
+                        cartas de lugar<br>
+                        Dificil: Ademas del desafio de la bomba si no encuentras a todos los pokemon antes de fallar un
+                        determinado de veces Perderas
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal Dificultades -->
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>

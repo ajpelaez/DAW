@@ -1,0 +1,50 @@
+{
+    "lang": {
+        "en": {
+            "score": "Score",
+            "errors": "Errors",
+            "message_success": "Nice!!! the cards match",
+            "message_mistake": "Ups!, you failed",
+            "message_victory": "You won the game!! Lets goo!!",
+            "start_game": "Start the game",
+            "restart_game": "Restart the game",
+            "show_button" : "Show cards",
+            "model_name":"Enter your nick:",
+            "modal_select": "Choose difficulty:",
+            "modal_easy": "Easy (pussy)",
+            "modal_challenging": "Challenging",
+            "modal_close": "Close",
+            "modal_start": "Start",
+            "top_player": "Top players",
+            "player_name": "Nick",
+            "progress_bar": "Progress:",
+            "text_game": "Game",
+            "text_info": "Information",
+            "text_legends": "Legend"
+        },
+
+        
+        "es": {
+            "score": "Puntuacion",
+            "errors": "Errores",
+            "message_success": "Buena!!!, las cartas son iguales",
+            "message_mistake": "Vaya... has fallado",
+            "message_victory": "Has ganado el juego!!!",
+            "start_game": "Comenzar el juego",
+            "restart_game": "Reiniciar",
+            "show_button":"Mostrar las cartas",
+            "model_name":"Introduce tu nick:",
+            "modal_select": "Selecciona una dificultad:",
+            "modal_easy": "Facil (cagadx)",
+            "modal_challenging": "Dificil",
+            "modal_close": "Cerrar",
+            "modal_start": "Comenzar",
+            "top_player": "Mejores jugadores",
+            "player_name": "Nombre",
+            "progress_bar": "Progreso:",
+            "text_game": "Juego",
+            "text_info": "Informacion",
+            "text_legends": "Leyenda"
+        }
+    }
+}

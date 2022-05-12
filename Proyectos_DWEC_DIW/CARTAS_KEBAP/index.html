@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KebaCard</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <audio class="bomba">
+        <source src="./sonido/sonido-bomba.mp3" type="audio/mp3">
+    </audio>
+    <audio class="victoria">
+        <source src="./sonido/sonido-victoria.mp3" type="audio/mp3">
+    </audio>
+    <audio class="error">
+        <source src="./sonido/sonido-error.mp3" type="audio/mp3">
+    </audio>
+    <audio class="cambiar">
+        <source src="./sonido/sonido-cambio.mp3" type="audio/mp3">
+    </audio>
+
+    <header>
+        <img src="images/logo.png" id="logo">
+        <h1 id="tituloPc">KebaCard</h1>
+        <h1 id="tituloMovil">KC</h1>
+        <div></div>
+    </header>
+
+    <table class="table table-striped" class="tabla-informacion__caja" id="punt" id="idioma">
+        <tr>
+            <td class="table-primary">Jugador</td>
+            <td class="table-success" id="puntuacionTexto">Puntuación</td>
+            <td class="table-danger"><div id="errorTexto">Errores</div></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="table-success"  id="top-player">Top player</td>
+            <td class="table-danger"><div id="puntuacionTextoRanking">Puntuación</div></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="table-success" id="idiomaTexto" >Idioma</td>
+        </tr>
+        <tr>
+            <td class="table-primary"></td>
+            <td class="table-success" id="contador-puntos">0</td>    
+            <td class="table-danger"><div><span id="contador-errores">0</span></div></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="table-success" id="ranking-jugador">0</td>    
+            <td class="table-danger"><div><span id="ranking-puntuacion">0</span></div></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="table-success" class="botonIdioma"><button id="es" class="btn btn-outline-success">ES</button><button id="en" class="btn btn-outline-success">EN</button></td>    
+        </tr>   
+    </table>
+
+<div id="barra-informativa" class="alert alert-success"><br></div>
+
+    <br>
+    <div class="juego">
+        <div id="container" class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+            <div class="celda col"></div>
+
+            <div id="invisible"></div>
+        </div>
+
+        <aside id="descripcion"></aside>
+    </div>
+
+    <footer>
+        <br> Diego Sánchez-Rojo --- Rufino Serrano Cañas
+        <br> KebaCard
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

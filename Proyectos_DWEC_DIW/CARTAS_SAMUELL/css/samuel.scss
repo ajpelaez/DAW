@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Mochiy+Pop+P+One&display=swap');
+/*VARIABLES*/
+$fuenteGlobal: 'Mochiy Pop P One', sans-serif;
+$fuenteSecundaria: 'Comfortaa', cursive;
+$colorPrimario: #325288;
+$colorSecundario: #FAEEE7;
+$colorTerciario: #D96098;
+
+*{
+    box-sizing: border-box;
+    font-family: $fuenteGlobal;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1{
+    font-size: 3.6rem;
+    text-align: center;
+}
+
+/*h1::before{
+    content: "JUEGO DE CARTAS";
+}*/
+
+h2{
+    text-align: center;
+}
+
+p {
+    font-size: 1.6rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+a{
+    text-decoration: none!important;
+    color: black!important;
+    font-size: 1.6rem;
+    margin: 0 1rem;
+    
+}
+
+#usuario,#jugadorTop{
+        font-family: $fuenteSecundaria;
+    font-weight: 700;
+}
+
+span{
+    font-weight: 700;
+}
+
+span#errores, span#contador{
+    font-family: $fuenteSecundaria;
+    font-weight: 400;
+}
+
+.no-margin{
+    margin: 0!important;
+}
+
+table{
+    font-size: 1.2rem;
+}
+
+#btnPlay,#ayuda{
+    width: 10%;
+    margin: 1rem;
+    background-color: white;
+}
+
+#btnPlay:hover,#ayuda:hover{
+    color: white;
+    background-color: #198754;
+}
+#ayuda{
+    display: none;
+}
+body{
+    background-color: $colorPrimario!important;
+}
+
+@mixin boton {
+    background-color: transparent;
+    color: $colorSecundario;
+    border: none;
+    cursor: pointer;
+}
+
+.idioma{
+    @include boton();
+}
+
+.idioma:hover{
+    font-weight: 700;
+}
+
+
+.contenedor-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5, 200px);
+    gap:10px;
+    width: 100%;
+    margin: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .contenedor-grid{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(8, 200px);
+        gap:10px;
+        width: 100%;
+        margin: 10px;
+    }
+    /*h1:before{
+        content: "JUEGO DE CARTAS";
+    }*/
+}
+
+
+
+@media (max-width: 480px) {
+    .contenedor-grid{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(8, 200px);
+        gap:10px;
+        width: 100%;
+        margin: 10px;
+    }
+    .aside__lateral{
+        display: none;
+    }
+    /*h1:before{
+        content: "JC";
+    }*/
+    /*.marcador{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 50%, 50%;
+    }
+    #tablaJugador{
+        grid-column: 1 / 2;
+        font-size: 1.2rem;
+    }
+    #tablaJugadorTop{
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        font-size: 1.2rem;
+    }
+
+    #tablaLenguaje{
+        font-size: 1.2rem;
+    }*/
+}
+
+.info{
+    margin: 2rem;
+}
+
+.carta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/cara-trasera2.jpg);
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 6px 6px 15px 0px rgba(217,98,217,1);
+    width: 100%;
+    height: 130px;
+}
+
+#div-ayuda {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: transparent;
+  }
+
+@media(max-width: 480px){
+    .carta{
+        height: 100px;
+    }
+}
+
+@media(max-width: 768px){
+    .carta{
+        height: 100px;
+    }
+}
+
+@media(max-width: 1200px){
+    .carta{
+        height: 100px;
+    }
+}
+
+
+.carta-texto{
+    font-size: 1.4rem;
+    height: 20rem;
+    overflow: scroll;
+}
+
+img{
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.header__cabecera{
+    display: flex;
+    background-image: url(../img/cielo.jpg);
+    position: relative;
+}
+
+.header__cabecera img{
+    width: 100px;
+    height: 120px;
+    justify-content: flex-start;
+}
+
+.header__cabecera h1{
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translateY(-50%);
+}
+
+table,tr,th,td{
+    font-family: $fuenteSecundaria;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px;
+    color: $colorSecundario;
+    font-weight: 300;
+}
+.contenedor{
+    background-color: $colorPrimario;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.contenedor-main{
+    margin: 0 auto!important;
+}
+
+.aside__lateral{
+    flex: 1 0 200px;
+    color: $colorSecundario;
+    background-color: $colorPrimario;
+}
+@media (min-width: 768px) {
+    .contenedor{
+        flex-direction: row;
+    }
+}
+
+.aside__lateral p{
+    font-family: $fuenteSecundaria;
+    font-weight: 300;
+}
+
+.barra-informativa{
+    background-color: $colorPrimario;
+    color: $colorSecundario;
+    width: 90%;
+    margin: auto;
+}
+
+.barra-informativa p{
+    font-family: $fuenteSecundaria;
+    font-weight: 300;
+}
+
+
+.footer{
+    margin-top: 10px;
+    background: rgb(0,168,255);
+    background: linear-gradient(90deg, rgba(0,168,255,1) 0%, rgba(22,88,162,1) 51%, rgba(0,212,255,1) 100%);
+    padding: 10px;
+    color: $colorSecundario;
+}
+
+.footer p{
+    font-family: $fuenteSecundaria;
+    font-weight: 300;
+}
+
+.barra_separacion{
+    border-right: 1px solid $colorTerciario;
+}
+/*#ayuda{
+    display: none;
+}*/
+
+@media (max-width: 480px){
+    .juego,.marcadores{
+        margin: 0 auto;
+    }
+    .marcadores{
+        width: 100%!important;
+    }
+}
+
+@media (max-width: 768px){
+    .juego,.marcadores{
+        margin: 0 auto;
+    }
+    .marcadores{
+        width: 100%!important;
+    }
+}
+
+.accordion-button:hover{
+    background-color: #9c93ac;
+}

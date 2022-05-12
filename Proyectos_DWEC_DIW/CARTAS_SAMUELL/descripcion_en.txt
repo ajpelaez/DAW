@@ -1,0 +1,1 @@
+The memory game consists in finding the same two images within a card. The game starts with all the cards face down and tou can turn over two cards, if you find a pair, you win a point.

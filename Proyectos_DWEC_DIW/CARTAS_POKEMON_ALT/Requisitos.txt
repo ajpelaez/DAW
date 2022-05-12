@@ -1,0 +1,12 @@
+-Todo Jquery xxxxxx
+-Que no se vean las id o src xxxxxx
+-bomba xxxxxx
+-animacion al levantar la carta, bomba o error xxxxxx
+-Sonidos: Acierto, Fallo, Victoria xxxxxx
+-Idiomas con json xxxxxx
+
+
+-Dificultad normal bomba 2 segundos se muestra
+-Dificil no se ve la bomba
+-Leyenda 1 segundo bomba y 2 fallos maximo
+-Dificultad Facil con boton pista

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./css/bootstrap.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>ZooCard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="leon.ico">
+</head>
+
+
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #732E07;">
+
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/logo.png" id="logo"></a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-1 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html"> <span id="textoJuego" style="color: white;">Juego</span><i
+                            class="fa-solid fa-gamepad" style="color: white; margin-left: 5px;"></i></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="informacion.html">
+                            <span id="textoInformacion" style="color: white;">Informacion</span><i class="fa-solid fa-circle-question" style="color: white; margin-left: 5px;"></i></a>
+                    </li>
+                </ul>
+
+
+                <form class="d-flex" onsubmit="return false">
+                    <button id="es" class="btn btn-outline-success">ES</button>
+                    <button id="en" class="btn btn-outline-success">EN</button>
+                </form>
+            </div>
+
+
+        </div>
+
+    </nav>
+
+
+
+
+    <audio class="bomba">
+        <source src="./sonido/bomba.mp3" type="audio/mp3">
+    </audio>
+    <audio class="victoria">
+        <source src="./sonido/victoria.mp3" type="audio/mp3">
+    </audio>
+    <audio class="error">
+        <source src="./sonido/error.mp3" type="audio/mp3">
+    </audio>
+    <audio class="cambiar">
+        <source src="./sonido/cambio.mp3" type="audio/mp3">
+    </audio>
+
+
+    <main>
+        <div class="row">
+            <div class="col-12 col-sm-3 p-4">
+
+                <div class="col-12 mb-3">
+                    <button class="btn btn-primary p-4" id="boton-comenzar" data-estado="start">Comenzar juego
+                    </button>
+
+                </div>
+
+
+                <div class="col-12 mb-3">
+                    <button class="btn btn-warning p-2" id="botonMostrarCartas"> <span id="mostrarTodasLasCartas">Mostrar </span><i class="fa-regular fa-eye" style="margin-left: 5px;"></i> </button>
+                </div>
+
+                <div class="col-12">
+
+                    <table class="table table-striped mt-5">
+
+                        <tr>
+                            <td class="table-primary" colspan="2"><i class="fa-solid fa-user-large" style="margin-right: 5px;"></i><span id="nick">Nombre Jugador</span></td>
+                        </tr>
+
+                        <tr>
+                            <td class="table-success"><i class="fa-solid fa-circle-check"></i> <span id="contador-puntos">0</span></td>
+                            <td class="table-danger"><i class="fa-solid fa-circle-xmark"></i> <span id="contador-errores"> 0</span></td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+
+                <div class="col-12">
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <td class="table-warning" colspan="2"><span id="top-player">Mejores jugadores</span> <i class="fa-solid fa-medal"></i></td>
+                            </tr>
+                        </thead>
+
+                        <tbody id="jugadores"></tbody>
+                    </table>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="col-12 col-sm-9 p-4">
+
+                <div id="barra-informativa" class="alert alert-success"></div>
+
+                <span id="textoBarraProgreso">Progreso:</span>
+
+                <div class="progress mb-3" style="height: 20px; background-color: white;">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
+
+                <div id="container" class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 rowc">
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+                    <div class="celda mx-2 my-2 rowc"></div>
+
+                    <div id="invisible"></div>
+                </div>
+            </div>
+
+        </div>
+
+         
+
+        <!-- Modal -->
+        <div id="modal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ZooCard</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+
+                    <div class="modal-body">
+                        <p>
+                            <span id="textoIntroduceNombre">Introduce tu nick:</span> <input type="text" id="nombreModal">
+                        </p>
+
+                        <p>
+                            <span id="textoSeleccionaDificultad">Selecciona una dificultad:</span><br>
+                            <input type="radio" name="dificultad" id="facil" value="facil" checked> <span id="textoFacil">Facil (pussy)</span><br>
+                            <input type="radio" name="dificultad" id="normal" value="normal">Normal<br>
+                            <input type="radio" name="dificultad" id="dificil" value="difícil"> <span id="textoDificil">Dificil</span><br>
+                            <input type="radio" name="dificultad" id="leyenda" value="leyenda"> <span id="textoLeyenda">Leyenda</span><br>
+                        </p>
+
+
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="comenzarModal">Comenzar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="textoBotonCancelar">Cerrar</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal" tabindex="-1" role="dialog" id="modal_victoria">
+
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">¡Has ganado, suuuuu!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p id="modal_contenido"></p>
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modal_victoria_boton_cerrar">Cerrar</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog" id="modal_bomba">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Noooo!!!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>Cagaste, pulsaste la carta bomba, el juego se va a reiniciar</p>
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modal_bomba_boton_cerrar">Cerrar</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal" tabindex="-1" role="dialog" id="modal_leyenda">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">¡Oh no!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+
+
+                    <div class="modal-body">
+                        <p>Cagaste dos veces, has perdido</p>
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modal_leyenda_boton_cerrar">Cerrar</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p class="texto-footer">Ruben Garcia-Romeral Ortega | ZooCard</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        
+
+    <script src="js/main.js"></script>
+    <script src="js/idioma.js"></script>
+    <script src="js/todasvariables.js"></script>
+    <script src="js/barraprogreso.js"></script>
+    <script src="js/ranking.js"></script>
+    <script src="js/sonido.js"></script>
+    
+</body>
+
+</html>

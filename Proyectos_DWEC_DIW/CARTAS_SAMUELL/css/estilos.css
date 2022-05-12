@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Mochiy+Pop+P+One&family=Mukta:wght@200&family=Outfit&display=swap');
+*{
+    box-sizing: border-box;
+    /* font-family: 'Caveat', cursive; */
+    font-family: 'Mukta', sans-serif;
+
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1{
+    font-size: 3.6rem;
+    text-align: center;
+}
+
+p {
+    font-size: 2.4rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+span#usuario{
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+}
+
+span{
+    font-weight: 700;
+}
+
+table{
+    font-size: 2.4rem;
+}
+
+
+.marcador{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    text-transform: uppercase;
+}
+
+.contenedor-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3, 200px);
+    background-color: lightgrey;
+    gap:10px;
+    width: 70%;
+    margin: auto;
+}
+
+.carta {
+    text-align: center;
+    background-image: url(img/cara-trasera.jpg);
+    background-size: cover;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+

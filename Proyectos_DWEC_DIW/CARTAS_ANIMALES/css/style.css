@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
+body {
+  margin: 0;
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+  background-color: #F2D6A2;
+  font-weight: bold;
+}
+
+#es {
+  margin-right: 1em;
+}
+
+.btn {
+  width: 100%;
+}
+
+#progresoTexto {
+  color: black;
+}
+
+#container {
+  padding: 10px;
+  background-color: #BF8417;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 0px 1px;
+  border-radius: 5px;
+}
+
+.celda {
+  height: 200px;
+  width: 220px;
+  background-image: url("../images/celda.jpg");
+  background-size: 100% 100%;
+  border-radius: 10px;
+}
+
+.imagen {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.sombra {
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, inset 6px 6px 28px -2px rgba(0, 0, 0, 0);
+}
+
+#ranking {
+  font-size: 2em;
+}
+
+#logo {
+  border-radius: 50px;
+}
+
+#invisible {
+  display: none;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  z-index: 1;
+  width: 200%;
+  height: 200%;
+}
+
+footer {
+  border-radius: 15px;
+  font-size: 25px;
+  display: table;
+  color: white;
+  background: #020024;
+  background: #3f2059;
+  background: radial-gradient(circle, #3f2059 29%, #a446fc 87%);
+  width: 100%;
+  height: 70px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.texto-footer {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#barra-informativa {
+  height: 60px;
+}/*# sourceMappingURL=style.css.map */

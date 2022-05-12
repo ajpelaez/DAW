@@ -1,0 +1,24 @@
+{
+    "lang":{
+        "eng":{
+        "score": "Score",
+        "errors": "Errors",
+        "topPlayer": "Top player",
+        "matchMessage": "It's a match!",
+        "errorMessage": "Oops, choose better next time!",
+        "win": "You win!",
+        "titleDescription": "How to play?",
+        "gameDescription": "The memory game consists in finding the same two images within a card. The game starts with all the cards face down and tou can turn over two cards, if you find a pair, you win a point."
+        },
+        "esp":{
+            "score": "Puntuación",
+            "errors": "Errores",
+            "topPlayer": "Mejor jugador",
+            "matchMessage": "¡Has acertado!",
+            "errorMessage": "¡Ops, escoge mejor la próxima vez!",
+            "win": "Has ganado!",
+            "titleDescription": "¿Cómo jugar?",
+            "gameDescription": "El memorama es un juego de encontrar pares de cartas con la misma imagen. Todas las cartas están boca abajo y puedes voltear dos, si logras formar un par entonces ganas un punto."
+        }
+    }
+}

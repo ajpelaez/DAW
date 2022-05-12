@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto';
+    background-color: #ABBC85;
+}
+
+h1 {
+    margin: 0;
+    font-size: 50px;
+    color: #536256;
+}
+
+header{
+    padding: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 2fr 1fr;
+
+}
+
+.tabla-informacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 8em;
+    width: 100%;
+}
+
+.tabla-informacion__caja{
+    display: flex;
+}
+
+.juego {
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+#descripcion {
+    background-color: #1f3d1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+    color: #ABBC85;
+    font-size: 20px;
+    padding: 10px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 2px 0px 1px;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-rows: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    margin-left: 40px;
+    background-color: rgb(85, 112, 63);
+    box-shadow: rgb(0 0 0 / 10%) 0px 2px 0px 1px;
+    border-radius: 5px;
+}
+
+#puntuacion {
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+
+.celda {
+    display: grid;
+    align-content: center;
+    height: 200px;
+    font-size: 3em;
+    background-image: url('../images/celda.jpg');
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+.imagen {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.sombra {
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, inset 6px 6px 28px -2px rgba(0,0,0,0); 
+box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, inset 6px 6px 28px -2px rgba(0,0,0,0);
+}
+
+#ranking {
+    font-size: 2em;
+}
+
+#logo {
+    border-radius: 50px;
+}
+
+
+
+#nick {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
+    background-color: white;
+}
+
+.caja {
+    height: 25px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
+    background-color: white;
+}
+
+.cajaIdioma {
+    height: 25px;
+    width: 162px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: solid 1px black;
+}
+
+.contador {
+    height: 53px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
+    background-color: white;
+}
+
+.botonIdioma {
+    height: 49px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
+    background-color: white;
+}
+footer {
+    margin-top: 30px;
+    padding-bottom: 20px;
+    color: white;
+    border-top: solid 2px #536256 ;
+    background: rgb(5,1,38);
+    background: linear-gradient(90deg, rgba(5,1,38,1) 16%, rgba(9,85,121,1) 65%, rgba(31,61,29,1) 100%);
+}
+
+#barra-informativa {
+    width: 92%;
+    height: 3em;
+    border: solid 2px black;
+    margin: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: #1f3d1d;
+    color: #ABBC85;
+    font-size: 20px;
+}
+
+#tituloMovil{
+    display: none;
+}
+
+
+@media only screen and (max-width:1024px){
+    #container {
+        grid-template-columns: 32% 32% 32%;
+    }    
+}
+
+@media only screen and (max-width:768px){
+    #container {
+        grid-template-columns: 48% 48%;
+    }    
+}
+
+@media only screen and (max-width:500px){
+    #container {
+        grid-template-columns: 48% 48%;
+    }   
+    #descripcion{
+        display: none;
+    }
+    #tituloMovil{
+        display: block;
+    }
+    
+    #tituloPc{
+        display: none;
+    }
+
+    #punt{grid-area: punt;}
+    #top{grid-area: topP;margin:auto;}
+    #idioma{grid-area: idioma;}
+    .tabla-informacion {
+        margin-left: 5px ;
+        grid-template-areas: 
+
+        'punt idioma'
+        'topP idioma'
+        ;
+        grid-gap: 10px;
+    }
+}

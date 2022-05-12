@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link rel="shortcut icon" type="image/ico" href="imgs/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="./jquery.js"></script>
+  <link rel="stylesheet" href="./jquery-ui-1.13.1.custom/jquery-ui.min.js">
+  <script src="./jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/styleCardGame.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Fila 1 -->
+      <div class="col-12" id="ActualPlayer">
+        <!-- Jugador Actual -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"><img src="imgs/favicon.ico" margin="auto"></th>
+              <th scope="col" id="UserName">Usuario</th>
+              <th scope="col" id="UserScore">Puntuacion <i class='fas fa-check-circle'></i></th>
+              <th scope="col" id="Error-Actual">Errores <i class="far fa-times-circle"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"></th>
+              <td>
+                <p id="nick"></p>
+              </td>
+              <td>
+                <p id="pointsMarkerSuccessful"></p>
+              </td>
+              <td>
+                <p id="pointsMarkerFailed"></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div> <!-- Fin Jugador Actual -->
+    </div><!-- Fin Fila 1 -->
+    <div class="row">
+      <!-- Fila 2 -->
+      <div class="col-3" id="botones">
+        <!-- Botones -->
+        <button type="button" id="botonModal" class="btn w-100 Boton-Menu" data-bs-toggle="modal"
+          data-bs-target="#modal">
+          Opciones
+        </button>
+      </div> <!-- Fin botones -->
+      <!-- Boton Pista -->
+      <div class="col-1 d-none" id="Boton-Pista">
+        <button type="button" id="Pista">
+          Pista
+        </button>
+      </div> <!-- Fin Boton Pista -->
+      <!-- Barra Aciertos/Fallos -->
+      <div class="col-8 alert alert-primary" role="alert" id="informationTitle">
+        !!Aun no has seleccionado ninguna carta¡¡
+      </div>
+      <!-- Fin Barra Aciertos/Fallos -->
+
+      <!-- Barra de Progreso -->
+      <div class=" col-7 progress w-100">
+        <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 100%"
+          aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <!-- Fin Barra Progreso -->
+    </div> <!-- Fin Fila 2 -->
+
+    <div class="container-fluid">
+      <div class="row game">
+        <!-- Fila 3 -->
+        <div class="col-6 col-lg-4 col-md-5 d-flex" id="TopPalyer-Ranking">
+          <!-- Tabla Ranking -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"><img src="imgs/favicon.ico" margin="auto"></th>
+                <th scope="col" id="Ranking">Top</th>
+                <th scope="col" id="Errors">Errores <i class="far fa-times-circle"></i></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"></th> <!-- Ranking 1 -->
+                <td>
+                  <p id="menuTopPlayerTitle">Top1</p>
+                </td>
+                <td>
+                  <p id="topPoints">10</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"></th> <!-- Ranking 2 -->
+                <td>
+                  <p id="menuTopPlayer2">Top2</p>
+                </td>
+                <td>
+                  <p id="topPoints">20</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"></th> <!-- Ranking 3 -->
+                <td>
+                  <p id="menuTopPlayer3">Top3</p>
+                </td>
+                <td>
+                  <p id="topPoints">40</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"></th> <!-- Ranking 4 -->
+                <td>
+                  <p id="menuTopPlayer4">Top4</p>
+                </td>
+                <td>
+                  <p id="topPoints">60</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"></th> <!-- Ranking 5 -->
+                <td>
+                  <p id="menuTopPlayer5">Top5</p>
+                </td>
+                <td>
+                  <p id="topPoints">80</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div> <!-- Fin Tabla Ranking -->
+        <div class="col-6 col-lg-8 col-md-7 d-flex" id="FondoJuego">
+          <!-- Juego -->
+          <div class="grid-container w-100 h-100 ">
+            <div class="row d-flex aling-items-center justify-content-center w-100 h-100">
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="1">
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="2">
+  
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="3">
+  
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="4">
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="5">
+  
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="6">
+  
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="7">
+  
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="8">
+  
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="9">
+  
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="10">
+  
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="11">
+  
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="12">
+  
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="13">
+  
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="14">
+  
+                </div>
+              </div>
+  
+              <div class="col-2 m-1 p-0">
+                <div class="card" style="width: 100%; height: 100%;" id="cardSpace">
+  
+                  <img src="./imgs/pokeball.png" class="carta" draggable="false" id="15">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin Juego -->
+      </div> <!-- Fin Fila 2 -->
+
+    </div>
+
+    <!-- Footer -->
+    <div class="alert alert-danger mt-2 mx-2 text-center footer" role="alert" id="footer">
+      Juego realizado por Andres Cordoba Gutierrez
+    </div>
+    <!-- Fin Footer -->
+    <!-- Modal -->
+
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content p-4" id="ContenidoModal">
+          <h2>Menu Del Juego</h2>
+          <img src="imgs/favicon.ico" margin="auto">
+          <div class="modal-header">
+          </div>
+          <hr>
+          <div id="IdiomasModal">
+            <p>Selecciona tu idioma</p>
+            <button class="btn btn-secondary Boton-Menu-Interior" id="ES">ES</button>
+            <button class="btn btn-secondary Boton-Menu-Interior" id="EN">EN</button>
+          </div>
+          <hr>
+          <div id="DificultadModal">
+            <p>¿Con que te atreves?</p>
+            <button class="btn btn-success Boton-Menu-Interior" id="DificultadFacil">Facil</button>
+            <button class="btn btn-warning Boton-Menu-Interior" id="DificultadNormal">Normal</button>
+            <button class="btn btn-danger Boton-Menu-Interior" id="DificultadDificil">Dificil</button>
+          </div>
+          <hr>
+          <div id="ComandosModal">
+            <p>¿Que quieres hacer?</p>
+            <button class="btn btn-danger Boton-Menu-Interior" id="restart">Restart</button>
+            <button class="btn btn-success Boton-Menu-Interior" id="start">Play!!</button>
+          </div>
+          <hr>
+          <div id="InformacionModal">
+            <p>Información sobre el juego</p>
+            <button class="btn btn-secondary Boton-Menu-Interior" id="Information"><a style="text-decoration: none;"
+                href="informacion.html">Información</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin Modal -->
+    <div class="block" id="blockInteractions"></div>
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+</body>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LANGUAGE>
+<eng>
+    <SCORE>Score</SCORE>
+    <ERRORS>Errors</ERRORS>
+    <TOPPLAYER>Top player</TOPPLAYER>
+    <MATCHMESSAGE>It's a match!</MATCHMESSAGE>
+    <ERRORMESSAGE>Oops,choose better next time!</ERRORMESSAGE>
+    <WIN>You win!</WIN>
+    <TITLEDESCRIPTION>How to play?</TITLEDESCRIPTION>
+</eng>
+<esp>
+    <SCORE>Puntuación</SCORE>
+    <ERRORS>Errores</ERRORS>
+    <TOPPLAYER>Mejor jugador</TOPPLAYER>
+    <MATCHMESSAGE>¡Has acertado!</MATCHMESSAGE>
+    <ERRORMESSAGE>¡Ops, escoge mejor la próxima vez!</ERRORMESSAGE>
+    <WIN>¡Has ganado!</WIN>
+    <TITLEDESCRIPTION>¿Cómo jugar?</TITLEDESCRIPTION>
+</esp>
+</LANGUAGE>

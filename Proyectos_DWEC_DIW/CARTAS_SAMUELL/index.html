@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Juego de cartas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="css/samuel.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" href="sandra.css"> -->
+    <!--<link rel="stylesheet" type="text/css" href="estilos.css">-->
+</head>
+
+<body>
+    <header class="header__cabecera"> <!-- CABECERA -->
+        <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <div class="container-fluid">
+                <img src="img/logo.jpg" alt="logo">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <a href="informacion.html" class="navbar-brand">Información</a>
+                    <h1 class="w-25">Juego de cartas</h1>
+                </ul>
+                <table id="tablaLenguaje" class="table table-dark table-striped w-25">
+                    <tr>
+                        <th colspan="2" id="leng">Lenguaje</th>
+                    </tr>
+                    <tr>
+                        <td><button class="idioma" id="esp">ESP</button></td>
+                        <td><button class="idioma" id="eng">ENG</button></td>
+                    </tr>
+                </table>
+            </div>
+        </nav>
+    </header> <!-- FIN CABECERA -->
+    <section class="container info"> <!-- SECCION BOTONES MODALES E INFORMACIÓN DE LA PARTIDA -->
+        <div class="row">
+            <div class="col-3">
+                <button type="button" class="btn btn-lg btn-outline-success w-50" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" id="btnPlay"><i class="fa-solid fa-play"></i></button>
+                <button type="button" class="btn btn-lg btn-outline-success w-50" id="ayuda"><i
+                        class="fa-solid fa-circle-question"></i></i></button>
+            </div>
+            <div class="col-9">
+                <div class="d-flex flex-column">
+                    <div class="alert alert-primary" role="alert">
+                        <p id="barra_informativa">¡Que comience el juego!</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 0%"
+                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="7"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!-- FIN SECCION BOTONES MODALES E INFORMACIÓN DE LA PARTIDA -->
+    <!-- CONTENEDOR JUEGO -->
+    <main class="container-fluid">
+        
+        <div class="row">
+            <!-- FILA MARCADORES -->
+            <div class="col-12 col-sm-12 col-lg-2 marcadores">
+                <!-- COLUMNAS MARCADORES -->
+                <table id="tablaJugador" class="table table-dark m-5 w-75">
+                    <tr>
+                        <th colspan="2" id="usuario"><i class="fa-solid fa-user-astronaut"></i>Usuario</th>
+                    </tr>
+                    <tr>
+                        <th id="tagPuntuacion">Puntuación</th>
+                        <th id="tagErrores">Errores</th>
+                    </tr>
+                    <tr>
+                        <td class="table-active"><i class="fas fa-check"></i> <span id="contador">0</span></td>
+                        <td class="table-active"><i class="fas fa-times"></i> <span id="errores">0</span></td>
+                    </tr>
+                </table>
+                <table id="tablaJugadorTop" class="table table-dark m-5 w-75">
+                    <tr>
+                        <th colspan="2">Ranking</th>
+                    </tr>
+                    <tr>
+                        <td id="topNombre1">Jugador 1</td>
+                        <td id="topErrores1" class="table-active">10</td>
+                    </tr>
+                    <tr>
+                        <td id="topNombre2">Jugador 2</td>
+                        <td id="topErrores2" class="table-active">20</td>
+                    </tr>
+                    <tr>
+                        <td id="topNombre3">Jugador 3</td>
+                        <td id="topErrores3" class="table-active">30</td>
+                    </tr>
+                    <tr>
+                        <td id="topNombre4">Jugador 4</td>
+                        <td id="topErrores4" class="table-active">40</td>
+                    </tr>
+                    <tr>
+                        <td id="topNombre5">Jugador 5</td>
+                        <td id="topErrores5" class="table-active">50</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Ranking con mas fallos</th>
+                    </tr>
+                    <tr>
+                        <td id="topNombreMasFallos1">Jugador 1</td>
+                        <td id="topErroresMasFallos1" class="table-active">90</td>
+                    </tr>
+                    <tr>
+                        <td id="topNombreMasFallos2">Jugador 2</td>
+                        <td id="topErroresMasFallos2" class="table-active">100</td>
+                    </tr>
+                </table>
+            </div><!-- FIN COLUMNAS MARCADORES -->
+            <div class="col-10 juego">
+                <!-- COLUMNAS JUEGO -->
+                <div class="row">
+                    <!-- FILA CARTAS -->
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 col-xl-3 col-sm-3 p-2 no-margin columna_carta">
+                        <div class="carta">
+                            <div class="carta__imagen">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- FIN COLUMNAS JUEGO -->
+        </div>
+    </main>
+    <!-- FIN CONTENEDOR JUEGO -->
+    <!-- MODAL -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Elige tu nombre y la dificultad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Nombre jugador</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" placeholder="Nombre jugador"
+                            id="nombreUsuario">
+                    </div>
+                    <h3>Dificultad</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="facil" value="facil">
+                        <label class="form-check-label" for="facil">
+                            Fácil
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="normal" value="normal">
+                        <label class="form-check-label" for="normal">
+                            Normal
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="dificil"
+                            value="dificil">
+                        <label class="form-check-label" for="dificil">
+                            Difícil
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="leyenda"
+                            value="leyenda">
+                        <label class="form-check-label" for="leyenda">
+                            Leyenda
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        id="btnCerrarModal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="empezarJuego">Empezar juego</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN MODAL -->
+
+    <!-- AUDIOS -->
+    <audio class="explosion">
+        <source src="audio/explosion.mp3" type="audio/mp3">
+    </audio>
+    <audio class="correcto">
+        <source src="audio/correcto.mp3" type="audio/mp3">
+    </audio>
+    <audio class="incorrecto">
+        <source src="audio/incorrecto.mp3" type="audio/mp3">
+    </audio>
+    <audio class="inicio">
+        <source src="audio/windows-xp-inicio.mp3" type="audio/mp3">
+    </audio>
+    <audio class="sonic-ring">
+        <source src="audio/sonic-ring.mp3" type="audio/mp3">
+    </audio>
+    
+    <!-- FIN AUDIOS -->
+    <footer class="footer">
+        <p>JUEGO DE CARTAS SIMPSON. SAMUEL</p>
+    </footer>
+    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+        integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+        integrity="sha512-fzff82+8pzHnwA1mQ0dzz9/E0B+ZRizq08yZfya66INZBz86qKTCt9MLU0NCNIgaMJCgeyhujhasnFUsYMsi0Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <div id="div-ayuda"></div>
+</body>
+
+</html>

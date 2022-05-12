@@ -1,0 +1,12 @@
+{
+    "lang":{
+        "ES":{
+            "score":"Puntuacion",
+            "errors":"Errores"
+        },
+        "EN":{
+            "score":"Scores",
+            "errors":"Errors"
+        }
+    }
+}
