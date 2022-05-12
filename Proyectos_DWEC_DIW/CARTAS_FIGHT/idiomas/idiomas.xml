@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<LANGUAGE>
+    <EN>
+        <TITLE>CARD GAME SFV</TITLE>
+        <SCORE>Score</SCORE>
+        <ERRORS>ERRORS</ERRORS>
+        <TOPPLAYER>Top player</TOPPLAYER>
+        <TOPERROR>Top Errors</TOPERROR>
+        <LANGUAJE>Language</LANGUAJE>
+        <INFO>Info</INFO>
+    </EN>
+    <ES>
+        <TITLE>Juego de cartas SFV</TITLE>
+        <SCORE>Puntuacion</SCORE>
+        <ERRORS>Errores</ERRORS>
+        <TOPPLAYER>El maquina</TOPPLAYER>
+        <TOPERROR>Errores del maquina</TOPERROR>
+        <LANGUAJE>Idioma</LANGUAJE>
+        <INFO>Informacion</INFO>
+    </ES>
+</LANGUAGE>

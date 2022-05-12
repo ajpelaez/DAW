@@ -1,0 +1,86 @@
+body {
+    background-image: url("../imagenes/fondo.png");
+    background-size: cover;
+  }
+  
+  .sombras {
+    box-shadow: -13px 5px 15px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  .contenedor {
+    width: 80%;
+    margin-top: 10px;
+   
+  
+  }
+  .mainaside{
+      margin-top: 10px;
+  }
+  .cartas {
+    background-image: url("../imagenes/dorso2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 215px;
+    width: 125px;
+    
+  }
+  
+  .borderojo{
+    border: 5px solid red;
+    height: 171px;
+  }
+
+  .bordeverde{
+    border: 5px solid green;
+    height: 171px;
+  }
+  
+  
+  .imagenLogo {
+    width: 75px;
+    height: 75 px;
+  }
+  
+  header {
+    display: flex;
+    width: 100%;
+    
+    
+  }
+  
+  .btnrestart{
+    display: none;
+  }
+  
+  table,
+  th,
+  td {
+    border: solid black 2px;
+
+  }
+  
+  
+  .informacion {
+    border: solid black 1px;
+    border-radius: 20px;
+    text-align: center;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  footer {
+    border: solid black 1px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    padding: 5px;
+    background: rgb(19,19,19);
+    background: linear-gradient(90deg, rgba(19,19,19,1) 2%, rgba(181,171,171,1) 40%);
+  }
+  
+  

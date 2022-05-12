@@ -1,0 +1,27 @@
+{
+    "lang": {
+        "ES":{
+            "TITLE":"Juego",
+            "SCORE":"Puntuacion",
+            "DESCRIPCION":"Descripcion",
+            "ERRORS":"Errores",
+            "TOPPLAYER":"El maquina",
+            "TOPERROS":"Errores del maquina",
+            "LANGUAJE":"Idioma",
+            "INFO":"Informacion"
+            
+            
+        },
+        "EN":{
+            "TITLE":"Game",
+            "SCORE":"Score",
+            "DESCRIPCION":"Description",
+            "ERRORS":"Errors",
+            "TOPPLAYER":"The machine",
+            "TOPERROS":"Machine errors",
+            "LANGUAJE":"Language",
+            "INFO":"Information"
+        }
+        
+    }
+}
