@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LANGUAGE>
+<eng>
+    <STADISTICS>STADISTICS</STADISTICS>
+    <INFOBAR>GAME START!</INFOBAR>
+    <SCORE>Score</SCORE>
+    <ERRORS>Errors</ERRORS>
+    <TOPPLAYER>Top player</TOPPLAYER>
+    <MATCHMESSAGE>It's a match!</MATCHMESSAGE>
+    <ERRORMESSAGE>Oops,choose better next time!</ERRORMESSAGE>
+    <DESC>Description</DESC>
+    <WIN>You win!</WIN>
+</eng>
+<esp>
+    <STADISTICS>ESTADISTICAS</STADISTICS>
+    <INFOBAR>¡QUE COMIENCE EL JUEGO!</INFOBAR>
+    <SCORE>Puntuación</SCORE>
+    <ERRORS>Errores</ERRORS>
+    <TOPPLAYER>Mejor jugador</TOPPLAYER>
+    <MATCHMESSAGE>¡Has acertado!</MATCHMESSAGE>
+    <ERRORMESSAGE>¡Ops, escoge mejor la próxima vez!</ERRORMESSAGE>
+    <DESC>Descripcion</DESC>
+    <WIN>¡Has ganado!</WIN>
+</esp>
+</LANGUAGE>

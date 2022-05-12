@@ -1,0 +1,205 @@
+.container {
+  
+  padding: 30px;
+  background-color: lemonchiffon;
+}
+body {
+    font-family: 'Simpsonfont', sans-serif;
+    
+}
+h1 {
+    text-align: center;
+    margin: 1rem;
+    color: black; 
+    text-shadow: 1px 1px 1px rgba(0.0.0,0.46);
+}
+.header .logo {
+  float:left;
+  border-radius: 40px;
+  max-width: 70px;
+  margin-left: 10px;
+  border-color: red;
+  border: white 1px;
+  position: float;
+  
+}
+.header .banner {
+  max-width: 1000px;
+  width: 600px;
+  border-radius: 10px;
+}
+.header {
+    grid-column: 1 / 7;
+    background-color: orangered;
+    background-image: url("../images/banner.jpg")  ;
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-position:75% 40% ;
+    height: 350px;
+  }
+  
+  .score {
+    grid-column: 1 / span 2;
+    background-color: rgb(0, 204, 255);
+  }
+  .score:hover{
+    background-color: rgb(5, 178, 221);
+  }
+ .score table {
+    margin: auto;
+    border-collapse: separate;
+    text-align: center;
+ }
+ .score th {
+   padding: 5px;
+ }
+ .score td {
+   padding: 5px;
+   border: 3px solid black;
+   border-radius: 20px;
+ }
+ .score #score {
+  background-color: greenyellow;
+ }
+ .score #errors {
+   background-color: red;
+ }
+ .score #nickname {
+   background-color: indianred;
+ }
+  .ranking {
+    grid-column: 3 / span 2;
+    background-color: darkorange;
+  }
+  .ranking:hover{
+    background-color: rgb(182, 101, 3);
+  }
+  .ranking table {
+    margin: auto;
+    border-collapse: separate;
+    text-align: center;
+ }
+ .ranking th {
+   padding: 5px;
+ }
+ .ranking td {
+   padding: 5px;
+   border: 3px solid black;
+   border-radius: 20px;
+ }
+   .ranking #Rfallos {
+     background-color: red;
+   }
+   .ranking #Rnickuser {
+     background-color: indianred;
+   }
+  .language {
+    grid-column: 5 / span 2;
+    background-color: rgb(53, 53, 216);
+    color: white;
+  }
+  .language:hover{
+    background-color: rgb(39, 39, 143);
+  }
+  .language p {
+    margin: auto;
+  }
+  .language button {
+    font-size: 30px;
+    border-radius: 60px;
+  }
+  .language button img {
+  
+    max-width: 40px;
+   
+  }
+  button img {
+    border-radius: 70px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .block-leng{
+    padding-top: 10px;
+  }
+  .information-bar {
+    grid-column: 1 / span 6;
+    background-color: chocolate;
+  }
+  .information-bar:hover {
+    background-color: rgb(165, 81, 22);
+  }
+  .game {
+    grid-column: 1 / 6;
+    background-color: rgb(175, 30, 175);
+  }
+  .game:hover{
+    background-color: rgb(143, 23, 143);
+  }
+  
+  .description {
+    grid-column: 6 / 7;
+    background-color: yellow;
+    overflow: auto;
+    max-height: 550px;
+  }
+  .description:hover{
+    background-color: rgb(197, 197, 4);
+  }
+  .description p {
+      padding: 15px;
+      font-size: 40px;
+      margin: auto;
+      max-width: 400px;
+  }
+  .description img {
+      width: 20%;
+  }
+  .footer {
+    grid-column: 1 / span 6;
+    background-color: cyan;
+    background-image: linear-gradient(cyan, aquamarine); 
+  }
+  .footer:hover{
+    background-color: aquamarine;
+  }
+  
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 25px;
+    /*background-color: #c7c9ca; */
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    /*background-color: rgba(255, 255, 255, 0.8); */
+    text-align: center;
+    padding: 20px 0;
+    
+    font-size: 30px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 16px rgba(0,0,0,0.7) ;
+  }
+  @media (max-width: 480px) {
+    .description {
+      display: none;
+      background-color: red;
+    }
+    .description p {
+      display: none;      
+    }
+    .score{
+      grid-column-start: 1;
+    }
+    .ranking{
+      grid-column-start: 1;
+    }
+    .language{
+      grid-column-start: 4;
+      grid-row-start: 2;
+    }
+  
+  }
+

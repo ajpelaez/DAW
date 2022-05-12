@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Sarpanch:wght@400;800&display=swap');
+
+$fuentePrincipal: 'Poppins', sans-serif;
+$fuenteSecundaria : 'Sarpanch', sans-serif;
+
+$colorPrincipal: #4c84e6;
+$colorSecundario: indigo;
+$colorLinkActive: gold;
+
+$negrita: 700;
+
+@mixin h2{
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+
+@mixin cartas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    text-align: center;
+    background-image: url("../img/fondo-carta.jpg");
+    background-size: cover;
+    border: 4px solid black;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+@media (max-width: 480px) {
+    .carta{
+        height: 12rem !important;
+    }
+}
+
+.carta img{
+    max-width: 70%;
+}
+
+
+
+
+@mixin tablas {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 1.8rem;
+    
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+header{
+    font-family: $fuentePrincipal;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1{
+    font-size: 3.6rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+.marcador{
+    text-transform: uppercase;
+}
+
+h2{
+    @include h2;
+}
+img{
+    max-width: 90%;
+}
+body {
+    font-family: $fuenteSecundaria;
+}
+
+.btn-info{
+    border: $colorPrincipal;
+}
+
+.header{
+    background-color: $colorPrincipal;
+    padding: 3rem;
+    border-bottom: 1px solid black;
+}
+
+.nav-link {
+    color: white;
+    font-size: 3.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-link:hover{
+    font-style: italic;
+    color: white;
+}
+
+.active{
+    color: $colorLinkActive;
+}
+
+.header__titulo{
+    position: relative;
+    left: 9rem;
+}
+
+main{
+    background-image: url("img/homer.jpg");
+        background-position: left bottom;
+        background-size: calc(50%);
+        background-repeat: no-repeat;
+        max-width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+        font-family: $fuenteSecundaria;
+        margin: auto;
+}
+.contenedor-grid{
+    width: 90%;
+    
+}
+.carta{
+    @include cartas;
+}
+
+.botones-barra{
+    font-size: 1.6rem;
+    width: 100%;
+    display: flex;
+    margin: 2rem;
+    padding: 2rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+table,tr,td,th{
+    @include tablas;
+
+}
+
+#barra_informativa{
+    padding: 2rem;
+    font-size: 2.5rem;
+}
+
+#mostrar {
+    display: none;
+}
+
+.prevent-click {
+    pointer-events: none;
+}
+
+#modalNick{
+    font-size: 1.8rem
+}
+.juego{
+    margin-top: 2rem;
+}
+
+#juego.row{
+    height: 20rem;
+}
+.cara-delantera{
+    background-color: white;
+    background-image: url("");
+    border:1px solid black;
+}
+
+.correcta{
+    box-shadow: 9px 7px 2px -6px #1AAE00;
+}
+.sidebar{
+    padding-left: 2rem;
+    margin: auto;
+}
+
+
+#tagDescCompleta {
+    max-height: 30rem;
+    overflow: scroll;
+}
+
+.sidedar__publi, .sidedar__publi img{
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.footer {
+    margin-top: 3rem;
+    padding: 3rem;
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(59,1,100,1) 100%);
+    text-align: center;
+    color: white;
+    font-size: 1.6rem;
+    font-family:'Sarpanch', sans-serif;;
+
+}
+.sidebar p::-moz-selection{
+    color: $colorSecundario;
+    font-weight: $negrita;
+}
+.sidebar p::selection {
+    color: $colorSecundario;
+}
+
+.btn{
+    background-color: white;
+    border-collapse: collapse;
+    border-radius: 0.5rem;
+    font-size: 3rem;
+    padding: 2rem auto;
+}
+
+.btn:hover{
+    background-color: $colorPrincipal;
+}
+button:hover{
+    font-weight: $negrita;
+}
+
+header .btn-group-lg > .btn, header.btn-lg{
+    font-size: 2rem;
+}
+
+header .btn-group-lg > .btn:hover, header .btn-lg {
+    background-color: $colorSecundario;
+    color: white;
+}
+
+/* informacion */
+
+.info-cartas{
+    background-color: #e6e6e6;
+    background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+    background-position: 85% 85%;
+    background-size: 10rem;
+}
+
+.card > img{
+    max-width: max-content;
+    max-height: max-content;
+}
+
+accordion-item {
+    font-size: 2rem;
+}
+
+
+
+
+
+

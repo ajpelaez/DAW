@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Memorama</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="estilo/board.css">
+	<link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
+	<script src="https:/kit.fontawesome.com/2c36e9b7b1.js" ></script> 
+	<script src="js/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+
+</head>
+<body >
+
+	<nav class="navbar navbar-light bg-light justify-content-center">
+		<a class="navbar-brand" href="#">
+		  <img src="/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" style="border-radius: 5px;">
+		  Memorama Simpson
+		</a>
+				<a class="nav-link" href="/info.html">Informacion <span class="sr-only"></span></a>
+				<input type="hidden" class="btn btn-outline-primary my-2 my-sm-0 m-2" readonly value="Pista !"id="pista"><span class="sr-only" ></span></input>
+				<button type="button" class="btn btn-outline-primary btn-lg my-2 my-sm-0 m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+					Play
+				</button>
+				<img class="btn btn-outline-primary m-1 p-6 w-50"  src="./img/spa.png" id="esp">
+				<img class="btn btn-outline-primary m-1 p-6 w-50" src="./img/uk.png" id="eng" >
+	  </nav>
+	<div class="bg-light" id="fondo">
+	<div class="container justify-content-center">
+		<!--Menu-->
+	
+
+  
+  
+		<!--Carrousel-->
+	<div class="row" id="header">
+		<div class="col-12 col-md-12 col-lg-12 py-4 px-4" >
+	
+		<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				<img class="d-block w-100" src="img/banner.png" alt="First slide">
+			  </div>
+			  <div class="carousel-item">
+				<img class="d-block w-100" src="img/banner2.jpg" alt="Second slide">
+			  </div>
+			</div>
+		
+		</div>
+		</div>
+	</div>
+	<!--Informacion-->
+	<div class="row py-3">
+		<div class="col-md-12 p-5" id="col-informacion">
+			<div class="row p-3" id="container-informacion">
+				<div class="col-lg-2">
+					<img src="/img/giphy.gif" width="100" height="100" class="img-fluid m-4" alt="" style="border-radius: 5px;">
+				</div>
+				<div class="col-lg-8  justify-content-center" id="col-info-mid">
+					<h2>La memoria es el centinela del cerebro</h2> 
+				</div>
+				<div class="col-lg-2">
+					<img src="/img/icon-gif.gif" width="110" height="110"  class="img-fluid m-4" alt="" style="border-radius: 5px;">
+				</div>
+				
+			</div>
+		
+	</div>
+	
+     <!--Game--> 
+	<div class="row">
+		<div class="col-12 col-md-12 col-lg-9 mb-4 px-5" id="col-game">
+			
+				<div class="row pe-4 pt-4 pb-4  justify-content-center" id="container-game">
+					<div class="col-3 col-md-3 col-lg-2 mx-md-1">
+						<img id="foto1"  class="img-thumbnail" alt="" src="" width="100%">
+					</div>
+					<div class="col-3 col-md-3 col-lg-2 mx-md-1 ">
+						<img id="foto2"  class="img-thumbnail" alt="" src="" width="100%">
+					</div>
+					<div class="col-3 col-md-3 col-lg-2 mx-md-1  ">
+						<img id="foto3"  class="img-thumbnail" alt="" src="" width="100%" >
+					</div>
+					<div class="col-3 col-md-3 col-lg-2  mx-md-1   ">
+						<img id="foto4"  class="img-thumbnail" alt="" src="" width="100%" >
+					</div>
+					<div class="col-3 col-md-3 col-lg-2  mx-md-1  ">
+						<img id="foto5"  class="img-thumbnail" alt="" src="" width="100%" >
+					</div>
+					<div class="col-3 col-md-3 col-lg-2  mx-md-1   ">
+						<img id="foto6"  class="img-thumbnail" alt="" src="" width="100%" >
+					</div>
+					<div class="col-3 col-md-3 col-lg-2  mx-md-1  ">
+						<img id="foto7"  class="img-thumbnail" alt="" src="" width="100%">
+					</div>
+					<div class="col-3 col-md-3 col-lg-2 mx-md-1   ">
+						<img id="foto8"  class="img-thumbnail" alt="" src="" width="100%">
+					</div>
+					<div class="col-3 col-md-3 col-lg-2  mx-md-1 ">
+						<img id="foto9"  class="img-thumbnail" alt="" src="" width="100%">
+					</div>
+					<div class="col-3 col-md-3 col-lg-2  mx-md-1 ">
+						<img id="foto10"  class="img-thumbnail" alt="" src="" width="100%">
+					</div>
+					<div class="col-3 col-md-3 col-lg-2 mx-md-1   ">
+						<img id="foto11"  class="img-thumbnail" alt="" src="" width="100%">
+					</div>
+					<div class="col-3 col-md-3 col-lg-2  mx-md-1  ">
+						<img id="foto12"  class="img-thumbnail" alt="" src="" width="100%">
+					</div>
+					<div class="col-3 col-md-3 col-lg-2 mx-md-1  ">
+						<img id="foto13"  class="img-thumbnail" alt="" src="" width="100%">
+					</div>
+					<div class="col-3 col-md-3 col-lg-2  mx-md-1  ">
+						<img id="foto14"  class="img-thumbnail" alt="" src="" width="100%">
+					</div>
+					<div class="col-3 col-md-3 col-lg-2 mx-md-1  ">
+						<img id="foto15"  class="img-thumbnail" alt="" src="" width="100%">
+					</div>
+				</div>
+		</div>
+		<div class="col-12 col-md-6 col-lg-3 px-4" id="col-score">
+			<div class="row">
+				<table class="table table-striped table-hover"  id="container-ranking">
+					<tr>
+						<th>
+						   <p id="lnickname">Nickname</p>
+						</th>
+						
+						<th>
+							<p id="lscore">Score</p>
+						</th>
+					
+						<th>
+							<p id="lerrors">Errors</p>
+						</th>
+					</tr>
+					<td id="nickname"><label id="nickuser"></label></td>	
+					<td id="score" ><label id="intentosCorrectos"></label></td>
+					<td id="errors" > <label id="intentosFallidos"></label></td>
+				</table>
+			</div>
+			<div class="row">
+				<table class="table table-striped table-hover" id=container-score>
+					<tr><th rowspan="2"><p>Ranking</p></th>
+						<th>
+						   <p id="l1nickname">Nickname</p>
+						</th>
+					
+						<th>
+							<p id="l1errors">Errors</p>
+						</th>
+					</tr>
+					
+					<td id="Rnickuser"><label id="Rnickuser"></label></td>
+					<td id="Rfallos" lang="en"> <label id="Rfallos"></label></td>
+					
+					
+				</table> 
+			</div> 
+			
+		</div>
+	</div>		
+</div>
+</div>
+	<!--Footer-->
+
+
+			<div class="footer">
+				<div class="card-header">
+				  <i>Fernando Olmedo Ortiz</i>
+				</div>
+			</div>
+			<!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" >Bienvenido!</h5>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="mb-3">
+					<label  class="form-label">Introduzca el usuario</label>
+					<input type="text" class="form-control" id="usuario" name="usuario" value="" placeholder="Escribe tu usuario" required> 
+					<label  class="form-label">Seleccione la dificultad</label>
+					
+						<div class="btn-group p-3" role="group" aria-label="Basic radio toggle button group">
+							<input type="radio" class="btn-check" name="dificultad" id="facil" autocomplete="off" value="facil">
+							<label class="btn btn-success" for="facil">Facil</label>
+						  
+							<input type="radio" class="btn-check" name="dificultad" id="normal" autocomplete="off" value="normal">
+							<label class="btn btn-warning " for="normal">Normal</label>
+						  
+							<input type="radio" class="btn-check" name="dificultad" id="dificil" autocomplete="off" value="dificil">
+							<label class="btn btn-danger" for="dificil">Dificil</label>
+
+							<input type="radio" class="btn-check" name="dificultad" id="leyenda" autocomplete="off" value="leyenda">
+							<label class="btn btn-dark" for="leyenda">Leyenda</label>
+						  </div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="addNew">Jugar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+
+</script>  
+
+</body>
+</html>

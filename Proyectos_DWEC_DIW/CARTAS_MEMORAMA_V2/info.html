@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Memorama</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="estilo/board.css">
+	<link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
+	<script src="https:/kit.fontawesome.com/2c36e9b7b1.js" ></script> 
+	<script src="js/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+
+</head>
+<body >
+
+	<nav class="navbar navbar-light bg-light justify-content-center">
+		<a class="navbar-brand" href="#">
+		  <img src="/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" style="border-radius: 5px;">
+		  Memorama Simpson
+		</a>
+				<a class="nav-link" href="/index.html">Juego <span class="sr-only"></span></a>
+				
+	  </nav>
+	<div class="bg-light" id="fondo">
+	<div class="container justify-content-center">
+		<!--Menu-->
+	
+
+  
+  
+		<!--Carrousel-->
+	<div class="row" id="header">
+		<div class="col-12 col-md-12 col-lg-12 py-4 px-4" >
+	
+		<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				<img class="d-block w-100" src="img/banner.png" alt="First slide">
+			  </div>
+			  <div class="carousel-item">
+				<img class="d-block w-100" src="img/banner2.jpg" alt="Second slide">
+			  </div>
+			</div>
+		
+		</div>
+		</div>
+	</div>
+	<!--Informacion-->
+	<div class="row py-3">
+		<div class="col-md-12 p-5" id="col-informacion">
+			<div class="row p-3" id="container-informacion">
+				<div class="col-lg-2">
+					<img src="/img/giphy.gif" width="100" height="100" class="img-fluid m-4" alt="" style="border-radius: 5px;">
+				</div>
+				<div class="col-lg-8  justify-content-center" id="col-info-mid">
+					<h2>La memoria es el centinela del cerebro</h2> 
+				</div>
+				<div class="col-lg-2">
+					<img src="/img/icon-gif.gif" width="110" height="110"  class="img-fluid m-4" alt="" style="border-radius: 5px;">
+				</div>
+				
+			</div>
+	</div>
+	
+    		
+    </div>
+     <!--Game--> 
+	<div class="row">
+		<div class="col-12 col-md-12 col-lg-9 px-5 pb-4 " id="col-game">
+			
+				<div class="row pe-4 pt-4 pb-4  p-4" id="container-game">
+					<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2 justify-content-center">
+						<div class="card  p-4 " >
+                            <img src="/img/0.jpg" class="card-img-top" alt="...">
+                            <div class="card-body ">
+                              <h5 class="card-title">Bart Simpson</h5>
+                              <p class="card-text">Multiplicate por cero.</p>
+                              
+                            </div>
+                          </div>
+					</div>
+					<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2 ">
+						<div class="card  p-4" >
+                            <img src="/img/1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body m-0">
+                              <h5 class="card-title">Waylon Smithers</h5>
+                              <p class="card-text">"Es Homer Simpson, uno de nuestros empleados del sector 7-G"</p>
+                              
+                            </div>
+                          </div>
+					</div>
+					<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2 ">
+						<div class="card  p-4 " >
+                            <img src="/img/2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body ">
+                              <h5 class="card-title">Homer Simpson</h5>
+                              <p class="card-text">¡Estupido Flanders!</p>
+                              
+                            </div>
+                          </div>
+					</div>
+					<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2 ">
+						<div class="card  p-4" >
+                            <img src="/img/3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title m-0">L.Hutz</h5>
+                              <p class="card-text">"¡Vaya, aun si pierdo me hare famoso!"</p>
+                              
+                            </div>
+                          </div>
+					</div>
+					<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2">
+						<div class="card  p-4" >
+                            <img src="/img/4.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Lisa Simpson</h5>
+                              <p class="card-text">Baaaaaaaaart</p>
+                              
+                            </div>
+                          </div>
+					</div>
+					<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2 ">
+						<div class="card  p-4" >
+                            <img src="/img/5.jpg" class="card-img-top" alt="...">
+                            <div class="card-body ">
+                              <h5 class="card-title">Maguie Simpson</h5>
+                              <p class="card-text">Chuk Chuk (sonido de chupete)</p>
+                              
+                            </div>
+                          </div>
+					</div>
+					<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2">
+						<div class="card p-4" >
+                            <img src="/img/6.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Marge Simpson</h5>
+                              <p class="card-text">¡No Lisa, Milhouse no cuenta!</p>
+                             
+                            </div>
+                          </div>
+					</div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2">
+						<div class="card p-4" >
+                            <img src="/img/bomb.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">La peleona</h5>
+                              <p class="card-text">Al·lahu-àkbar</p>
+                             
+                            </div>
+                          </div>
+					</div>
+				</div>
+		</div>
+		<div class="col-12 col-sm-6 col-md-6 col-lg-3 px-4" >
+			<div class="row">
+				<div class="" id="col-description">
+					<div class="container mb-3" id="container-description">
+						<h4>Descripcion</h4>
+					<p class="" lang="es">El objetivo consiste en encontrar los pares con la misma figura impresa utilizando la memoria. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mollis mauris fringilla erat porttitor, egestas tempus elit consectetur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sed vulputate nisi. Fusce dapibus, turpis sed dapibus pretium, lorem risus venenatis nisi, a blandit est ipsum vitae massa. Sed accumsan metus non dignissim lacinia. In elit purus, sagittis a tincidunt facilisis, vestibulum nec dui. Mauris vel neque rhoncus leo fermentum lacinia. Proin consequat dapibus imperdiet. Suspendisse est massa, ullamcorper vel sem ac, fringilla sollicitudin felis.Sed accumsan metus non dignissim lacinia. In elit purus, sagittis a tincidunt facilisis, vestibulum nec dui. Mauris vel neque rhoncus leo fermentum lacinia. Proin consequat dapibus imperdiet. Suspendisse est massa, ullamcorper vel sem ac, fringilla sollicitudin felis.Sed accumsan metus non dignissim lacinia. In elit purus, sagittis a tincidunt facilisis, vestibulum nec dui. Mauris vel neque rhoncus leo fermentum lacinia. Proin consequat dapibus imperdiet. Suspendisse est massa, ullamcorper vel sem ac, fringilla sollicitudin felis.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="" id="col-description">
+					<div class="container mb-3" id="container-description2">
+						<h4>Descripcion</h4>
+					<p class="" lang="es">El objetivo consiste en encontrar los pares con la misma figura impresa utilizando la memoria. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mollis mauris fringilla erat porttitor, egestas tempus elit consectetur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sed vulputate nisi. Fusce dapibus, turpis sed dapibus pretium, lorem risus venenatis nisi, a blandit est ipsum vitae massa. Sed accumsan metus non dignissim lacinia. In elit purus, sagittis a tincidunt facilisis, vestibulum nec dui. Mauris vel neque rhoncus leo fermentum lacinia. Proin consequat dapibus imperdiet. Suspendisse est massa, ullamcorper vel sem ac, fringilla sollicitudin felis.Sed accumsan metus non dignissim lacinia. In elit purus, sagittis a tincidunt facilisis, vestibulum nec dui. Mauris vel neque rhoncus leo fermentum lacinia. Proin consequat dapibus imperdiet. Suspendisse est massa, ullamcorper vel sem ac, fringilla sollicitudin felis.Sed accumsan metus non dignissim lacinia. In elit purus, sagittis a tincidunt facilisis, vestibulum nec dui. Mauris vel neque rhoncus leo fermentum lacinia. Proin consequat dapibus imperdiet. Suspendisse est massa, ullamcorper vel sem ac, fringilla sollicitudin felis.</p>
+					</div>
+				</div>
+			</div> 
+			<div class="row">
+				<div class="" id="col-description">
+					<div class="container mb-3" id="container-description3">
+						<h4>Descripcion</h4>
+					<p class="" lang="es">El objetivo consiste en encontrar los pares con la misma figura impresa utilizando la memoria. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mollis mauris fringilla erat porttitor, egestas tempus elit consectetur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sed vulputate nisi. Fusce dapibus, turpis sed dapibus pretium, lorem risus venenatis nisi, a blandit est ipsum vitae massa. Sed accumsan metus non dignissim lacinia. In elit purus, sagittis a tincidunt facilisis, vestibulum nec dui. Mauris vel neque rhoncus leo fermentum lacinia. Proin consequat dapibus imperdiet. Suspendisse est massa, ullamcorper vel sem ac, fringilla sollicitudin felis.Sed accumsan metus non dignissim lacinia. In elit purus, sagittis a tincidunt facilisis, vestibulum nec dui. Mauris vel neque rhoncus leo fermentum lacinia. Proin consequat dapibus imperdiet. Suspendisse est massa, ullamcorper vel sem ac, fringilla sollicitudin felis.Sed accumsan metus non dignissim lacinia. In elit purus, sagittis a tincidunt facilisis, vestibulum nec dui. Mauris vel neque rhoncus leo fermentum lacinia. Proin consequat dapibus imperdiet. Suspendisse est massa, ullamcorper vel sem ac, fringilla sollicitudin felis.</p>
+					</div>
+				</div>
+			</div> 
+		</div>
+	</div>	
+    </div>
+
+	<!--Footer-->
+
+
+			<div class="footer">
+				<div class="card-header">
+				  <i>Fernando Olmedo Ortiz</i>
+				</div>
+			</div>	
+</body>
+</html>

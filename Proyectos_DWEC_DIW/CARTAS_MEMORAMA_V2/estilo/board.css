@@ -1,0 +1,223 @@
+
+#fondo {
+	background-image: url("../img/background2.png");
+}
+.container{
+    font-family: 'Simpsonfont';
+}
+#icono{
+    font-family:  var(--bs-body-font-family)
+}
+#esp,#eng{
+    max-width: 50px;
+    max-height: 50px;
+    border:none;
+}
+.card p{
+    color:black;
+    font-size: 12px
+}
+
+#col-game{
+    position: center;
+}
+#col-informacion{
+    text-align: center;  
+}
+#container-informacion{
+    background-color: #ffcfdf;
+    background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);
+    border-radius: 10px ;
+    opacity: 0.8;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#container-informacion img{
+   display: inline;
+   opacity: 100%;
+}
+#container-informacion h2{
+    display: inline;
+ }
+ #col-info-mid{
+    display: flex;
+    align-items: center;
+ }
+#container-score{
+background-color: #f8ef42;
+background-image: linear-gradient(315deg, #f8ef42 0%, #0fd64f 74%);
+padding: 0;
+border-radius: 12px;
+text-align: center;
+opacity: 0.9;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#table{
+    color:white
+}
+.card-title{
+    text-align:center;
+    font-size: 15px;
+}
+.card img{
+    border-radius: 10px;
+}
+.card-text{
+    font-size:10px;
+
+}
+.card-body{
+    overflow: auto;
+}
+#container-description{
+    padding-left: 0;
+    align-items: center;
+    overflow: auto;
+    max-height: 200px;
+    background-color: #fbb034;
+    background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+ 
+    border-radius: 10px;
+    opacity: 0.8;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+#container-description2{
+    padding-left: 0;
+    align-items: center;
+    overflow: auto;
+    max-height: 200px;
+    background-color: #fff000;
+    background-image: linear-gradient(315deg, #fff000 0%, #ed008c 74%);
+    border-radius: 10px;
+    opacity: 0.8;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+.card-body::-webkit-scrollbar {
+    display: none;
+  }
+#container-description3{
+    padding-left: 0;
+    align-items: center;
+    overflow: auto;
+    max-height: 200px;
+    background-color: #ef5734;
+    background-image: linear-gradient(315deg, #ef5734 0%, #ffcc2f 74%);
+    border-radius: 10px;
+    opacity: 0.8;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+#container-ranking{
+    background-color: #63d471;
+    background-image: linear-gradient(315deg, #63d471 0%, #858f89 74%);
+    padding: 0;
+    text-align: center;
+    border-radius: 12px;
+    color: rgb(194, 71, 0);
+    opacity: 0.9;
+    padding-left: 0;
+    align-items: center;
+    overflow: auto;
+    max-height: 510px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+p{
+    color:rgb(255, 255, 255);
+    text-align: center;
+}
+td{
+    color:black
+}
+h2,h4{
+    padding: 10px;
+}
+h4{
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#container-description h4{
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#container-description {
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#container-description2 h4{
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#container-description2 {
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#container-description3 h4{
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#container-description3 {
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.navbar-brand{
+    padding: 10px;   
+}
+#container-game{
+    border-radius: 10px;
+    margin: 0 auto;
+    background-color: #a40606;
+    background-image: linear-gradient(315deg, #a40606 0%, #d98324 74%);
+    opacity: 0.9;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.d-block {
+    border-radius: 20px;
+    
+}
+.d-inline-block{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 2px;
+}
+.NULL{
+    border-radius: 8px;
+    margin:10px;
+    padding: 4px;
+    border: 1px solid #dee2e6;
+    box-shadow: 3px -0.01px green;
+    
+}
+.img-thumbnail{
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 3px -0.01px green;
+}
+.navbar{
+    background-color: #b8c6db;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+}
+.footer{
+    background-color: #b8c6db;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%); 
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 5px 8px;
+}
+@font-face{
+    font-family: 'Simpsonfont';
+    src: url(../fonts/font.otf);
+}
+.card{
+    box-shadow: 3px -0.01px green;
+    height: 300px;
+
+
+}
+.card-img-top{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+@media (max-width: 600px) {
+    .card-text {
+      display: none;
+    }
+  }

@@ -1,0 +1,22 @@
+{
+    "LANGUAGE": {
+      "EN": {
+        "SCORE": "Score",
+        "ERRORS": "Errors",
+        "NICKNAME": "Nickname",
+        "RANKING": "Ranking",
+        "TOPPLAYER": "Player en cabeza",
+        "MENSAJE": "You Win!",
+        "LANG": " Lenguage"
+      },
+      "ES": {
+        "SCORE": "Puntuación",
+        "ERRORS": "Errores",
+        "NICKNAME": "Usuario",
+        "RANKING": "Clasificación",
+        "TOPPLAYER": "Top Player",
+        "MENSAJE": "Ganaste!",
+        "LANG": " Lenguaje"
+      }
+    }
+  }

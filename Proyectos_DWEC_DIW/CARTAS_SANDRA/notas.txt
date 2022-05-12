@@ -1,0 +1,43 @@
+<<<<<<< HEAD
+funciones:
+detectar 1 celda seleccionada
+mostrar su imagen
+guardar primera celda seleccionada
+detectar 2 celda seleccionada
+mostrar su imagen
+guardar segunda celda seleccionada
+comparar ambas celdas
+
+si coinciden
+	sumar punto
+	mantener imagen visible + borde
+	reiniciar variables globales necesarias para las siguientes parejas
+si no coinciden
+	ocultar ambas imagenes
+
+si marcador == 6
+	alert
+	resetear todo
+	
+=======
+funciones:
+detectar 1 celda seleccionada
+mostrar su imagen
+guardar primera celda seleccionada
+detectar 2 celda seleccionada
+mostrar su imagen
+guardar segunda celda seleccionada
+comparar ambas celdas
+
+si coinciden
+	sumar punto
+	mantener imagen visible + borde
+	reiniciar variables globales necesarias para las siguientes parejas
+si no coinciden
+	ocultar ambas imagenes
+
+si marcador == 6
+	alert
+	resetear todo
+	
+>>>>>>> 8f6968f9984ecf101abc883857441b3d184e31e4

@@ -1,0 +1,1 @@
+El memorama es un juego de encontrar pares de cartas con la misma imagen. Todas las cartas están boca abajo y puedes voltear dos, si logras formar un par entonces ganas un punto.
