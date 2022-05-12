@@ -21,8 +21,8 @@
 
 | Título del proyecto  | Autor / Autora |
 | ------------- |-------------:|
-| [Cartas Simpson - ACB](Proyectos_DWEC_DIW/CARTAS_SIMPSON_ACB) | [acbeldeandaw](https://github.com/acbeldeandaw) |
-| [Cartas Simpson V2 - ACB](Proyectos_DWEC_DIW/CARTAS_SIMPSON_V2_ACB) | [acbeldeandaw](https://github.com/acbeldeandaw) |
+| [Cartas Simpson](Proyectos_DWEC_DIW/CARTAS_SIMPSON_ACB) | [acbeldeandaw](https://github.com/acbeldeandaw) |
+| [Cartas Simpson V2](Proyectos_DWEC_DIW/CARTAS_SIMPSON_V2_ACB) | [acbeldeandaw](https://github.com/acbeldeandaw) |
 | [Cartas Pokemon](Proyectos_DWEC_DIW/CARTAS_POKE) | [jmhurtadomontejano](https://github.com/jmhurtadomontejano) |
 | [Cartas Tarot](Proyectos_DWEC_DIW/CARTAS_TAROT) | [evelynn333](https://github.com/evelynn333) |
 | [Cartas Tarot V2](Proyectos_DWEC_DIW/CARTAS_TAROT_V2) | [evelynn333](https://github.com/evelynn333) |
@@ -32,12 +32,12 @@
 | [Cartas Flores V2](Proyectos_DWEC_DIW/CARTAS_FLORES_V2) | [4jax71](https://github.com/4jax71) |
 | [Cartas MTG](Proyectos_DWEC_DIW/CARTAS_MTG) | [gabinavalon](https://github.com/gabinavalon) |
 | [Cartas MTG V2](Proyectos_DWEC_DIW/CARTAS_MTG_V2) | [gabinavalon](https://github.com/gabinavalon) |
-| [Cartas El Chiringuito](Proyectos_DWEC_DIW/ChirinCartas) | [cristiansaezpracticas](https://github.com/cristiansaezpracticas) y [charly1597](https://github.com/charly1597)|
+| [Chirin Cartas](Proyectos_DWEC_DIW/CARTAS_CHIRINGUITO) | [cristiansaezpracticas](https://github.com/cristiansaezpracticas) y [charly1597](https://github.com/charly1597)|
 | [Cartas Simpson](Proyectos_DWEC_DIW/CARTAS_SAMUEL) | [srivasj99](https://github.com/srivasj99) |
-| [Cartas Ramon](Proyectos_DWEC_DIW/CARTAS_RAMON) | [raorpa](https://github.com/raorpa) |
+| [Cartas Ramon](Proyectos_DWEC_DIW/CARTAS_MINECRAFT) | [raorpa](https://github.com/raorpa) |
 | [Cartas Memorama](Proyectos_DWEC_DIW/CARTAS_MEMORAMA) | [narsx](https://github.com/narsx) |
 | [Cartas Memorama V2](Proyectos_DWEC_DIW/CARTAS_MEMORAMA_V2) | [narsx](https://github.com/narsx) |
-| [Cartas FIGHT](Proyectos_DWEC_DIW/CARTAS_FIGHT) | [SamperDaw](https://github.com/SamperDaw) |
+| [Cartas Street Fighter](Proyectos_DWEC_DIW/CARTAS_FIGHT) | [SamperDaw](https://github.com/SamperDaw) |
 | [Cartas Animales](Proyectos_DWEC_DIW/CARTAS_ANIMALES) | [RubenGarcia-Romeral](https://github.com/RubenGarcia-Romeral) |
 | [Cartas Kebap](Proyectos_DWEC_DIW/CARTAS_KEBAP) | [ShinMugenNoKabe](https://github.com/ShinMugenNoKabe) y [diego-sanchez-r](https://github.com/diego-sanchez-r) |
 | [Cartas Animales](Proyectos_DWEC_DIW/CARTAS_ANIMALES) | [RubenGarcia-Romeral](https://github.com/RubenGarcia-Romeral) |
