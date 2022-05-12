@@ -18,7 +18,14 @@
 
 ## Proyectos realizados para los módulos de DWEC y DIW:
 
- - [Cartas Simpson - ACB](Proyectos_DWEC_DIW/CARTAS_SIMPSON_ACB) - Autor: [acbeldeandaw](https://github.com/acbeldeandaw)
+
+| Proyecto  | Autor / Autora  |
+| ------------- |:-------------:|
+| [Cartas Simpson - ACB](Proyectos_DWEC_DIW/CARTAS_SIMPSON_ACB) | [acbeldeandaw](https://github.com/acbeldeandaw) |
+| col 2 is      | centered      |
+| zebra stripes | are neat      |
+
+ -  - Autor:
  - [Cartas Simpson V2 - ACB](Proyectos_DWEC_DIW/CARTAS_SIMPSON_V2_ACB) - Autor: [acbeldeandaw](https://github.com/acbeldeandaw)
  - [Cartas El Chiringuito](Proyectos_DWEC_DIW/ChirinCartas) - Autores: [cristiansaezpracticas](https://github.com/cristiansaezpracticas) y [charly1597](https://github.com/charly1597)
   - [Cartas Tarot](Proyectos_DWEC_DIW/CARTAS_TAROT) - Autora: [evelynn333](https://github.com/evelynn333)
