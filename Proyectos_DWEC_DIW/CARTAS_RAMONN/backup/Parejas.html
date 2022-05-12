@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parejas Minecraft</title>
+
+    <link href="Estilo.css" type="text/css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="Funciones.js"></script>
+
+</head>
+<body>
+    
+    <div class="cabecera">
+        
+        <button class="boton">ES</button> <button class="boton">EN</button>        
+        <h1 id="titulo" class="titulo">Juego de Parejas</h1> 
+    </div>
+    <div class="pieCabecera">
+        <div class="puntuacion" id="score">
+            <p id="jugador">Jugador</p>
+            <p id="aciertos">Aciertos: 0</p>
+            <p id="fallos">Fallos: 0</p>
+        </div>
+        <div class="ranking" id="ranking">
+            <p id="clasif">Clasificacion:</p>
+            <p id="topranking"></p>
+        </div>
+    </div>
+    <p class="titulo">Selecciona una carta!!!</p><br>
+    <button class="botonD">Reiniciar juego</button><br><br>
+    <p>Dificultad</p>
+    <select class="botonD">
+        <option value="--">Dificultad</option>
+        <option value="facil">Fácil</option>
+        <option value="normal">Normal</option>
+        <option value="dificil">Dificil</option>
+    </select><br><br>
+    <button class="botonD">Ayuda</button>
+    <div class="contenedor">
+        <div>
+            <img class="img">
+        </div>
+        <div>
+            <img class="img">
+        </div>
+        <div>
+            <img class="img">    
+        </div>
+        <div>
+            <img class="img">    
+        </div>
+        <div>
+            <img class="img">
+         </div>
+        <div>
+            <img class="img">
+         </div>
+        <div>
+            <img class="img">
+        </div>
+        <div>
+            <img class="img">
+         </div>
+        <div>
+            <img class="img">
+         </div>
+        <div>
+            <img class="img"> 
+         </div>
+        <div>
+            <img class="img">
+        </div>
+        <div>
+            <img class="img">
+         </div>
+         <div>
+            <img class="img"> 
+         </div>
+        <div>
+            <img class="img">
+        </div>
+        <div>
+            <img class="img">
+         </div>
+    </div>
+</body>
+<script>
+    $(document).ready(iniciar());
+    
+    function iniciar(){
+        let cartas = barajear();
+        let imagenes = $(".img");
+
+        let topJugador = localStorage.getItem("topJugador");
+        let topErrores = localStorage.getItem("topErrores");
+        var jugador = prompt("Nombre del jugador").toUpperCase();
+        $("#jugador").text(jugador);
+        $(".img").attr("src","Imagenes/reverso.jpg");
+
+        $(".img").click(function(){
+            voltear(this, $(".done"), jugador, $(this).data("carta"), $(this));
+            setTimeout(() => {
+                $("#aciertos").text("Puntuacion: " + puntos);
+                $("#fallos").text("Fallos: " + errores);
+            },1000);
+            
+        });
+
+        //$(".img").off("click");
+        
+        $("img").click(function(){
+            $("#topranking").text(topJugador + ": " + topErrores + " fallos");
+        })
+
+        $(".boton").click(function(){
+            localStorage.setItem("idioma", $(this).html());
+            cargarJSON($(this).html());
+        })
+
+        $(".botonD").click(function(){
+            reinicio();
+        })
+
+        for(i=0;i<imagenes.length;i++){
+            $(imagenes[i]).data("carta", cartas[i]);
+            imagenes[i].id = "carta" + i;
+        }
+        
+        $("#topranking").text(topJugador + ": " + topErrores + " fallos");
+    }
+
+    function reinicio(){
+        //barajea
+        let cartas = barajear();
+        //obtiene las imágenes
+        let imagenes = $("img");
+        //cambia la clase de las completas
+        $(".done").attr("class","img");
+        //cambia la clase de las seleccionadas
+        $(".selected").attr("class","img");
+        //cambia la src de todas las imagenes
+        $(".img").attr("src","Imagenes/reverso.jpg");
+        //resetea el marcador
+        $("#aciertos").text("aciertos: 0");
+        $("#fallos").text("Fallos: 0");
+        errores = 0;
+        puntos = 0;
+        //borra la carta anterior
+        cAnterior = "";
+        //recoloca las cartas barajeadas
+        for(i=0;i<imagenes.length;i++){
+            $(imagenes[i]).data("carta", cartas[i]);
+            imagenes[i].id = "carta" + i;
+        }
+
+        //pone el ranking
+        let topJugador = localStorage.getItem("topJugador");
+        let topErrores = localStorage.getItem("topErrores");
+        $("#topranking").text(topJugador + ": " + topErrores + " fallos");
+    }
+</script>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LANGUAJE>
+    <EN>
+        <SCORE>Score</SCORE>
+        <ERRORS>Errors</ERRORS>
+        <RANKING>High Score</RANKING>
+        <SUCCESS>Nice, both cards are the same<SUCCESS>
+        <FAIL>Ops, tou failed</FAIL>
+        <VICTORY>You win the game</VICTORY>
+    </EN>
+    <ES>
+        <SCORE>Puntuación</SCORE>
+        <ERRORS>Errores</ERRORS>
+        <RANKING>Clasificación</RANKING>
+        <SUCCESS>Genial, las cartas son iguales</SUCCESS>
+        <FAIL>Ops, has fallado</FAIL>
+        <VICTORY>Has ganado el juego</VICTORY>
+    </ES>
+</LANGUAJE>

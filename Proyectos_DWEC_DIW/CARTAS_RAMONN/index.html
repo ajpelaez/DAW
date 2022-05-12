@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parejas Minecraft</title>
+
+    <link href="Estilo.css" type="text/css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="Funciones.js"></script>
+
+</head>
+<body>
+    
+    <div class="cabecera">
+        
+        <button class="boton">ES</button> <button class="boton">EN</button>        
+        <h1 id="titulo" class="titulo">Juego de Parejas</h1> 
+    </div>
+    <div class="pieCabecera">
+        <div class="puntuacion" id="score">
+            <p id="jugador">Jugador</p>
+            <p id="aciertos">Aciertos: 0</p>
+            <p id="fallos">Fallos: 0</p>
+        </div>
+        <div class="ranking" id="ranking">
+            <p id="clasif">Clasificacion:</p>
+            <p id="topranking"></p>
+        </div>
+    </div>
+    <p class="titulo" id="rules">Selecciona una carta!!!</p><br>
+    <button class="botonD" id="reset">Reiniciar juego</button><br><br>
+    <p>Dificultad</p>
+    <select class="Dificultad" id="dif">
+        <option value="--">Dificultad</option>
+        <option value="facil">Fácil</option>
+        <option value="normal">Normal</option>
+        <option value="dificil">Dificil</option>
+    </select><br><br>
+    <button class="botonD" id="ayuda" style="display: none;">Ayuda</button>
+    <div class="contenedor">
+        <div>
+            <img class="img">
+        </div>
+        <div>
+            <img class="img">
+        </div>
+        <div>
+            <img class="img">    
+        </div>
+        <div>
+            <img class="img">    
+        </div>
+        <div>
+            <img class="img">
+         </div>
+        <div>
+            <img class="img">
+         </div>
+        <div>
+            <img class="img">
+        </div>
+        <div>
+            <img class="img">
+         </div>
+        <div>
+            <img class="img">
+         </div>
+        <div>
+            <img class="img"> 
+         </div>
+        <div>
+            <img class="img">
+        </div>
+        <div>
+            <img class="img">
+         </div>
+         <div>
+            <img class="img"> 
+         </div>
+        <div>
+            <img class="img">
+        </div>
+        <div>
+            <img class="img">
+         </div>
+    </div>
+</body>
+<script>
+    //se llama a la funcion iniciar
+    $(document).ready(iniciar());
+    cargarJSON(localStorage.getItem("idioma"));
+    //función iniciar
+    function iniciar(){
+        //se obtienen las cartas barajeadas
+        let cartas = barajear();
+        //se obtienen los html que almacenan las cartas
+        let imagenes = $(".img");
+
+        //se establece el ranking
+        let topJugador = localStorage.getItem("topJugador");
+        let topErrores = localStorage.getItem("topErrores");
+        //se pregunta el nombre del jugador
+        var jugador = prompt("Nombre del jugador").toUpperCase();
+        //se escribe el nombre del jugador
+        $("#jugador").text(jugador);
+        //se les pone a todas las cartas el reverso
+        $(".img").attr("src","Imagenes/reverso.jpg");
+
+        cargarJSON(localStorage.getItem("idioma"));
+        //se añade el evento click a las imagenes, aqui se pone que no se pueda jugar sin elegir dificultad
+        $("img").click(function(){
+            $("#topranking").text(topJugador + ": " + topErrores);
+            alert("Selecciona una dificultad para empezar");
+        })
+
+        //evento de cambiar la dificultad
+        $("#dif").change(function(){
+            reinicio();
+            //si se elige una dificultad se llama a jugar
+            if($( "#dif").val()!="--"){
+                jugar();
+                //si no se impide jugar
+            }else{
+                $(".img").off("click");
+
+                $("img").click(function(){
+                    alert("Selecciona una dificultad para empezar");
+                });
+            }            
+
+            //modo fácil
+            if($( "#dif").val()=="facil"){
+                //se activa el botón de ayuda
+                $("#ayuda").fadeIn();
+                $("#ayuda").removeClass("desactivado");
+                //boton ayuda
+                $("#ayuda").click(function(){
+                    ayuda();
+                    $(this).off("click");
+                    $(this).addClass("desactivado");
+                })
+                }
+            else{
+                //se desactiva el botón de ayuda
+                $("#ayuda").fadeOut();
+            }
+
+            //modo normal
+            if($("#dif").val()=="normal" || $("#dif").val()=="facil"){
+                //se busca la bomba y se muestra
+                for(i=0;i<imagenes.length;i++){
+                    if($("#carta"+i).data("carta")=="Imagenes/tnt.jpg"){
+                        $("#carta"+i).attr("src", $("#carta"+i).data("carta"));
+                    }                  
+                }   
+                //taras 2 segundos se vuelve a poner boca abajo             
+                setTimeout(() => {$(".img").attr("src", "Imagenes/reverso.jpg")}, 2000);         
+            }
+        })
+
+        //Evento de click al botón del idioma (no funciona)
+        $(".boton").click(function(){
+            //alert($(this).html());
+            localStorage.setItem("idioma", $(this).html());
+            cargarJSON($(this).html());
+        })
+
+        
+
+        //botón reiniciar (reinicia el juego)
+        $("#reset").click(function(){
+            reinicio();
+        })
+
+        //se guarda la imagen en el data de cada elemento html, además se le da un id a cada elemento
+        for(i=0;i<imagenes.length;i++){
+            $(imagenes[i]).data("carta", cartas[i]);
+            imagenes[i].id = "carta" + i;
+        }
+        
+        //escribe el ranking
+        $("#topranking").text(topJugador + ": " + topErrores);
+    }
+
+    //función jugar
+    function jugar(){
+        //se quita el evento anterior que nos impedía jugar
+        $(".img").off("click");
+
+        //se activa el evento que le da la vuelta a la imgen y comprueba que está bien
+        $(".img").click(function(){
+            voltear(this, $(".done"), jugador, $(this).data("carta"), $(this));
+            setTimeout(() => {
+                cargarJSON(localStorage.getItem("idioma"));
+            },1000);
+            $("#topranking").text(topJugador + ": " + topErrores); 
+        });
+    }
+
+    function ayuda(){
+    for(i=0;i<15;i++){
+        $("#carta"+i).attr("src", $("#carta"+i).data("carta"));                 
+    }   
+    //taras 2 segundos se vuelve a poner boca abajo             
+    setTimeout(() => {$(".img").attr("src", "Imagenes/reverso.jpg")}, 2000);
+    }
+
+//cambia los textos dependiendo del idioma
+function cargarJSON(idioma){
+    console.log(idioma);
+    $.getJSON("lang.json", function(respuesta){
+        //console.log(respuesta);
+        //console.log(respuesta.lang.ES.Errors);
+        if(idioma=="ES"){
+            $("#rules").html(respuesta.lang.ES.GameDescription);
+            $("#fallos").html(respuesta.lang.ES.Errors+ ": " + errores);
+            $("#aciertos").html(respuesta.lang.ES.Score+ ": " + puntos);
+            $("#titulo").html(respuesta.lang.ES.Title);
+            $("#clasif").html(respuesta.lang.ES.Ranking);
+        }
+        else{
+            $("#rules").html(respuesta.lang.EN.GameDescription);
+            $("#fallos").html(respuesta.lang.EN.Errors + ": " + errores);
+            $("#aciertos").html(respuesta.lang.EN.Score + ": " + puntos);
+            $("#titulo").html(respuesta.lang.EN.Title);
+            $("#clasif").html(respuesta.lang.EN.Ranking);
+        }
+    })  
+}
+
+    //reinicar el juego
+    function reinicio(){
+        //barajea
+        let cartas = barajear();
+        //obtiene las imágenes
+        let imagenes = $("img");
+        //cambia la clase de las completas
+        $(".done").attr("class","img");
+        //cambia la clase de las seleccionadas
+        $(".selected").attr("class","img");
+        //cambia la src de todas las imagenes
+        $(".img").attr("src","Imagenes/reverso.jpg");
+        //resetea el marcador
+        errores = 0;
+        puntos = 0;
+        cargarJSON(localStorage.getItem("idioma"));
+        //borra la carta anterior
+        cAnterior = "";
+        //recoloca las cartas barajeadas
+        for(i=0;i<imagenes.length;i++){
+            $(imagenes[i]).data("carta", cartas[i]);
+            imagenes[i].id = "carta" + i;
+        }
+
+        //pone el ranking
+        let topJugador = localStorage.getItem("topJugador");
+        let topErrores = localStorage.getItem("topErrores");
+        $("#topranking").text(topJugador + ": " + topErrores);
+    }
+</script>
+</html>

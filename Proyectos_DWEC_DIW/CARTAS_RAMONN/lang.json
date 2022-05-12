@@ -1,0 +1,18 @@
+{
+    "lang":{
+        "ES":{
+            "Score": "Puntuacion",
+            "GameDescription": "SELECCIONA UNA CARTA!!!",
+            "Errors": "Errores",
+            "Title": "Juego de parejas",
+            "Ranking": "Clasificacion"
+        },
+        "EN":{
+            "Score": "Score",
+            "GameDescription": "SELECT A CARD!!!",
+            "Errors": "Errors",
+            "Title": "Match Game",
+            "Ranking": "Ranking"
+        }
+    }
+}

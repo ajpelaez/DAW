@@ -1,0 +1,110 @@
+@import url('http://fonts.cdnfonts.com/css/minecraft-4');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: burlywood;
+}
+.titulo{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Minecraft', sans-serif;
+    font-size: 40px;
+    color: aliceblue;
+    -webkit-text-stroke: 2px black;
+}
+.cabecera{
+    background-image: url("Imagenes/cabecera.jpg");
+    height: 75px;
+    align-items: center;
+    border-radius: 5px;
+}
+.puntuacion{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(88, 47, 0) 0%, rgba(83, 49, 3, 0.911) 35%, rgba(68, 35, 4, 0.884) 100%);
+    font-family: "Minecraft";
+    font-size: 20px;
+    color: lightgray;
+    -webkit-text-stroke: 2px black;
+    float: left;
+    width: 150px;
+}
+#jugador{
+    font-size: 30px;
+    margin: 1%;
+}
+#aciertos{
+    margin: 1%;
+}
+#fallos{
+    margin: 1%;
+}
+.ranking{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(88, 47, 0) 0%, rgba(83, 49, 3, 0.911) 35%, rgba(73, 40, 9, 0.966) 100%);
+    font-family: "Minecraft";
+    font-size: 20px;
+    color: lightgray;
+    -webkit-text-stroke: 2px black;
+    width: 300px;
+    float:right;
+    height: 60px;
+}
+.contenedor{
+
+    display: grid;
+    grid-template-columns: 155px 155px 155px 155px 155px;
+    grid-template-rows: auto auto auto;
+    gap: 1px;
+    margin-left: 250px;
+}
+.grid>div {
+   height: 150px;
+   padding: 5px;
+   margin: 20px;
+
+}
+.img{
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+.boton{
+    float: right;
+}
+.botonD{
+    float: left;
+}
+.selected{
+    height: 150px;
+    width: 150px;
+    border: 6px solid yellow;
+    border-radius: 20px;
+
+}
+.done{
+    height: 150px;
+    width: 150px;
+    border: 6px solid green;
+    border-radius: 20px;
+}
+
+.ranking>p{
+    padding-left: 10px;
+}
+
+.puntuacion>p{
+    padding-left: 10px;
+}
+
+.desactivado{
+    background-color: grey;
+}
+.activado{
+    background-color: white;
+}
