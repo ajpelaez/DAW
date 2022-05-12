@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LANGUAGE>
+    <EN>
+        <SCORE>Score</SCORE>
+        <ERRORS>Errors</ERRORS>
+        <TOP>Best Player</TOP>
+        <ERRTOP>Errors</ERRTOP>
+        <LANGUAGE>Language</LANGUAGE>
+        <ALERTS>(Alerts will appear here)</ALERTS>
+        <RIGHT>Nice! You get one point</RIGHT>
+        <WRONG>Wrong! Try again</WRONG>
+        <WIN>Congratulations! You finished the game. Errors: </WIN>    
+    </EN>
+    <ES>
+        <SCORE>Puntuación</SCORE>
+        <ERRORS>Errores</ERRORS>
+        <TOP>Mejor Jugador</TOP>
+        <ERRTOP>Errores</ERRTOP>
+        <LANGUAGE>Idioma</LANGUAGE>
+        <ALERTS>(Los mensajes aparecerán aquí)</ALERTS>
+        <RIGHT>¡Genial! Has ganado un punto</RIGHT>
+        <WRONG>¡Mal! Inténtalo otra vez</WRONG>
+        <WIN>¡Enhorabuena! Has terminado el juego. Errores: </WIN> 
+    </ES>
+</LANGUAGE>

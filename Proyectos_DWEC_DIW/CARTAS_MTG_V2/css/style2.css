@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+* {
+  font-family: "Righteous", cursive;
+}
+
+.dificultades:hover {
+  color: red;
+}
+
+.img, .img-fluid {
+  border-radius: 5px;
+}
+
+.img-fluid {
+  border-radius: 5px;
+}
+
+body {
+  background: url("../img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+header {
+  background-color: rgba(247, 202, 201, 0.719);
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  background: #f3f7ff;
+  background: linear-gradient(90deg, rgba(243, 247, 255, 0.1068802521) 0%, rgba(125, 127, 131, 0) 16%, rgba(0, 0, 0, 0.8071603641) 33%, black 49%, rgba(0, 0, 0, 0.8575805322) 66%, rgba(132, 147, 150, 0) 86%, rgba(224, 250, 255, 0.0676645658) 100%);
+  padding: 2%;
+  color: white;
+}
+
+.carta {
+  border-radius: 10px;
+  width: 144px;
+  height: 200px;
+}
+
+.img:hover {
+  transform: scale(1.05) !important;
+}
+
+.cabecera {
+  height: 100px;
+}
+
+.cabecera img {
+  height: 100px;
+}
+
+#tabla1 {
+  margin: 1%;
+  margin-top: 5%;
+}
+
+#tabla2 {
+  margin: 1%;
+  font-size: 0.75em;
+}
+
+.mensajes {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.enlace {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.titulo_largo {
+  font-size: 0.7em !important;
+}
+
+.card-text {
+  font-size: 0.7em !important;
+}
+
+.informacion-general {
+  background: url("../img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  border: 2px solid black;
+  overflow: auto;
+  background-image: url("../img/fondo.jpg") !important;
+}
+
+.card {
+  background: url("../img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-image: url("../img/fondo_cards.jpg") !important;
+}
+.card .card-text {
+  color: antiquewhite !important;
+  font-family: "Roboto Serif", sans-serif;
+}
+.card .card-header {
+  color: antiquewhite !important;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
+}
+
+.informacion-bomba {
+  background: url("../img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  border: 2px solid black;
+  overflow: auto;
+  background-image: url("../img/fondo_bomba.jpg") !important;
+  color: antiquewhite !important;
+}
+
+.informacion-dificultad {
+  background: url("../img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  border: 2px solid black;
+  overflow: auto;
+  background-image: url("../img/fondo_dificultad.jpg") !important;
+}
+
+.informacion-general::-moz-selection {
+  color: red;
+  /**Este tipo de letra ya se encuentra en negrita por defecto por lo que no se puede poner en negrita*/
+}
+
+.informacion-general::selection {
+  color: red;
+  /**Este tipo de letra ya se encuentra en negrita por defecto por lo que no se puede poner en negrita*/
+}
+
+.invisible {
+  display: none;
+}
+
+.sombreado {
+  box-shadow: 11px 11px 15px 5px #000000, -5px -5px 15px 5px #3B3B3B;
+}
+
+#minititle {
+  display: none;
+}
+
+.sonido {
+  display: none;
+}
+/*# sourceMappingURL=style2.css.map *//*# sourceMappingURL=style2.css.map */

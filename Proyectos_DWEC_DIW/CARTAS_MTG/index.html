@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Juego de cartas en el que debes emparejar cartas de MTG fallando lo menos posible">
+               
+    <title>Juego de Memoria MTG</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="img/favicon\android-icon-192x192.png" alt="logo" id="logo">
+        <h1 id="title">MTG Card Game</h1>
+        <h3 id="minititle">MTGame</h3>
+        
+    </header>
+
+
+
+    <div class="tablas">
+        <div class="puntuacion">
+            <table>
+                <tr>
+                    <th rowspan="2">
+                        <span id="usu"></span>
+                    </th>
+                    <th id="score">
+                        Puntuación
+                    </th>                 
+                    <th>
+                        <i class="fas fa-trophy"></i>
+                    </th>
+                    <th id="errors">
+                        Errores
+                    </th>
+                    <th>
+                        <i class="fas fa-skull"></i>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" value="0" id="marcador" disabled size="3"></td>
+                    <td colspan="2"><input type="text" value="0" id="errores" disabled size="3"></td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="ranking" id="ranking">
+            <table>
+                <tr>
+                    <th id="topPlayer">Mejor jugadorx</th>
+                    <th id="topErr">Errores</th>
+                </tr>
+                <tr>
+                    <td id="winner">¿?¿?¿?</td>
+
+                    <td><input type="text" value="100" id="erroresGanador" disabled size="3"></td>
+
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="idioma">
+            <table>
+                <tr>
+                    <th colspan="2" id="language">Idioma</th>
+                   
+                </tr>
+                <tr>
+                    <td><button id="btnES">ES</button></td>
+
+                    <td><button id="btnEN">EN</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="mensajes" id="alerts">
+        (Los mensajes aparecerán aquí)
+    </div>
+
+
+    <div class="juego">
+
+
+
+        <div class="contenedorCartas">
+
+            <div class="cartas" id="carta1"></div>
+            <div class="cartas" id="carta2"></div>
+            <div class="cartas" id="carta3"></div>
+            <div class="cartas" id="carta4"></div>
+            <div class="cartas" id="carta5"></div>
+            <div class="cartas" id="carta6"></div>
+            <div class="cartas" id="carta7"></div>
+            <div class="cartas" id="carta8"></div>
+            <div class="cartas" id="carta9"></div>
+            <div class="cartas" id="carta10"></div>
+            <div class="cartas" id="carta11"></div>
+            <div class="cartas" id="carta12"></div>
+
+        </div>
+
+        <div class="informacion" id="desc">
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Gabriel Navalón Soriano --- MTGMemoryGame
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

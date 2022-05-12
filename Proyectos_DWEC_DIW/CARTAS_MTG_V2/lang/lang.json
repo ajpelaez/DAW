@@ -1,0 +1,28 @@
+{
+    "LANGUAGE": {
+        "EN": {
+            "SCORE": "Score",
+            "ERRORS": "Errors",
+            "TOP": "Best Player",
+            "ERRTOP": "Errors",
+            "LANG": "Language",
+            "ALERTS": "(Alerts will appear here)",
+            "RIGHT": "Nice! You get one point",
+            "WRONG": "Wrong! Try again",
+            "WIN": "Congratulations! You finished the game. Errors: ",
+            "DESC": "To play, you have to click in any card to flip it <br> <br> Then, you can click any other card, if both cards are the same, you will get a pint, and if they are different, they wull flip again <br><br> You have to remember their position! <br><br> The game will end when you match all the cards. <br><br> Try to finish with fewer mistakes as possible! <br><br><br> <a href='#'><img src='img/favicon/android-icon-72x72.png' alt='logo' id='logo'></a> <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est iure saepe, illum fuga vitae quo molestias dicta officiis excepturi ipsum autem officia fugit incidunt eligendi, ea ex deleniti voluptas ab? <br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto ratione debitis, tempora quae commodi voluptatum veniam voluptate aspernatur non, asperiores ex laboriosam cumque nulla aliquam inventore magni? Sed, eos fugit! <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo vel voluptas unde distinctio, laborum molestias ipsum error repudiandae suscipit veniam aut exercitationem impedit quaerat velit. Illum cupiditate eveniet possimus reprehenderit!" 
+        },
+        "ES": {
+            "SCORE": "Puntuación",
+            "ERRORS": "Errores",
+            "TOP": "Mejor Jugador",
+            "ERRTOP": "Errores",
+            "LANG": "Idioma",
+            "ALERTS": "(Los mensajes aparecerán aquí)",
+            "RIGHT": "¡Genial! Has ganado un punto",
+            "WRONG": "¡Mal! Inténtalo otra vez",
+            "WIN": "¡Enhorabuena! Has terminado el juego. Errores: ",
+            "DESC": "Para jugar solo tienes que hacer click en cualquier carta para darle la vuelta. <br> <br> Después, haz click en otra carta, si son iguales, habrás consegido un punto, si son distintas, volverán a darse la vuelta. <br><br> ¡Tendrás que recordar su posición! <br><br> El juego termina cuando emparejas todas las cartas. <br> <br> ¡Intenta terminar con el menor número de fallos! <br><br><br> <a href='#'><img src='img/favicon/android-icon-72x72.png' alt='logo' id='logo'></a> <br><br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore vel id dicta delectus non earum ducimus repellat, quae officia iure repellendus consectetur culpa, nesciunt at provident fugiat facilis amet modi. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis aperiam itaque architecto cumque. Neque provident, minus labore magni rem reiciendis repellat error aliquam enim! Dolor fuga accusamus architecto dolorem? Temporibus? <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum unde cupiditate doloribus minima itaque sapiente corporis incidunt, consequuntur quasi. Ullam consequuntur labore rerum fugit aliquid a culpa corporis totam molestiae." 
+        }
+    }
+}

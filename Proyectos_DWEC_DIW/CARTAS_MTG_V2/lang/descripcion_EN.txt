@@ -1,0 +1,17 @@
+To play, you have to click in any card to flip it <br> <br>
+Then, you can click any other card, if both cards are the same, you will get a pint,
+and if they are different, they wull flip again <br><br>
+You have to remember their position! <br><br>
+The game will end when you match all the cards. <br><br>
+Try to finish with fewer mistakes as possible! <br><br><br>
+<img src="img\favicon\android-icon-72x72.png" alt="logo"> <br><br>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est iure saepe, illum fuga vitae quo molestias
+dicta officiis excepturi ipsum autem officia fugit incidunt eligendi, ea ex deleniti voluptas ab?
+<br><br>
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto ratione debitis, tempora quae commodi
+voluptatum veniam voluptate aspernatur non, asperiores ex laboriosam cumque nulla aliquam inventore magni?
+Sed, eos fugit!
+<br><br>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo vel voluptas unde distinctio, laborum
+molestias ipsum error repudiandae suscipit veniam aut exercitationem impedit quaerat velit. Illum cupiditate
+eveniet possimus reprehenderit!
