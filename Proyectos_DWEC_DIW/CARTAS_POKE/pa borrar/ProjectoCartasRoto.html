@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<head>
+    <title>EJERCICIO JUEGO DE CARTAS</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+
+    <link rel="shortcut icon" type="image/ico" href="imagenes_pokemon/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        @font-face {
+            font-family: pokemonFont;
+            src: url('/imagenes_pokemon/Fonts/pokemon.ttf'), format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+
+        * {
+            margin: 0px;
+            /* font-family: 'Dongle', sans-serif; too much small*/
+        }
+
+        .mainTitle {
+            border: 1px solid black;
+            display: flex;
+            background: rgb(24, 36, 50);
+            background: radial-gradient(circle, rgba(24, 36, 50, 1) 0%, rgb(80, 75, 75) 100%);
+            color: blanchedalmond;
+            font-family: 'Dongle', sans-serif;
+        }
+
+        .mainTitle img {
+            width: 5em;
+            height: 5em;
+        }
+
+        .mainTitle link {
+            width: 100px;
+            height: 100px;
+        }
+
+        .mainTitle h1 {
+            text-align: center;
+            margin: auto;
+            font-size: 4em;
+            font-family: 'Dongle', sans-serif;
+        }
+
+        .menu {
+            /* border: 1px solid black;
+            padding: 2% 2% 2% 2%;*/
+            display: flex;
+            justify-content: space-between;
+            background: rgb(24, 36, 50);
+            background: linear-gradient(72deg, rgba(24, 36, 50, 1) 0%, rgba(210, 195, 223, 1) 2%);
+        }
+
+        .menuNickUserAndScore {
+            display: flex;
+            justify-content: space-around;
+            border: 1px solid black;
+            font-size: 1.5em;
+        }
+
+        .menuNickUserAndScore div {
+            border: 1px solid black;
+        }
+
+        #nick {
+            padding: 0.3em;
+            align-self: center;
+            width: auto;
+        }
+
+        .score {
+            display: inline-grid;
+            width: auto;
+        }
+
+        .score div {
+            padding: 0px;
+        }
+
+        .menu div {
+            padding: 0.2em;
+        }
+
+        .menuTopPlayer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            text-align: center;
+        }
+
+        .menuTopPlayer div {
+            border: 1px solid black;
+            font-size: 1.5em;
+        }
+
+        .menuLanguage {
+            text-align: center;
+            display: block;
+            flex-wrap: wrap;
+            font-size: 1.5em;
+        }
+
+        .menuLanguage div {
+            flex-wrap: wrap;
+            border: 1px solid black;
+            display: grid;
+        }
+
+        .menuLanguage button {
+            padding: 2%;
+            font-size: 0.7em;
+            display: inline-block;
+        }
+
+        .information {
+            display: flex;
+            justify-content: space-around;
+            border: 2px solid black;
+            height: 2em;
+            padding: 0em 0em 0.2em 0em;
+            font-size: 2em;
+            background: rgb(255, 255, 255);
+            background: radial-gradient(circle, rgba(255, 255, 255, 1) 73%, rgba(218, 33, 33, 1) 100%);
+        }
+
+        .pokeball {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 999999999;
+            background: url("imagenes_pokemon/pokeballSlow.gif") center no-repeat #fff;
+        }
+
+        .game {
+            display: flex;
+            justify-content: space-between;
+            background-color: #2196F3;
+        }
+
+        .gameInformation {
+            background-image: url("imagenes_pokemon/poster4.jpg");
+            background-size: cover;
+            width: auto;
+        }
+
+        .gameDescription {
+            padding: 5em 0 0 0;
+            color: white;
+            font-size: 4em;
+        }
+
+
+        .grid-container {
+            margin: auto;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container img {
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+        }
+
+        .grid-container>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid black;
+            text-align: center;
+            font-size: 30px;
+            height: 5em;
+            width: 5em;
+        }
+
+        .block {
+            -webkit-box-shadow: 7px -5px 10px 0px #4B0082, 11px -9px 10px 0px #0000FF, 16px -14px 10px 0px #00FF00, 20px -17px 10px 0px #FFFF00, 24px -19px 10px 0px #FF7F00, 27px -23px 10px 0px #FF0000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+            box-shadow: 7px -5px 10px 0px #4B0082, 11px -9px 10px 0px #0000FF, 16px -14px 10px 0px #00FF00, 20px -17px 10px 0px #FFFF00, 24px -19px 10px 0px #FF7F00, 27px -23px 10px 0px #FF0000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+            background: #9400D3;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .footer {
+            background: rgb(58, 180, 86);
+            background: radial-gradient(circle, rgba(58, 180, 86, 1) 0%, rgba(235, 232, 56, 1) 61%, rgba(240, 69, 252, 1) 100%);
+        }
+
+        @media (max-width: 1024px) {
+            .mainTitle img {
+                width: 4em;
+                height: 4em;
+            }
+
+            .mainTitle h1 {
+                font-size: 3em;
+            }
+
+            .menuNickUserAndScore {
+                font-size: 1.2em;
+            }
+
+            .menuTopPlayer {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                text-align: center;
+                padding: 5px;
+                width: 45%;
+            }
+
+            .menuTopPlayer div {
+                border: 1px solid black;
+                font-size: 1.2em;
+            }
+
+            .menuLanguage {
+                height: 100%;
+                display: inline-block;
+                font-size: 1.2em;
+            }
+
+            .information {
+                font-size: 1.5em;
+                padding: 0em 0em 1em 0;
+            }
+
+            .grid-container {
+                grid-template-columns: auto auto auto;
+            }
+
+            .grid-container>div {
+                height: 4em;
+                width: 4em;
+            }
+
+            .gameInformation {
+                width: 40%;
+                font-size: 0.8em;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            .mainTitle img {
+                width: 3em;
+                height: 3em;
+            }
+
+            .mainTitle h1 {
+                font-size: 2em;
+            }
+
+            .menu {
+                font-size: 1em;
+            }
+
+            .menuNickUserAndScore {
+                font-size: 1em;
+            }
+
+            .menuTopPlayer {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                text-align: center;
+                padding: 5px;
+                width: 45%;
+            }
+
+            .menuTopPlayer div {
+                border: 1px solid black;
+                font-size: 1em;
+            }
+
+            .menuLanguage {
+                height: 100%;
+                display: inline-block;
+                font-size: 1em;
+                padding: auto;
+            }
+
+            .information {
+                font-size: 1.2em;
+                padding: 0em 0em 1em 0;
+            }
+
+            .grid-container {
+                grid-template-columns: auto auto;
+            }
+
+            .grid-container>div {
+                height: 3em;
+                width: 3em;
+            }
+
+            .gameInformation {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: auto auto;
+            }
+
+            .grid-container>div {
+                height: 2em;
+                width: 2em;
+            }
+
+            .gameInformation {
+                display: none;
+            }
+
+            .menu {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .menuNickUserAndScore {
+                font-size: 1em;
+            }
+
+            .menuTopPlayer {
+                clear: left;
+                float: left;
+                position: relative;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                text-align: center;
+                padding: 5px;
+                width: 45%;
+            }
+
+            .menuTopPlayer div {
+                border: 1px solid black;
+                font-size: 1em;
+            }
+
+            .menuLanguage {
+                float: right;
+                flex-direction: column-reverse;
+                position: relative;
+                height: 100%;
+                display: inline-block;
+                font-size: 1em;
+            }
+
+            .information {
+                font-size: 1em;
+                padding: 0em 0em 1em 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="mainTitle">
+        <img src="imagenes_pokemon/favicon.ico">
+        <link rel="shortcut icon" type="image/ico" href="imagenes_pokemon/favicon.ico" />
+        <h1 id="mainTitle">CARDS TWICE GAME</h1>
+    </div>
+    <div class="menu">
+        <div class="menuNickUserAndScore">
+            <p id="nick">Nick User</p>
+            <div class="score">
+                <p id="scoreTitle">SCORE</p>
+                <p id="pointsMarkerSuccessful"> <i class="fas fa-check-circle"></i></p>
+            </div>
+            <div class="score">
+                <p id="errorsTitle">ERRORS</p>
+                <p id="pointsMarkerFailed"> <i class="far fa-times-circle"></i></p>
+            </div>
+        </div>
+        <div class="menuTopPlayer">
+            <div id="menuTopPlayerTitle">Top Player</div>
+            <div id="topPointsTitle">Points</div>
+            <div id="menuTopPlayer">winner name</div>
+            <div id="topPoints">Points</div>
+        </div>
+        <div class="menuLanguage">
+            <div>
+                <p id="languageTitle">Language</p>
+            </div>
+            <div>
+                <button id="ES" onclick="putInSpanish()">Spanish</button>
+                <button id="EN" onclick="putInEnglish()">English</button>
+            </div>
+        </div>
+    </div>
+    <div class="information">
+        <h2 id="informationTitle">Information</h2>
+
+    </div>
+
+    <div class="game">
+        <div class="grid-container">
+            <div id="carta1" class="carta"><img id="1" src="./imagenes_pokemon/Pikachu.png"></div>
+            <div id="carta2" class="carta"><img id="2" src="./imagenes_pokemon/mewtwo.png"></div>
+            <div id="carta3" class="carta"><img id="3" src="./imagenes_pokemon/Charizard.png"></div>
+            <div id="carta4" class="carta"><img id="4" src="./imagenes_pokemon/mewtwo.png"></div>
+            <div id="carta5" class="carta"><img id="5" src="./imagenes_pokemon/eevee.png"></div>
+            <div id="carta6" class="carta"><img id="6" src="./imagenes_pokemon/Charizard.png"></div>
+            <div id="carta7" class="carta"><img id="7" src="./imagenes_pokemon/groudon.png"></div>
+            <div id="carta8" class="carta"><img id="8" src="./imagenes_pokemon/digglet.png"></div>
+            <div id="carta9" class="carta"><img id="9" src="./imagenes_pokemon/eevee.png"></div>
+            <div id="carta10" class="carta"><img id="10" src="./imagenes_pokemon/groudon.png"></div>
+            <div id="carta11" class="carta"><img id="11" src="./imagenes_pokemon/digglet.png"></div>
+            <div id="carta12" class="carta"><img id="12" src="./imagenes_pokemon/Pikachu.png"></div>
+        </div>
+        <div class="gameInformation">
+            <h2 class="gameDescription">Gotta catch´em all!</h2>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>Footer</h2>
+        <!-- <button type="button" id="incrementar">Incrementar</button>
+        <button type="button" id="decrementar">Decrementar</button>
+        <button type="button" id="logout">Log out</button>
+        <p id="saludo"></p>
+        <p id="contador"></p>
+        -->
+    </div>
+    <script type="text/javascript">
+
+
+        //Chek if the browser supports Web Storage
+        if (typeof (Storage) !== "undefined") {
+            /*          alert("El navegador soporta WebStorage");
+                        if (localStorage.usuario != null) {
+                            document.getElementById("saludo").innerHTML = "¡Bienvenido/a de nuevo, " + localStorage.usuario + "!";
+                        } else {
+                            localStorage.setItem("puntos", pointsCounter);
+                            document.getElementById("saludo").innerHTML = "¡Tu primera visita, " + localStorage.usuario + "!";
+                        }
+            
+                        if (!sessionStorage.getItem("contador"))
+                            sessionStorage.setItem("contador", "0");
+            
+                        document.getElementById("contador").innerHTML = "Contador: " + sessionStorage.getItem("contador");
+                        document.getElementById("incrementar").addEventListener("click", incrementar);
+                        document.getElementById("decrementar").addEventListener("click", decrementar);
+                        document.getElementById("logout").addEventListener("click", logout);
+                    */       }
+
+        else {//Hold the message about the browser don´t support Web Storage, because it´s necesary to run correctly
+            alert("El navegador no soporta Web Storage");
+
+        }
+
+        /*          function incrementar() {
+                             sessionStorage.setItem("contador", Number(sessionStorage.getItem("contador")) + 1);
+                             document.getElementById("contador").innerHTML = "Contador: " + sessionStorage.getItem("contador");
+                         }
+                         function decrementar() {
+                             sessionStorage.setItem("contador", Number(sessionStorage.getItem("contador")) - 1);
+                             document.getElementById("contador").innerHTML = "Contador: " + sessionStorage.getItem("contador");
+            }*/
+        function logout() {
+            alert("Se ha cerrado la sesión de " + localStorage.getItem("usuario"));
+            localStorage.removeItem("usuario");
+            //sessionStorage.clear();
+            document.getElementById("saludo").innerHTML = "";
+        }
+
+
+        window.addEventListener("load", start, false)
+        /*VARIABLES ABOUT POINTS*/
+        var pointsCounter = 0;
+        var failsCounter = 0;
+        var ranking;
+
+        /*VARIABLES ABOUT CARDS*/
+        var card1SRC;
+        var card2SRC;
+        var card1ID;
+        var card2ID;
+        var cardSelected;
+        var cardSelected2;
+        var cartasDescubiertas = new Array;
+        var message;
+
+        var arrayImagenes = new Array(
+            new Array(img = "./imagenes_pokemon/Pikachu.png", 1),
+            new Array(img = "./imagenes_pokemon/Pikachu.png", 2),
+            new Array("./imagenes_pokemon/mewtwo.png", 3),
+            new Array("./imagenes_pokemon/mewtwo.png", 4),
+            new Array("./imagenes_pokemon/Charizard.png", 5),
+            new Array("./imagenes_pokemon/Charizard.png", 6),
+            new Array("./imagenes_pokemon/eevee.png", 7),
+            new Array("./imagenes_pokemon/eevee.png", 8),
+            new Array("./imagenes_pokemon/groudon.png", 9),
+            new Array("./imagenes_pokemon/groudon.png", 10),
+            new Array("./imagenes_pokemon/digglet.png", 11),
+            new Array("./imagenes_pokemon/digglet.png", 12)
+        );
+
+        function random_card() {
+            if (cards.length > 0) {
+                var rand = Math.floor(Math.random() * cards.length);
+                var html = "card: " + cards[rand][0] + "<br/>points: " + cards[rand][1] + "<br/><br/>";
+                document.getElementById("myDiv").innerHTML += html;
+                cards.splice(rand, 1);
+                alert(cards[0]);
+            }
+        }
+
+        function start() {  //Restart counter to 0
+            language = localStorage.getItem("language");
+            /*
+            language = getCookie("language");*/
+
+            if (language == "ES") {
+                putInSpanish();
+            } if (language == "EN") {
+                putInEnglish();
+            }
+
+            pointsCounter = 0;
+            failsCounter = 0;
+            var cartasDescubiertas = new Array;
+            var cartasDescubiertasSI = 0;
+            var cartas = document.getElementsByClassName("carta");
+
+
+            if (cartas.length > 0) {
+                for (i = 0; i < cartas.length; i++) {
+                    cartas[i].addEventListener("click", chekCard, false);
+                }
+            }
+        }
+        var userName = prompt("Escribe tu Usuario");
+        nick.innerHTML = "" + userName;
+
+
+        function chekCard(e) {
+            if (e.target.className == "block") {
+                alert("la carta seleccionada " + e + " ya ha sido descubierta");
+                return;
+            }
+            if (card1SRC == null) {
+                card1SRC = e.target.src;
+                card1ID = e.target.id;
+                cardSelected = document.getElementById(e.target.id);
+                showCard(cardSelected);
+            } else {
+                if (card2SRC == null) {
+                    card2SRC = e.target.src;
+                    card2ID = e.target.id;
+                    cardSelected2 = document.getElementById(e.target.id);
+                    showCard(cardSelected2);
+                    if (card1SRC == card2SRC) {
+                        if (card1ID == card2ID) {
+                            alert("las 2 cartas seleccionadas es la misma. Vuelve a seleccionar la 2ª carta");
+                            card2SRC = null;
+                        } else {
+                            pointsCounter = pointsCounter + 1;
+                            cardSelected.className = "block";
+                            cardSelected2.className = "block";
+                            changeInformationTitleWINPoint();
+                            {
+                                cartasDescubiertas += new Array(card1ID);
+                                cartasDescubiertas += new Array(card2ID);
+                            }
+                            if (pointsCounter == 6) {
+                                var information = document.getElementById("information");
+                                if (failsCounter < localStorage.getItem("fails")) {
+                                    localStorage.setItem("topName", userName);//create o modify the value topName of the WebStorage
+                                    localStorage.setItem("score", pointsCounter);//create o modify the value score of the WebStorage
+                                    localStorage.setItem("fails", failsCounter);//create o modify the value fails of the WebStorage
+                                }
+                                if (language == "ES") {
+                                    informationTitle.textContent = "Excelente " + userName + ", has ganado los 6 puntos. El juego ha terminado";
+                                }
+                                if (language == "EN") {
+                                    informationTitle.textContent = "Excelent " + userName + ", you win the 6 points. The Game is finish";
+                                }
+                            }
+                            setTimeout(() => {
+                                card1ID = null;
+                                card2ID = null;
+                                card1SRC = null;
+                                card2SRC = null;
+                                cardSelected = null;
+                                cardSelected2 = null;
+                            }, 1000);
+                        }
+                    } else {
+                        failsCounter = failsCounter + 1;
+                        changeInformationTitleFailPoint();
+                        setTimeout(() => {
+                            cardSelected.style.opacity = 0;
+                            cardSelected2.style.opacity = 0;
+                            card1ID = null;
+                            card2ID = null;
+                            card1SRC = null;
+                            card2SRC = null;
+                            cardSelected = null;
+                            cardSelected2 = null;
+
+                        }, 1000);
+                    }
+                }
+
+            }
+        }
+
+        function showAlert(message) {
+            setTimeout(() => {
+                alert(message);
+            }, 500);
+        }
+
+        function showCard(idCarta) {
+            idCarta.style.opacity = 1;
+        }
+
+        function changeInformationTitleWINPoint() {
+            localStorage.setItem("puntos", pointsCounter);
+            if (language == "ES") {
+                if (pointsCounter != 0) {
+                    showAlert
+                    informationTitle.textContent = "Has ganado un punto, ahora tienes: " + pointsCounter;
+                    localStorage.setItem("language", "EN");//create o modify the value of the WebStorage
+                }
+                pointsMarkerSuccessful.innerHTML = pointsCounter + "<i class='fas fa-check-circle'>";
+            }
+            else if (language == "EN") {
+                if (pointsCounter != 0) {
+                    informationTitle.innerHTML = "You Win 1 Point, now you have: " + pointsCounter;
+                }
+                pointsMarkerSuccessful.innerHTML = pointsCounter + "<i class='fas fa-check-circle'>";
+
+            }
+        }
+
+        function changeInformationTitleFailPoint() {
+            if (language == "ES") {
+                pointsMarkerFailed.innerHTML = failsCounter + "<i class='far fa-times-circle'>";
+                if (failsCounter != 0) {
+                    informationTitle.innerHTML = "Has fallado, tienes: " + failsCounter + " fallos.";
+                }
+
+            } if (language == "EN") {
+                pointsMarkerFailed.innerHTML = failsCounter + "<i class='far fa-times-circle'>";
+                if (failsCounter != 0) {
+                    informationTitle.innerHTML = "You fail, you have: " + failsCounter + " faults.";
+                }
+
+            }
+
+        }
+
+        function ranking() {
+            primero = document.getElementById("primerPuesto");
+            primero.innerHTML = "El usuario que ha conseguido mayor puntuación a sido = " + userName;
+        }
+
+        document.getElementById("ES").addEventListener("click", importXML);
+
+        function languageChange() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    importXML(this);
+                }
+            };
+            xhr.open("GET", "language.xml", true);
+            xhr.send();
+        }
+
+        function importXML(xml) {
+            var docXML = xml.responseXML;
+            var languageImportXML = docXML.getElementsByTagName("LANGUAGE");
+            switch (language) {
+                case 'EN':
+                    alert(languageImportXML[0].getElementsByTagName("SCORE")[0].textContent);
+                    alert(languageImportXML[0].getElementsByTagName("ERRORS")[0].textContent);
+                    alert(language);
+                    break;
+
+                case 'ES':
+                    alert(languageImportXML[1].getElementsByTagName("SCORE")[0].textContent);
+                    alert(languageImportXML[1].getElementsByTagName("ERRORS")[0].textContent);
+                    break;
+
+            }
+        }
+
+        function putInEnglish() {
+            language = "EN";
+            /*CHANGE MAIN TITLE*/
+            mainTitle.innerHTML = "Exercise Card Game";
+
+            /*CHANGE SCORE BOX*/
+            scoreTitle.innerHTML = "SCORE";
+            errorsTitle.innerHTML = "ERRORS";
+            pointsMarkerSuccessful.innerHTML = pointsCounter + "<i class='fas fa-check-circle'>";
+            pointsMarkerFailed.innerHTML = failsCounter + "<i class='far fa-times-circle'>";
+
+            /*CHANGE TOP PLAYER BOX*/
+            menuTopPlayerTitle.innerHTML = "TOP PLAYER";
+            topPointsTitle.innerHTML = "FAILS";
+            menuTopPlayer.innerHTML = localStorage.getItem("topName");
+            topPoints.innerHTML = localStorage.getItem("fails");
+                alert(localStorage.getItem("fails"));
+            /*CHANGE LANGUAGE BOX*/
+            languageTitle.innerHTML = "LANGUAGE";
+            /*I comment this line for to change Cookie for WebStorage  
+            setCookie("language", "EN", 3);*/
+            localStorage.setItem("language", "EN");//create o modify the value of the WebStorage
+
+            /*INFORMATION BOX*/
+            var infomationAlert = " ";
+            informationTitle.innerHTML = infomationAlert;
+
+            changeInformationTitleWINPoint();
+            changeInformationTitleFailPoint();
+            languageChange();
+        }
+
+        function putInSpanish() {
+            language = "ES";
+            /*CHANGE MAIN TITLE*/
+            mainTitle.innerHTML = "Ejercicio Juego de Cartas ";
+
+            /*CHANGE BOX ABOUT POINTS*/
+
+            scoreTitle.innerHTML = "PUNTOS";
+            errorsTitle.innerHTML = "FALLOS";
+            pointsMarkerSuccessful.innerHTML = pointsCounter + "<i class='fas fa-check-circle'>";
+            pointsMarkerFailed.innerHTML = failsCounter + "<i class='far fa-times-circle'>";
+
+            /*CHANGE BOX ABOUT TOP PLAYER*/
+            menuTopPlayerTitle.innerHTML = "MEJOR JUGADORA";
+            topPointsTitle.innerHTML = "FALLOS";
+            menuTopPlayer.innerHTML = localStorage.getItem("topName");
+            topPoints.innerHTML = localStorage.getItem("fails");
+
+            /*CHANGE LANGUAGE BOX*/
+            languageTitle.innerHTML = "IDIOMA";
+            /*Comento esta linea para cambiar el uso de cookies por web Storage  
+           setCookie("language", "ES", 3);*/
+            localStorage.setItem("language", "ES");//crea o modifica el valor de Web Storage
+
+            changeInformationTitleWINPoint();
+            changeInformationTitleFailPoint();
+            languageChange();
+        }
+
+
+        /* ESTO ERA LA UTILIDAD DE LAS COOKIES, pero lo comentamos para cambiarlo por web Storage
+         function setCookie(cname, cvalue, exdays) {
+              const d = new Date();
+              d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+              let expires = "expires=" + d.toUTCString();
+              document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+          }*/
+
+        /*  ESTO ERA LA UTILIDAD DE LAS COOKIES, pero lo comentamos para cambiarlo por web Storage
+        function getCookie(cname) {
+              let name = cname + "=";
+              let decodedCookie = decodeURIComponent(document.cookie);
+              let ca = decodedCookie.split(';');
+              for (let i = 0; i < ca.length; i++) {
+                  let c = ca[i];
+                  while (c.charAt(0) == ' ') {
+                      c = c.substring(1);
+                  }
+                  if (c.indexOf(name) == 0) {
+                      return c.substring(name.length, c.length);
+                  }
+              }
+              return "";
+          }*/
+
+    </script>
+</body>
+
+</html>

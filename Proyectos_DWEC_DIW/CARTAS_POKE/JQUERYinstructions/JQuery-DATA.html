@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="jquery.js"></script>
+    <style>
+
+    </style>
+    <script>
+
+        $(document).ready(inicio);
+
+        function inicio() {
+
+            //MÉTODO DATA
+            //$.data (nombre,valor) / (nombre) / (objeto)
+            //$.removeData(nombre)
+            $("#nombre").click(function () {
+                $("div").data("nombre", "ANTONIO");
+                $("#especial").data("edad", "30");
+
+            });
+
+            $("#nombre2").click(function () {
+                alert($("div").data("nombre"));
+                alert($("div").data("edad")); //edad esta en el elemento div
+                alert($("#especial").data("edad"));
+            });
+
+            $("#nombre3").click(function () {
+                $("div").removeData("nombre");
+                $("#especial").removeData("edad");
+            });
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="especial">Esto es un div</div>
+    <button id="nombre">Guardar nombre</button>
+    <button id="nombre2">Mostrar nombre</button>
+    <button id="nombre3">Borrar nombre</button>
+    <p></p>
+</body>
+
+</html>

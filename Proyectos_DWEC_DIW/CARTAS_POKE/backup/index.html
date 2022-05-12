@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<head>
+    <title>EJERCICIO JUEGO DE CARTAS POKEMON V.5</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- Llamada a Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="shortcut icon" type="image/ico" href="imgs/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styleCardGame.css" />
+</head>
+
+<body>
+    <header>
+        <div class="mainTitle container-fluid">
+            <!-- ROW DE CABECERA-->
+            <div class="row p-0">
+                <div class=" col-2 col-md-2 ps-0 pe-0 pt-100 mt-100 d-flex align-items-center">
+                    <img src="imgs/favicon.ico" alt="Icono Pokeball">
+                </div>
+                <link rel="shortcut icon" type="image/ico" href="imgs/favicon.ico" />
+                <div class="align-items-center col-6 col-md-5 mb-0 mt-0 pt-0 pb-0">
+                    <div class="align-items-center">
+                        <img src="./imgs/LogoPokemon.png" alt="Logo Pokemon">
+                    </div>
+                </div>
+                <div class="userName col-1 col-md-offset-1" id="nick2">
+                    <h5></h5>
+                </div>
+                <div class="menuOptionsAndLanguages col-12 col-md-4 mb-0 mt-0 pt-0 pb-0">
+                    <div class="row d-flex justify-content-around">
+                        <div class="col-6 col-md-12 mb-0 mt-0 pt-0 pb-0">
+                            <table class=" col-6 menuLanguage text-center border-bottom-0 mb-0 mt-3 ml-5 pt-0 pb-0">
+                                <thead class="m-0">
+                                    <th colspan="2">
+                                        <h5 id="optionsTitle">OPTIONS</h5>
+                                    </th>
+                                </thead>
+                                <tr>
+                                    <td><a href="index.html">
+                                            <button id="gameOption" type="button"
+                                                class="btn btn-secondary mb-0 mt-0 pt-0 pb-0">Juego
+                                            </button></a>
+                                    </td>
+                                    <td><a href="/informacion.html">
+                                            <button id="informationOption" type="button"
+                                                class="btn btn-secondary mb-0 mt-0 pt-0 pb-0">
+                                                Informacion
+                                            </button></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-6 col-md-12 mb-0 mt-0 pt-0 pb-0">
+                            <table class=" col-6 menuLanguage text-center border-bottom-0 mb-0 mt-3 ml-5 pt-0 pb-0">
+                                <thead class="m-0">
+                                    <th colspan="2">
+                                        <h5 id="languageTitle">LANGUAGE</h5>
+                                    </th>
+                                </thead>
+                                <tr>
+                                    <td> <button id="ES" type="button" class="btn btn-secondary mb-0 mt-0 pt-0 pb-0"
+                                            onclick="putInSpanish()">Spanish</button></td>
+                                    <td><button id="EN" type="button" class="btn btn-secondary mb-0 mt-0 pt-0 pb-0"
+                                            onclick="putInEnglish()">English</button></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--FIN ROW DE CABECERA-->
+        </div>
+    </header>
+
+    <!-- COMIENZO del DIV DE PLAY E INFO-->
+    <section>
+        <div class="container-fluid ">
+            <div class="row align-items-center ">
+                <div class="grid-container col-md-4 col-sm-4 col-xs-12 ">
+                    <button class="playButton btn btn-warning col-12 col-sm-12 h-100 d-inline-block"
+                        data-bs-toggle="modal" data-bs-target="#initModal">PLAY</button>
+                </div>
+                <div class="information alert-primary col-12 col-md-8 col-sm-8 col-xs-12">
+                    <h2 id="informationTitle">INFORMACION</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FIN DE PLAY E INFO-->
+    <!--PROGRESS BAR-->
+    <div class="progress alert-primary col-12" id="progress-bar">
+        <div class="progress-bar alert-link" id="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+            aria-valuemin="0" aria-valuemax="100">0%</div>
+    </div>
+    <!-- COMIENZO del tablero-->
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="board grid-container col-12 col-md-9" id="board">
+                <div class="row">
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="1" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="2" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="3" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="4" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="5" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="6" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="7" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="8" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="9" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="10" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="11" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="12" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="13" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="14" draggable="false">
+                    </div>
+                    <div class="carta col-4 col-md-3 col-xl-2 p-50 m-50"><img class="imgCard" id="15" draggable="false">
+                    </div>
+                </div>
+            </div>
+            <aside class="grid-container col-md-3 col-sm-12 col-xs-12 ">
+                <div class="grid-container col-12 ">
+                    <button class="showCards btn btn-warning col-12 col-sm-12 h-100 d-none" onclick="showCards(2000)"
+                        id="showCards">MOSTRAR CARTAS</button>
+                </div>
+                <table class="table table-dark table-striped text-center table-bordered">
+                    <tr>
+                        <td id="nick" colspan="2">Nick User
+                            <p id="level">Nivel</p>
+                        </td>
+                    </tr>
+                    <tr class="score">
+                        <td id="scoreTitle">SCORE</td>
+                        <td id="pointsMarkerSuccessful"> <i class="fas fa-check-circle"></i></td>
+                    </tr>
+                    <tr class="score">
+                        <td id="errorsTitle">ERRORS</td>
+                        <td id="pointsMarkerFailed"> <i class="far fa-times-circle"></i></td>
+                    </tr>
+                </table>
+                <table id="top-palyer-table" class="table table-dark table-striped text-center table-bordered">
+                    <tr>
+                        <th id="menuTopPlayerTitle">Top Player</th>
+                        <th id="topPointsTitle">Points</th>
+                    </tr>
+                </table>
+            </aside>
+        </div>
+    </div>
+    <div class="block" id="blockInteractions"></div>
+    <footer class="footer">
+        <h2>Designed by @jmhurtado</h2>
+    </footer>
+    <script type="text/javascript" src="scripts/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="scripts/jquerys.js"></script>
+
+
+    <!-- Bundle de Boostrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+<!-- VENTANA MODAL-->
+<div class="modal fade" id="initModal" tabindex="-1" aria-labelledby="initModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="configuration">Configuración</h3>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <row class="d-flex">
+                <div class="d-flex align-items-center w-50">
+                    <img src="./imgs/LogoPokemon.png" alt="Logo Pokemon">
+                </div>
+                <td> <button id="ES" type="button" class="btn btn-secondary mb-0 mt-0 pt-0 pb-0"
+                        onclick="putInSpanish()">Spanish</button></td>
+                <td><button id="EN" type="button" class="btn btn-secondary mb-0 mt-0 pt-0 pb-0"
+                        onclick="putInEnglish()">English</button></td>
+            </row>
+            <div class="modal-body">
+                <div>
+                    <h4>
+                        <input name="UserName" id="userName" placeholder="Escribe aquí tu nombre:">
+                    </h4>
+                </div>
+                <!--   <div id="userLevel" class="btn-group w-100 align-items-center" role="group" aria-label="Basic example">
+                    <h4 clas>Selecciona la dificultad:</h4>
+                    <button type="radio" class="btn btn-warning w-33" id="easy" name="userLevel"
+                        value="easy">Facil</button>
+                    <button type="radio" class="btn btn-warning w-33" id="medium" name="userLevel"
+                        value="medium">Medio</button>
+                    <button type="radio" class="btn btn-warning w-33" id="advanced" name="userLevel"
+                        value="advanced">Avanzado</button>
+                </div>
+              -->
+
+
+                botones que funcionan
+                <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="facil" autocomplete="off">
+                    <label class="facil btn btn-outline-warning" for="facil">Fácil</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="normal" autocomplete="off" checked>
+                    <label class="normal btn btn-outline-warning" for="normal">Medio</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="dificil" autocomplete="off">
+                    <label class="dificil btn btn-outline-warning" for="dificil">Avanzado</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="leyenda" autocomplete="off">
+                    <label class="leyenda btn btn-outline-warning" for="leyenda">Leyenda</label>
+                </div>
+                
+
+
+
+                <br>
+                <h2>Selecciona tu nivel</h2>
+                <div class="modal-body">
+                <!--    <div class="w-100 align-items-left" role="group" aria-label="Basic example">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        FACIL
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>En el modo sencillo tendrás una enorme ventaja</strong>
+                                        <br>
+                                        <code>Tienes un botón para poder ver todas las cartas durante 2 segundos</code>,
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        MEDIO
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>El método normal muestra la bomba</strong>
+                                        <code>solo durante 2 segundos</code>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        AVANZADO
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>El método avanzado no tiene ninguna ayuda, juegas a pelo</strong>
+                                        <code>apañate como puedas</code>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        LEYENDA
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>El método avanzado no tiene ninguna ayuda, juegas a pelo</strong>
+                                        <code>y además solo puedes cometer 2 fallos</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="pulseHereToStart" class="btn btn-warning w-100 align-items-left"
+                onclick="play()">PULSA AQUI PARA
+                <br>EMPEZAR a JUGAR</button>
+        </div>
+    </div>
+</div>
+</div>
+
+</html>

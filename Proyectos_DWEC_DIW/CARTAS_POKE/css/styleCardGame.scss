@@ -1,0 +1,444 @@
+$colour1:#303841;
+$colour2:#3A4750;
+$colour3:#F6C90E;
+$colour4:#EEEEEE;
+
+@mixin titleLetters{
+    color: $colour3;
+}
+
+@mixin styleBoxes {
+    background: transparent;
+    background: linear-gradient(180deg, $colour2 13%, $colour4 100%);
+    color: $colour3;
+    font-weight: bold;
+    margin: 1% 1% 1% 1%;
+    border-radius: 15px;
+  }
+
+@font-face {
+    font-family: PokemonFont;
+    src: url('../fonts/Pokemon.ttf'), format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+
+* {
+    margin: 0px;
+    /* font-family: 'Dongle', sans-serif; too much small*/
+}
+
+body{
+     background-image: url("../imgs/poster.jpg");
+    opacity: 0.95;
+     -webkit-box-sizing: content-box;
+     background-color: $colour1;
+     background-size: cover;
+    }
+
+h5 {
+    text-align: center;
+
+    background-color: $colour2;
+    color: $colour4;
+    border-radius: 1.4em;
+    font-size: 1.5em;
+    margin-bottom: 0px;
+  }
+
+  .menuOptionsAndLanguages h5, .gameInfo h5{
+    background-color: $colour3;
+    color: $colour1;
+  }
+
+ p {
+    text-align: center;
+    border: 1px solid $colour1;
+    background-color: $colour2;
+    color: $colour4;
+    margin-bottom: 0px;
+  }
+  btn{
+      font-weight: 900 !important;
+  }
+
+  .userName{
+      font-size: 4em;
+      color:$colour3
+  }
+
+.mainTitle {
+background-color: $colour1;
+}
+
+.mainTitle img {
+width: 100%;
+}
+
+.imgCard{
+display: block;
+display: inline-block;
+
+}
+
+.menu {
+    /* border: 1px solid black;*/
+    padding: 1% 1% 1% 1%;
+    display: flex;
+    justify-content: space-between;
+    /*background: $colour4;*/
+    background-image: url("../imgs/poster3.jpg");
+}
+
+.img-thumbposter3{
+    border: 0px transparent;
+}
+
+.board{
+    
+
+}
+
+.carta img{
+    height: inherit;
+    width: 100%;
+    opacity: 1;
+    align-self: center;
+    display: block;
+    display: inline-block;
+    line-height: 0;
+  }
+
+.carta {
+    background-image: url(../imgs/anverso.jpg);
+    background-position: center;
+    border: 2px solid white;
+    opacity: 1;
+    background-size: contain;
+    height: 14em;
+}
+
+.menu div {
+    padding: 0.2em;
+}
+
+.menuTopPlayer {
+    @include styleBoxes;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    text-align: center;
+}
+
+.menuTopPlayer div {
+    border: 1px solid $colour1;
+    border-radius: 15px;
+    font-size: 1.5em;
+}
+
+.menuLanguage th, td, p{
+    margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+}
+
+
+.menuLanguage div {
+    border: 1px solid $colour1;
+}
+
+.btn-group {
+    padding: 2%;
+    font-size: 0.8em;
+    display: inline-block;
+}
+
+.pokeball {
+    width: -moz-available;
+    width: -webkit-fill-available;
+    background: url("imgs/pokeballSlow.gif") center no-repeat #fff;
+}
+
+.game {
+    display: flex;
+    justify-content: space-between;
+    background-image: url("/imgs/poster.jpg");
+}
+
+.gameInformation {
+    background-image: url("../imgs/poster4.jpg");
+    background-size: cover;
+}
+
+.bomInfo{
+    border: 5px solid $colour3;
+    border-radius: 2em;
+
+}
+
+
+.dificultyInfo{
+    border: 5px solid $colour3;
+    border-radius: 2em;
+    padding: 1em 1em 1em 1em;
+    margin: 1em 1em 1em 1em;
+}
+
+.gameDescription {
+    padding: 5em 0 0 0;
+    color: $colour3;
+    font-size: 4em;
+}
+
+.block {
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(236,242,96,1) 78%);
+}
+
+h2 {
+    text-align: center;
+}
+
+.footer {
+    background: radial-gradient(circle, $colour4 0%, $colour3 61%, $colour2 100%);
+}
+
+.modal-content btn input{
+    background-color: $colour2;
+    color: $colour1;
+    font-weight: bolder;
+    border: 5px solid $colour4;
+    width:min-content;
+    justify-content: space-around;
+    font-weight: 900;
+}
+
+.modal img{
+    width: 100%;
+  }
+
+
+
+//INFORMATION GENERAL
+.allCards {
+    background-color: $colour2;
+    justify-content: space-around;
+}
+.menuOptionsAndLanguages{
+    background-color: $colour1;
+    justify-content: space-around;
+}
+
+.card{
+    text-align: center;
+    border: 5px solid $colour3;
+    border-radius: 1em;
+    padding: 0 0 0 0;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    background-color: $colour4;
+    transition: 3s;
+}
+
+ /* .card:hover{
+    box-shadow: -2px 2px 89px 0px $colour3 inset;
+    -webkit-box-shadow: -2px 2px 89px 0px $colour3 inset;
+    -moz-box-shadow: -2px 2px 89px 0px $colour3 inset;
+    transform: scale(1.2);
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}*/
+
+.Pikachu:hover{
+    box-shadow: -2px 2px 89px 0px lightblue inset !important;
+    -webkit-box-shadow: -2px 2px 89px 0px lightblue inset !important;
+    -moz-box-shadow: -2px 2px 89px 0px lightblue inset !important;
+    transform: scale(1.2);
+    transition: 1s;
+}
+
+
+  .card-title{
+    padding: 0rem 0rem ;
+    margin: 0;
+}
+ 
+
+  .card img{
+      width: -moz-available;
+      width: -webkit-fill-available;
+      height: 6em;
+  }
+
+  .card-name{
+    justify-content: end;
+    align-items: flex-end;
+  }
+
+  .card-body{
+      padding: 10px 4px 10px 4px !important;
+      margin: 0 0 0 0;
+  }
+
+  .gameInfo{
+      background-color: $colour4;
+  }
+
+  @media (max-width: 1200px){
+
+  }
+
+@media (max-width: 1200px) {
+    .menuNickUserAndScore {
+        font-size: 1.2em;
+    }
+
+    .menuTopPlayer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .menuTopPlayer div {
+        font-size: 1.2em;
+    }
+
+    .menuLanguage {
+        font-size: 1.2em;
+    }
+
+    .btn-group {
+        padding: 1.5%;
+        font-size: 0.7em;
+        display: inline-block;
+    }
+
+    /*CARDS IN 1200*/    
+.carta {
+    background-image: url(../imgs/anverso.jpg);
+    background-position: center;
+    border: 2px solid white;
+    opacity: 1;
+    background-size: contain;
+    height: 8em;
+}
+
+    .gameInformation {
+        font-size: 0.8em;
+    }
+
+
+@media (max-width: 739px) {
+
+    //JUEGO 768
+    .menu {
+        font-size: 1em;
+        display: grid;
+        grid-template-areas: 
+        'menuNick menuTop menuLanguage';
+    }
+
+    .menuNickUserAndScore {
+        font-size: 1em;
+        grid-column: 0;
+        grid-area: menuNick;
+    }
+
+    .menuTopPlayer {
+        grid-area: menuTop;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .menuTopPlayer div {
+        font-size: 1em;
+    }
+
+    .carta{
+        height: 6em;
+    }
+//CARDS 768
+
+
+    .information {
+        font-size: 1.2em;
+        padding: 0em 0em 0em 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h5{
+        font-size: 1rem;
+    }
+
+ p, td, tr, th but, button {
+        font-size: 0.9rem !important;
+      }
+    
+    .menu {
+        font-size: 1em;
+        display: grid;
+      /*  grid-template-areas: 
+        'menuNick menuLanguage'
+        'menuTop menuLanguage';*/
+    }
+
+    //JUEGO
+    .mainTitle img {
+        size-adjust: calc();
+    }
+    .gameInformation {
+        display: none;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        flex-direction: initial;
+    }
+
+    .menuNickUserAndScore {
+        font-size: 1em;
+        grid-area: menuNick;
+    }
+
+    .menuTopPlayer {
+        grid-area: menuTop;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .menuTopPlayer div {
+        font-size: 1em;
+    }
+
+    .menuLanguage {
+        font-size: 1em;
+    }
+
+    .menuLanguage p{
+        margin-bottom: 0rem;
+    }
+
+    .information {
+        font-size: 1em;
+        padding: 0em 0em 0em 0;
+    }
+
+    .pulseHereToStart{
+        font-size: 1em !important;
+    }
+//CARDS480
+
+
+}

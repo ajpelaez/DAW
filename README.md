@@ -23,7 +23,7 @@
 | ------------- |-------------:|
 | [Cartas Simpson - ACB](Proyectos_DWEC_DIW/CARTAS_SIMPSON_ACB) | [acbeldeandaw](https://github.com/acbeldeandaw) |
 | [Cartas Simpson V2 - ACB](Proyectos_DWEC_DIW/CARTAS_SIMPSON_V2_ACB) | [acbeldeandaw](https://github.com/acbeldeandaw) |
-| [Cartas Pokemon](Proyectos_DWEC_DIW/CARTAS_POKEMON) | [jmhurtadomontejano](https://github.com/jmhurtadomontejano) |
+| [Cartas Pokemon](Proyectos_DWEC_DIW/CARTAS_POKE) | [jmhurtadomontejano](https://github.com/jmhurtadomontejano) |
 | [Cartas Tarot](Proyectos_DWEC_DIW/CARTAS_TAROT) | [evelynn333](https://github.com/evelynn333) |
 | [Cartas Tarot V2](Proyectos_DWEC_DIW/CARTAS_TAROT_V2) | [evelynn333](https://github.com/evelynn333) |
 | [Cartas Simpson](Proyectos_DWEC_DIW/CARTAS_SANDRA) | [sandrablano96](https://github.com/sandrablano96) |
@@ -41,4 +41,4 @@
 | [Cartas Animales](Proyectos_DWEC_DIW/CARTAS_ANIMALES) | [RubenGarcia-Romeral](https://github.com/RubenGarcia-Romeral) |
 | [Cartas Kebap](Proyectos_DWEC_DIW/CARTAS_KEBAP) | [ShinMugenNoKabe](https://github.com/ShinMugenNoKabe) y [diego-sanchez-r](https://github.com/diego-sanchez-r) |
 | [Cartas Animales](Proyectos_DWEC_DIW/CARTAS_ANIMALES) | [RubenGarcia-Romeral](https://github.com/RubenGarcia-Romeral) |
-| [Cartas Pokemon](Proyectos_DWEC_DIW/CARTAS_POKEMON) | [AcordobagZero](https://github.com/AcordobagZero) |
+| [Cartas Pokemon](Proyectos_DWEC_DIW/CARTAS_POKEMON_ALT) | [AcordobagZero](https://github.com/AcordobagZero) |

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="jquery.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>-->
+
+    <script>
+        $(document).ready(inicio);
+
+        function inicio(){
+
+
+            alert($("#texto").html());
+
+            document.getElementById("cambiar").addEventListener("click", function() {
+              document.getElementById("texto").innerHTML = "Hola Javascript";
+            });
+
+            $("#cambiar2").click(function(){
+              $("#texto").html("Hola Jquery");
+            });
+        }
+
+
+    </script>
+    </head>
+
+<body>
+        <div id="texto">Hola Normal</div>
+        <button id="cambiar">CambiarJS</button>
+        <button id="cambiar2">CambiarJQuery</button>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+    "lang":{
+        "ES":{
+            "MainTitle": "JUEGO DE CARTAS POKEMON",
+            "Options":"OPCIONES",
+            "Game":"JUEGO",   
+            "Information":"INFORMACIÓN",
+            "Language": "IDIOMA",       
+            "Spanish":"ESPAÑOL", 
+            "English":"INGLÉS",
+            "Play": "JUGAR",
+            "Restart":"VOLVER A JUGAR",
+            "informationAlert":"INFORMACION",
+            "informationTitleFAIL": "LHas fallado, los fallos acumulados son: ",
+            "informationTitleWIN": "LHas ganado un punto, ahora tienes: ",
+            "Score": "PUNTOS",
+            "Errors": "ERRORES",
+            "TopPlayer": "MEJOR JUGADORA",
+            "Fails": "FALLOS",
+            "ShowCards":"MOSTRAR CARTAS",
+
+            "Configuration":"CONFIGURACION",
+            "YourName":"ESCRIBE AQUI TU NOMBRE",
+            "Easy":"FÁCIL",
+            "Medium":"MEDIO",
+            "Advanced":"AVANZADO",
+            "Leyend":"LEYENDA",
+            "PulseHereToStart":"PULSA AQUÍ PARA<br>EMPEZAR A JUGAR"
+        },
+        "EN":{
+            "MainTitle": "POKEMON CARDS GAME",
+            "Options":"OPTIONS",
+            "Game":"GAME",
+            "Information":"INFORMATION",
+            "Language": "LANGUAGE",
+            "Spanish":"SPANISH", 
+            "English":"ENGLISH",
+            "Play": "PLAY",
+            "Restart":"RESTART",
+            "informationAlert":"INFORMATION",
+            "informationTitleFAIL": "LYou fail, your acummulated fails are: ",
+            "informationTitleWIN": "LYou Win 1 Point, now you have: ",
+            "Score": "POINTS",
+            "Errors": "ERRORS",
+            "TopPlayer": "TOP PLAYER",
+            "Fails": "FAILS",
+            "ShowCards":"SHOW CARDS",
+
+            "Configuration":"CONFIGURATION",
+            "YourName":"WRITE HERE YOUR NAME",
+            "Easy":"FÁCIL",
+            "Medium":"MEDIO",
+            "Advanced":"AVANZADO",
+            "Leyend":"LEYENDA",
+            "PulseHereToStart":"PULSE HERE<br>TO START"
+        }
+
+    }
+}
