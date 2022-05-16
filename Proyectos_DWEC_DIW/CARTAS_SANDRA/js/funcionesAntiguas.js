@@ -1,4 +1,4 @@
-/*LECTURA DE DOCUMENTOS TXT Y XML*/ 
+/*LECTURA DE DOCUMENTOS TXT Y XML*/
 function cambiaDescripcion(leng) {
 
     var xhr = new XMLHttpRequest();
@@ -85,4 +85,18 @@ function getCookie(nombreCookie) {
         }
     }
     return "";
+}
+
+function cambiarIdiomaJSON(idioma) {
+    const xmlhttp = new XMLHttpRequest();
+    const url = "lang.json";
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            const myArr = JSON.parse(this.responseText);
+            cambiaTexto(myArr, idioma);
+        }
+    };
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
 }

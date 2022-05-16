@@ -1,145 +1,321 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="Es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-sca.0">
     <meta name="description" content="Juego de memoria con cartas de Los Simpson">
     <title>Juego de cartas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="js/jquery-ui-1.13.1.custom/jquery-ui.min.css">
     <link rel="icon" href="img/favicon.ico" type="image/png" />
-    <link href="/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
     <link rel="stylesheet" type="text/css" href="css/sandra.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="background-image"></div>
-        <div class="header__logo">
-            <img src="https://www.themoviedb.org/t/p/original/hKuiXx5eNObCLKe9BOl7O7ulKyg.png" alt="logo">
-        </div>
-        <div class="header__titulo">
-            <h1><span>Juego de parejas de los Simpson</span></h1>
-        </div>
+    <div class="container-fluid w-100">
+        <header class="header row">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid flex-column flex-md-row">
+                    <a class="navbar-brand d-flex justify-content-sm-center m-0 ms-4" href="#">
+                        <img src="img/logo.png" alt="logo" width=250 height=100 class="d-inline-block align-text-top">
+                    </a>
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Juego</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="informacion.html">Informacion</a>
+                        </li>
+                    </ul>
+                    <div class="btn-group btn-group-lg" role="group">
+                        <button type="button" class="idioma btn-outline-dark btn" id="esp">ESP</button>
+                        <button type="button" class="idioma btn-outline-dark btn" id="eng">ENG</button>
+                    </div>
+                </div>
 
-    </header>
-    <main>
-        <section class="estadisticas">
-            <h2 class="estadisticas__titulo" id="estadisticas">Estadísticas</h2>
-            <article>
-                <table>
-                    <tr>
-                        <td rowspan="3"><span id="usuario">Nick</span></td>
-                    </tr>
-                    <tr>
-                        <th id="tagPuntuacion">Puntuacion</th>
-                        <th id="tagErrores">Errores</th>
-                    </tr>
-                    <tr>
-                        <td><i class="fas fa-check"></i> <span id="contador">0</span></td>
-                        <td><i class="fas fa-times"></i> <span id="errores">0</span></td>
-                    </tr>
-                </table>
-            </article>
-            <article>
-                <table>
-                    <tr>
-                        <th id="tagTop">Top player</th>
-                        <th id="tagErroresTop">Errores</th>
-                    </tr>
-                    <tr>
-                        <td> <span id="jugadorTop">AJ</span></td>
-                        <td><span id="jugadorTopFilaError">0</span></td>
-                    </tr>
-                </table>
-            </article>
-            <article>
-                <table>
-                    <tr>
-                        <th colspan="2" id="leng">Lenguaje</th>
-                    </tr>
-                    <tr>
-                        <td><button class="idioma" id="esp">ESP</button></td>
-                        <td><button class="idioma" id="eng">ENG</button></td>
-                    </tr>
-                </table>
-            </article>
+            </nav>
 
-        </section>
-        <p id="barra_informativa">¡Que comience el juego!</p>
+        </header>
+    </div>
+    <div class="container-fluid w-75">
+        <div class="botones-barra container-fluid justify-content-center">
+            <div class="row w-100">
+                <main>
+                    <div class="row w-100 pb-5">
+                        <div class="col-12">
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="0"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div> <!-- fin col de progreso-->
+                    </div> <!-- fin de fila de progreso -->
+                    <div class="row w-100 justify-content-center">
+                        <div class="botonesJuego d-flex flex-column align-content-center col-md-2 col-12">
+                            <button type="button" id="botonInicio" class="btn btn-info mb-5" data-bs-toggle="modal"
+                                data-bs-target="#modalNick"></button>
+                            <button type="button" id="mostrar"
+                                class="btn btn-info mb-2 align-self-center">Ayuda</button>
+                        </div>
+                        <!--fin col botones juego-->
+                        <div class="col-12 col-md-10">
+                            <p id="barra_informativa" class="col-12 alert-dismissible" role="alert">¡Pulsa play para que
+                                comience el juego! </p>
+                            <audio id='audio'>
+                                <source type="audio/mp3" />
+                            </audio>
+                        </div> <!-- fin col barra informativa-->
+                    </div>
+                    <!--fin fila botones y barra-->
+            </div>
+        </div>
         <section id="juego">
-            <div class="contenedor-grid">
-                <div class="carta">
-                    <div class="carta__imagen">
+            <div class="row juego">
+                <div class="col-xl-9 col-lg-9 col-md-9 col-12 p-0">
+                    <div class="container-fluid w-100">
+                        <div class="row mb-2">
+                            <div class="col-xl-3 col-md-3 col-3 p-2">
+                                <div class="carta ">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3  col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3  col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3  col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3  col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3  col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3  col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3  col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3  col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3  col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3  col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3  col-md-3 col-3 p-2">
+                                <div class="carta">
+                                    <div class="carta__imagen">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- row del juego -->
                     </div>
+                </div> <!-- fin columna juego -->
+                </main>
+                <div class="col-xl-3 col-lg-3 col-md-3 mt-5">
+                    <aside>
+                        <table class="table table-hover p-2 mb-3">
+                            <tr>
+                                <th id="tagTop" scope="col">Top player</th>
+                                <th id="tagErroresTop" scope="col">Errores</th>
+                            </tr>
+                            <tr>
+                                <td scope="row">
+                                    <span id="jugador1">Nadie</span>
+                                </td>
+                                <td scope="row">
+                                    <span id="jugador1FilaError">0</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">
+                                    <span id="jugador2">Nadie</span>
+                                </td>
+                                <td scope="row">
+                                    <span id="jugador2FilaError">0</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">
+                                    <span id="jugador3">Nadie</span>
+                                </td>
+                                <td scope="row">
+                                    <span id="jugador3FilaError">0</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">
+                                    <span id="jugador4">Nadie</span>
+                                </td>
+                                <td scope="row">
+                                    <span id="jugador4FilaError">0</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">
+                                    <span id="jugador5">Nadie</span>
+                                </td>
+                                <td scope="row">
+                                    <span id="jugador5FilaError">0</span>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="table table-hover table-sm ">
+                            <tr>
+                                <td rowspan="3">
+                                    <span id="usuario">Nick</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th id="tagPuntuacion" scope="col">Puntuacion</th>
+                                <th id="tagErrores" scope="col">Errores</th>
+                            </tr>
+                            <tr>
+                                <td scope="row">
+                                    <i class="fas fa-check"></i>
+                                    <span id="contador">0</span>
+                                </td>
+                                <td scope="row">
+                                    <i class="fas fa-times"></i>
+                                    <span id="errores">0</span>
+                                </td>
+                            </tr>
+                        </table>
                 </div>
-                <div class="carta">
-                    <div class="carta__imagen">
-                    </div>
-                </div>
-                <div class="carta">
-                    <div class="carta__imagen">
-                    </div>
-                </div>
-                <div class="carta">
-                    <div class="carta__imagen">
-                    </div>
-                </div>
-                <div class="carta">
-                    <div class="carta__imagen">
-                    </div>
-                </div>
-                <div class="carta">
-                    <div class="carta__imagen">
-                    </div>
-                </div>
-                <div class="carta">
-                    <div class="carta__imagen">
-                    </div>
-                </div>
-                <div class="carta">
-                    <div class="carta__imagen">
-                    </div>
-                </div>
-                <div class="carta">
-                    <div class="carta__imagen">
-                    </div>
-                </div>
-                <div class="carta">
-                    <div class="carta__imagen">
-                    </div>
-                </div>
-                <div class="carta">
-                    <div class="carta__imagen">
-                    </div>
-                </div>
-                <div class="carta">
-                    <div class="carta__imagen">
-                    </div>
-                </div>
-            </div>
+                </aside>
+            </div> <!-- fin row juego y estadisticas-->
         </section>
-        <aside class="sidebar">
-            <div id=sidebar__desc>
-                <h2 id="tagDesc">Descripcion del juego</h2>
 
-                <p id="tagDescCompleta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo nobis velit perferendis! Fugit repudiandae
-                    molestiae, aperiam, enim labore minima officiis exercitationem velit laudantium, tempore nesciunt
-                    officia. Sequi in id debitis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus modi placeat quos et facere. Saepe sequi, iusto id officia laborum eos distinctio impedit ducimus accusantium ipsum. Ratione nobis magni optio.officia. Sequi in id debitis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus modi placeat quos et facere. Saepe sequi, iusto id officia laborum eos distinctio impedit ducimus accusantium ipsum. Ratione nobis magni optio.officia. Sequi in id debitis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus modi placeat quos et facere. Saepe sequi, iusto id officia laborum eos distinctio impedit ducimus accusantium ipsum. Ratione nobis magni optio.</p>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="container">
+        <div class="modal fade" id="modalNick" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="modalNickLabel">Escoge tu nick</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Nick:</label>
+                                <input type="text" class="form-control form-control-lg" id="nick" placeholder="Nick">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="infiltrado" id="infiltrado" value="infiltrado">
+                                <label class="form-check-label" for="infiltrado">
+                                    Infiltrado
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="dificultad" id="facil" value="facil"
+                                    checked>
+                                <label class="form-check-label" for="facil">
+                                    Facil
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="dificultad" id="normal"
+                                    value="normal">
+                                <label class="form-check-label" for="normal">
+                                    Normal
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="dificultad" id="dificil"
+                                    value="dificil">
+                                <label class="form-check-label" for="dificil">
+                                    Difícil
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="dificultad" id="leyenda"
+                                    value="leyenda">
+                                <label class="form-check-label" for="leyenda">
+                                    Leyenda
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="comenzar" class="btn">¡JUGAR!</button>
+                    </div>
+                </div>
             </div>
-            <div class="sidedar__publi">
-                <h3 class="sidebar__publi__titulo">Publicidad</h3>
-                <img src="img/publi.jpg" alt="publicidad">
-            </div>
-        </aside>
-    </main>
+        </div>
+    </div>
     <footer class="footer">
-        <p>Sandra Blazquez Notario y Samuel Rivas</p>
+        <p>Sandra Blazquez Notario</p>
         <p>Juego de cartas</p>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="js/jquery-ui-1.13.1.custom/jquery-ui.min.js"></script>
     <script src="js/script.js"></script>
 </body>
-
 </html>

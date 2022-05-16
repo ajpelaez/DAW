@@ -26,8 +26,7 @@
 | [Cartas Pokemon](Proyectos_DWEC_DIW/CARTAS_POKE) | [jmhurtadomontejano](https://github.com/jmhurtadomontejano) |
 | [Cartas Tarot](Proyectos_DWEC_DIW/CARTAS_TAROT) | [evelynn333](https://github.com/evelynn333) |
 | [Cartas Tarot V2](Proyectos_DWEC_DIW/CARTAS_TAROT_V2) | [evelynn333](https://github.com/evelynn333) |
-| [Cartas Simpson](Proyectos_DWEC_DIW/CARTAS_SANDRA) | [sandrablano96](https://github.com/sandrablano96) |
-| [Cartas Simpson V2](Proyectos_DWEC_DIW/CARTAS_SANDRA_V2) | [sandrablano96](https://github.com/sandrablano96) |
+| [Cartas Simpson V2](Proyectos_DWEC_DIW/CARTAS_SANDRA) | [sandrablano96](https://github.com/sandrablano96) |
 | [Cartas Flores](Proyectos_DWEC_DIW/CARTAS_FLORES) | [4jax71](https://github.com/4jax71) |
 | [Cartas Flores V2](Proyectos_DWEC_DIW/CARTAS_FLORES_V2) | [4jax71](https://github.com/4jax71) |
 | [Cartas MTG](Proyectos_DWEC_DIW/CARTAS_MTG) | [gabinavalon](https://github.com/gabinavalon) |
@@ -39,5 +38,5 @@
 | [Cartas Street Fighter](Proyectos_DWEC_DIW/CARTAS_FIGHT) | [SamperDaw](https://github.com/SamperDaw) |
 | [Cartas Animales](Proyectos_DWEC_DIW/CARTAS_ANIMALES) | [RubenGarcia-Romeral](https://github.com/RubenGarcia-Romeral) |
 | [Cartas Kebap](Proyectos_DWEC_DIW/CARTAS_KEBAP) | [ShinMugenNoKabe](https://github.com/ShinMugenNoKabe) y [diego-sanchez-r](https://github.com/diego-sanchez-r) |
-| [Cartas Animales](Proyectos_DWEC_DIW/CARTAS_ANIMALES) | [RubenGarcia-Romeral](https://github.com/RubenGarcia-Romeral) |
+| [Cartas Zoo](Proyectos_DWEC_DIW/CARTAS_ANIMALES) | [RubenGarcia-Romeral](https://github.com/RubenGarcia-Romeral) |
 | [Cartas Pokemon](Proyectos_DWEC_DIW/CARTAS_POKEMON_ALT) | [AcordobagZero](https://github.com/AcordobagZero) |
