@@ -1,5 +1,5 @@
 # DAW - Desarrollo de Aplicaciones WEB
- Transparencias, código, ejercicios y proyectos de diferentes asignaturas del Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones WEB.
+ Transparencias, código, ejercicios y proyectos de diferentes módulos del Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones WEB.
 
  Puedes ver este repositorio en versión web aquí: [Version WEB](https://ajpelaez.github.io/DAW/)
 
